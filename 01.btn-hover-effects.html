@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btn-hover-style01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            /* outline: 1px red solid; */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        a {
+            position: relative;
+            color: #FFF;;
+            background-color: #0690fd;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .5s;
+            box-shadow: 0 20px 25px  #0692fd50;
+            /* hover後跑板問題 */
+            overflow: hidden; 
+            text-decoration: none;
+            /* 字體都大寫 */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+        }
+
+        a:hover{
+            width: 200px;
+            transition-delay: .5s;
+        }
+
+        a::before {
+            content: '';
+            position: absolute;
+            right: 25px;
+            width: 12px;
+            height: 12px;
+            border-top: 3px solid white;
+            border-right:3px solid white;
+            transform: rotate(45deg);
+            transition: .5s;
+        }
+
+        a:hover::before{
+            /* 旋轉後的XY座標也會改變 */
+            transform: rotate(45deg) translate(50px,-50px); 
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            left: -50px;
+            width: 12px;
+            height: 12px;
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right:3px solid rgb(255, 255, 255);
+            transform: rotate(45deg) translate(-50px,50px); 
+            transition: .5s;
+        }
+
+        a:hover::after{
+            transform: rotate(45deg) translate(50px,-50px); 
+            transition-delay: 1s;
+        }
+
+        a span {
+            visibility: hidden;
+            opacity: 0;
+            white-space: nowrap;
+            transition: .5s;
+            transform: translateX(-30px);
+        }
+
+        a:hover span {
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0.75s;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#"><span>Get Started</span></a>
+</body>
+
+</html>
