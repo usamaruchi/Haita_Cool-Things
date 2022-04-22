@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-animation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            /* outline: 1px red solid; */
+            margin: 0;
+            padding: 0;
+            font-family: 'Luckiest Guy', cursive;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+        }
+
+
+        h1 {
+            color: #FFF;
+            font-size: 8em;
+        }
+
+        h1 span {
+            /* 調整不同div間的距離，轉成table表格，可居中等距調整間距 */
+            display: table-cell;
+            animation: animate 2s linear infinite;
+        }
+
+        h1 span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        h1 span:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        h1 span:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        h1 span:nth-child(4) {
+            animation-delay: 0.75s;
+        }
+
+        h1 span:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        @keyframes animate {
+
+            0%,
+            100% {
+                color:  #FFF;
+                filter: blur(2px);
+
+                /* shadow疊加  #10FFA2*/
+                text-shadow:
+                    0 0 10px  #10FFA2,
+                    0 0 20px  #10FFA2,
+                    0 0 40px  #10FFA2,
+                    0 0 80px  #10FFA2,
+                    0 0 120px  #10FFA2;
+            }
+
+            5%,
+            95% {
+                color: #111;
+                filter: blur(0px);
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+<h1>
+    <span>M</span>
+    <span>o</span>
+    <span>v</span>
+    <span>w</span>
+    <span>e</span>
+</h1>
+
+<body>
+
+</body>
+
+</html>
