@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* outline: 1px red solid; */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+        }
+
+        .wave {
+            position: relative;
+            width: 150px;
+            height: 50px;
+            /* background: #333; */
+            overflow: hidden;
+        }
+
+        .wave::before {
+            content: 'aaaaaaaaaaaaa';
+            position: absolute;
+            top: -42px;
+            left: 0;
+            font-size: 4em;
+            color: transparent;
+            text-decoration-line:underline;
+            text-decoration-style:wavy;
+            text-decoration-color: #fff;
+            animation: animate 1s linear infinite;
+        }
+
+        @keyframes animate{
+            0%{
+                transform: translateX(-1px);
+            }
+            100%{
+                transform: translateX(-100px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wave"></div>
+
+</body>
+
+</html>
