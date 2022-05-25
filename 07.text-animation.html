@@ -16,7 +16,7 @@
             /* outline: 1px red solid; */
             margin: 0;
             padding: 0;
-            font-family: 'Luckiest Guy', cursive;
+            /* font-family: 'Luckiest Guy', cursive; */
         }
 
         body {
@@ -24,19 +24,25 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #000;
+            background-color: #1A1D24;
         }
 
 
         h1 {
-            color: #FFF;
+            font-family: 'Luckiest Guy', cursive;
+            /* color: #FFF; */
+            /* color: rgba(255, 255, 255, .8); */
             font-size: 8em;
+            -webkit-text-stroke: 1px rgba(16, 255, 163, 0.5);
+
         }
 
         h1 span {
+            /* border: 1px solid #10FFA2; */
             /* 調整不同div間的距離，轉成table表格，可居中等距調整間距 */
             display: table-cell;
-            animation: animate 2s linear infinite;
+            animation: animate 5s linear infinite;
+            /* animation-delay: 0s;*/
         }
 
         h1 span:nth-child(1) {
@@ -44,43 +50,63 @@
         }
 
         h1 span:nth-child(2) {
-            animation-delay: 0.25s;
-        }
-
-        h1 span:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-
-        h1 span:nth-child(4) {
-            animation-delay: 0.75s;
-        }
-
-        h1 span:nth-child(5) {
             animation-delay: 1s;
         }
 
-        @keyframes animate {
+        h1 span:nth-child(3) {
+            animation-delay: 2s;
+        }
 
+        h1 span:nth-child(4) {
+            animation-delay: 3s;
+        }
+
+        h1 span:nth-child(5) {
+            animation-delay: 4s;
+        }
+
+        @keyframes animate {
+            /* shadow疊加  #10FFA2*/
             0%,
-            100% {
-                color:  #FFF;
+            100%{
+                color: rgba(255, 255, 255, .8);
                 filter: blur(2px);
 
-                /* shadow疊加  #10FFA2*/
                 text-shadow:
-                    0 0 10px  #10FFA2,
-                    0 0 20px  #10FFA2,
-                    0 0 40px  #10FFA2,
-                    0 0 80px  #10FFA2,
-                    0 0 120px  #10FFA2;
+                    0 0 10px rgba(16, 255, 163, 0.7),
+                    0 0 20px rgba(16, 255, 163, 0.7),
+                    0 0 40px rgba(16, 255, 163, 0.7),
+                    0 0 80px rgba(16, 255, 163, 0.7),
+                    0 0 120px rgba(16, 255, 163, 0.7);
             }
-
-            5%,
-            95% {
+            
+            15%,
+            85%{
                 color: #111;
                 filter: blur(0px);
                 text-shadow: none;
             }
+
+            /* 10%,
+            35%,
+            65% 
+            {
+                color:  rgba(255, 255, 255, .5);
+                filter: blur(1px);
+
+               
+                text-shadow:
+                    0 0 10px  rgba(16, 255, 163, 0.8),
+                    0 0 30px  rgba(16, 255, 163, 0.8); 
+            }
+            0%,
+            25%, 
+            50%,
+            100%{
+                color: #111;
+                filter: blur(0px);
+                text-shadow: none;
+            }         */
         }
     </style>
 </head>
