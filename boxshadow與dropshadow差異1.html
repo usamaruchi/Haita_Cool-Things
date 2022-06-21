@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>效果展示</title>
+        <style>
+            .box {
+                margin: 40px; padding: 50px;
+                width: 300px;
+                background-color: #fff;
+                position: relative;
+                font-size: 24px;
+            }
+            .cor {
+                position: absolute;
+                left: -40px;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                border: 20px solid transparent;
+                border-right-color: #fff;
+            }
+            .drop-shadow {
+                filter: drop-shadow(5px 5px 10px black);
+            }
+            .box-shadow{
+                box-shadow: 5px 5px 10px black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box drop-shadow">
+            <i class="cor"></i>
+            filter: drop-shadow
+        </div>
+        <div class="box box-shadow">
+            <i class="cor"></i>
+            box-shadow
+        </div>
+    </body>
+</html>
