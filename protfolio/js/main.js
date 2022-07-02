@@ -5,7 +5,8 @@ $(function () {
     }, 5000);
 
     setTimeout(function () {
-        $("#load_video").hide();
+        $("#landing_video").hide();
     }, 8000);
+
 })
 
