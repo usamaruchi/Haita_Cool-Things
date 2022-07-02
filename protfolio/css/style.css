@@ -1,5 +1,5 @@
 * {
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 :root {
@@ -87,16 +87,19 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align:center;
+    white-space: nowrap;
 }
 
 .load .title h1 {
-    font-size: 5em;
+    /* font-size: 5em; */
+    font-size: 10vmin;
     letter-spacing: .1em;
 }
 
 .load .title h2 {
-    font-size: 4em;
+    /* font-size: 4em; */
+    font-size: 8vmin;
     font-weight: 300;
     letter-spacing: .2em;
 }
@@ -211,7 +214,7 @@ body {
     /* outline: 1px solid red; */
     display: none;
     position: absolute;
-    top: 150%;
+    top: 130%;
     left: 50%;
     pointer-events: auto;
     cursor: pointer;
@@ -255,7 +258,48 @@ body {
 }
 
 /* Header */
+header{
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 背景毛玻璃效果 */
+    backdrop-filter:blur(50px);
+    transition: .6s ease;
+}
 
+.nav_bar{
+    position: relative;
+    height: calc(4rem + 1rem);
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    transition: .6s ease;
+}
+
+.nav_bar .logo{
+    /* color: var(--first-color); */
+    color: white;
+    font-size:1.3em;
+    font-weight: 600;
+}
+
+.nav_bar a{
+    /* color: var(--first-color); */
+    color: white;
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+}
+
+/* not選中除了a以外的，last-child選中最後一個子層 */
+.nav_bar a:not(:last-child){
+    margin-right: 50px;
+    /* color: var(--second-color); */
+}
 
 /* main*/
 /* .container {
