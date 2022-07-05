@@ -1,7 +1,3 @@
-* {
-    outline: 1px solid red;
-}
-
 :root {
     /* font */
     --font-ENG: 'Roboto';
@@ -41,25 +37,31 @@
 
 }
 
+* {
+    /* outline: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-ENG), var(--font-CHT), sans-serif;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 /* , 'Noto Sans TC' */
 body {
-    box-sizing: border-box;
-    font-family: var(--font-ENG), var(--font-CHT), sans-serif;
     color: var(--first-color);
     background: var(--body-bg-color);
     /* margin: 2rem 0 0 0; */
     transition: .5s ease;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
 }
 
@@ -95,7 +97,7 @@ li{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align:center;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -266,18 +268,18 @@ li{
 }
 
 /* Header */
-header{
+header {
     z-index: 99999;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     /* 背景毛玻璃效果 */
-    backdrop-filter:blur(50px);
+    backdrop-filter: blur(20px);
     transition: .6s ease;
 }
 
-.nav_bar{
+.nav_bar {
     position: relative;
     height: calc(4rem + 1rem);
     max-width: 1250px;
@@ -289,14 +291,14 @@ header{
     transition: .6s ease;
 }
 
-.nav_bar .logo{
+.nav_bar .logo {
     color: var(--first-color);
     /* color: white; */
-    font-size:1.3em;
+    font-size: 1.3em;
     font-weight: 600;
 }
 
-.nav_items a{
+.nav_items a {
     color: var(--first-color);
     /* color: white; */
     font-size: var(--normal-font-size);
@@ -304,26 +306,141 @@ header{
 }
 
 /* not選中除了a以外的，last-child選中最後一個子層 */
-.nav_items a:not(:last-child){
+.nav_items a:not(:last-child) {
     margin-right: 50px;
 }
 
-.nav_items a:hover{
+.nav_items a:hover {
     color: var(--second-color);
 }
 
-.media_icons a i{
-    color: black;
-    margin-top: 100px;
+/* 共用Style */
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* main*/
-/* .container {
-    max-width: 1140px;
+/* Home */
+.home {
+    position: relative;
+    max-width: 1250px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem 2rem;
+    flex-direction: column;
+}
+
+.home .home_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.home_container .media_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px
+}
+
+.home_container .media_icons a {
+    color: var(--second-color);
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.home_container .media_icons a:hover {
+    color: var(--hover-color);
+}
+
+.home_container .info h2 {
+    font-size: 3.5em;
+    /* font-feature-settings:1.3em; */
+    font-weight: 600;
+    line-height: 70px;
+}
+
+.home_container .info p {
+    color: var(--third-color);
+    font-size: var(--normal-font-size);
+    max-width: 500px;
+}
+
+.btn {
+    background-color: var(--second-color);
+    color: #FFF;
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+.home_container .home_img {
+    display: flex;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    /* overflow: hidden; */
+    background-image: url(/images/usamaruchi.jpg);
+    background-size: contain;
+    border-radius: 50%;
+
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255)inset,
+        0px 0px 10px 10px rgba(255, 255, 255)inset,
+        0px 0px 15px 15px rgba(255, 255, 255)inset;
+
+}
+
+/* .home_container .home_img::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255)inset,
+        0px 0px 10px 10px rgba(255, 255, 255)inset,
+        0px 0px 15px 15px rgba(255, 255, 255)inset;
 } */
 
-/* .row {
-    height: 100vh;
+/* .home_container .home_img img {
+
     width: 100%;
-    padding: 20px;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(0, 0);
 } */
+
+.home .scroll_down {
+    color: var(--first-color);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.home .scroll_down i {
+    color: var(--second-color);
+    font-size: 1.2em;
+    animation: arrow_down ease 2s infinite;
+}
+
+@keyframes arrow_down {
+    0% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(10px);
+    }
+
+}
