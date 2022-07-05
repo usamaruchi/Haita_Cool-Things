@@ -55,6 +55,14 @@ body {
     transition: .5s ease;
 }
 
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
 /* section landing_page */
 .load {
     height: 100vh;
@@ -282,23 +290,31 @@ header{
 }
 
 .nav_bar .logo{
-    /* color: var(--first-color); */
-    color: white;
+    color: var(--first-color);
+    /* color: white; */
     font-size:1.3em;
     font-weight: 600;
 }
 
-.nav_bar a{
-    /* color: var(--first-color); */
-    color: white;
+.nav_items a{
+    color: var(--first-color);
+    /* color: white; */
     font-size: var(--normal-font-size);
     font-weight: 500;
 }
 
 /* not選中除了a以外的，last-child選中最後一個子層 */
-.nav_bar a:not(:last-child){
+.nav_items a:not(:last-child){
     margin-right: 50px;
-    /* color: var(--second-color); */
+}
+
+.nav_items a:hover{
+    color: var(--second-color);
+}
+
+.media_icons a i{
+    color: black;
+    margin-top: 100px;
 }
 
 /* main*/
