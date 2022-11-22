@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tc">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollTrigger-3</title>
+    <link rel="stylesheet" href="/CSS/scroll.css">
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .bg {
+            background: #000;
+            height: 100vh;
+        }
+
+        .box-bg {
+            bottom: #fff;
+        }
+
+        .box-bg .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transform: translate(0, 0);
+        }
+
+        .box-bg .active {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+    <div class="box-bg">
+        <div class="box"></div>
+    </div>
+    <div class="bg"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="/JS/scroll.js"></script>
+
+</body>
+
+</html>
