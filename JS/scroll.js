@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".square", {
-    x: 700,
-    duration: 3,
-    ScrollTrigger: ".square"
+    x: 2000,
+    duration: 10,
+    ScrollTrigger: ".square2"
 })
