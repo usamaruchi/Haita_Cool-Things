@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tc">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            /* outline: red solid 1px; */
+        }
+
+        body {
+            background-color: rgb(210, 210, 210);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .nav {
+            width: 100%;
+            height: 80px;
+            background-color: white;
+            display: flex;
+            position: relative;
+            /* flex-shrink: 0; */
+            overflow: hidden;
+            /* transition:.3s ease; */
+        }
+
+        .box {
+            background-color: bisque;
+            background-color: var(--clr);
+            width: 100%;
+            /* width: calc(100%/3); */
+            /* height: 10px; */
+            text-align: center;
+            line-height: 80px;
+            font-size: 24px;
+            /* transition:.3s ease; */
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: -92%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--a-clr);
+            z-index: 0;
+            transition: .3s ease;
+        }
+
+        .box:hover::after
+        {
+        bottom: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        }
+
+
+        .box span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* .a::after,
+        .b::after,
+        .c::after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: -92%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--b-clr);
+            z-index: 0;
+            transition: .3s ease;
+        }
+
+        .a:hover::after,
+        .b:hover::after,
+        .c:hover::after {
+            bottom: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+  
+        .b:hover > .b::after{
+            bottom: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .a span,
+        .b span,
+        .c span {
+            position: relative;
+            z-index: 2;
+        } */
+    </style>
+</head>
+
+<div class="nav">
+    <div class="box a" style="--a-clr:#fbad04;">
+        <span>a</span>
+    </div>
+    <!-- <div class="box b" style="--c-clr:#03a1d9;">
+        <span>b</span>
+    </div> -->
+    <!-- <div class="box c" style="--b-clr:#f7036d;">
+        <span>c</span>
+    </div> -->
+</div>
+
+<body>
+
+</body>
+
+</html>
