@@ -10,6 +10,7 @@
         * {
             margin: 0;
             /* outline: red solid 1px; */
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
@@ -22,101 +23,119 @@
 
         .nav {
             width: 100%;
+            max-width: 1280px;
             height: 80px;
             background-color: white;
             display: flex;
-            position: relative;
-            /* flex-shrink: 0; */
-            overflow: hidden;
-            /* transition:.3s ease; */
+            justify-content: space-between
+                /* position: relative; */
+                /* flex-shrink: 0; */
+                /* overflow: hidden; */
+                /* transition:.3s ease; */
         }
 
         .box {
-            background-color: bisque;
-            background-color: var(--clr);
-            width: 100%;
-            /* width: calc(100%/3); */
-            /* height: 10px; */
+            /* background-color: bisque; */
+            width: calc(100%/2);
+            height: 100%;
             text-align: center;
             line-height: 80px;
             font-size: 24px;
             /* transition:.3s ease; */
+            position: relative;
+            overflow: hidden;
+
         }
 
         .box::after {
             content: '';
             position: absolute;
             display: block;
-            bottom: -92%;
-            left: 0;
+            bottom: -90%;
+            left: 0%;
             width: 100%;
             height: 100%;
-            background-color: var(--a-clr);
+            /* background-color: rgb(157, 157, 255); */
             z-index: 0;
             transition: .3s ease;
         }
 
-        .box:hover::after
-        {
-        bottom: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        .box:hover::after {
+            bottom: 0%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
+        .box1::after {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4efc0+0,abbd73+100;Olive+3D+%232 */
+            background: rgb(228, 239, 192);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(228, 239, 192, 1) 0%, rgba(171, 189, 115, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(228, 239, 192, 1) 0%, rgba(171, 189, 115, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(228, 239, 192, 1) 0%, rgba(171, 189, 115, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4efc0', endColorstr='#abbd73', GradientType=0);
+            /* IE6-9 */
 
-        .box span {
+        }
+        
+
+        .box2::after {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e5e696+0,d1d360+100;Wax+3D */
+            background: rgb(229, 230, 150);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(229, 230, 150, 1) 0%, rgba(209, 211, 96, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(229, 230, 150, 1) 0%, rgba(209, 211, 96, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(229, 230, 150, 1) 0%, rgba(209, 211, 96, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e696', endColorstr='#d1d360', GradientType=0);
+            /* IE6-9 */
+
+        }
+
+        .box3::after {
+            background-color: #FF9600;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+1,1e5799+100 */
+            background: rgb(125, 185, 232);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(125, 185, 232, 1) 1%, rgba(30, 87, 153, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(125, 185, 232, 1) 1%, rgba(30, 87, 153, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(125, 185, 232, 1) 1%, rgba(30, 87, 153, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db9e8', endColorstr='#1e5799', GradientType=0);
+            /* IE6-9 */
+
+
+        }
+
+        a {
             position: relative;
-            z-index: 2;
-        }
-
-        /* .a::after,
-        .b::after,
-        .c::after {
-            content: '';
-            position: absolute;
             display: block;
-            bottom: -92%;
-            left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--b-clr);
-            z-index: 0;
-            transition: .3s ease;
-        }
-
-        .a:hover::after,
-        .b:hover::after,
-        .c:hover::after {
-            bottom: 0;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-  
-        .b:hover > .b::after{
-            bottom: 0;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .a span,
-        .b span,
-        .c span {
-            position: relative;
             z-index: 2;
-        } */
+            text-decoration: none;
+            font-size: 30px;
+        }
     </style>
 </head>
-
+<!-- style="--a-clr:#fbad04;" -->
 <div class="nav">
-    <div class="box a" style="--a-clr:#fbad04;">
-        <span>a</span>
+    <div class="box box1">
+        <a href="# ">遊戲</a>
     </div>
-    <!-- <div class="box b" style="--c-clr:#03a1d9;">
-        <span>b</span>
-    </div> -->
-    <!-- <div class="box c" style="--b-clr:#f7036d;">
-        <span>c</span>
-    </div> -->
+    <div class="box box2">
+        <a href="#">電影</a>
+    </div>
+    <div class="box box3">
+        <a href="#">活動</a>
+    </div>
 </div>
 
 <body>
