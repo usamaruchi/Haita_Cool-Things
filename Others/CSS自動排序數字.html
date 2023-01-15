@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        chapter 這個計數器重設，初始值是 99
+        section 這個計數器重設，初始值是 -1
+        money   這個計數器重設，初始值是 2 萬郝，1 夢想家 200000000
+        nobody  這個計數器重設，不給初始值所以固定是 0 
+        */
+
+        /* 需要搭配用到偽類函數顯示 */
+
+        .toc {
+            counter-reset: chapter;
+        }
+
+        .toc>ul>li {
+            counter-increment: chapter;
+            counter-reset: section;
+            margin-left: 1em;
+        }
+
+        .toc>ul>li::before {
+            content: counter(chapter);
+            margin-right: 0.5em;
+        }
+
+        .toc>ul>li>ul>li {
+            counter-increment: section;
+            margin-left: 1em;
+        }
+
+        .toc>ul>li>ul>li::before {
+            content: counter(chapter) "." counter(section);
+            margin-right: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toc">
+        <ul>
+            <li>這是第x章，啦啦啦啦
+                <ul>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                </ul>
+            </li>
+            <li>這是第x章，啦啦啦啦
+                <ul>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                </ul>
+            </li>
+            <li>這是第x章，啦啦啦啦
+                <ul>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                </ul>
+            </li>
+            <li>這是第x章，啦啦啦啦
+                <ul>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                </ul>
+            </li>
+            <li>這是第x章，啦啦啦啦
+                <ul>
+                    <li>這是第x節，啦啦啦啦啦啦</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
