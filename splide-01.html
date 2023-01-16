@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/splide.min.css">
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/themes/splide-default.min.css">
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/themes/splide-skyblue.min.css">
+
+    <link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.css">
+
+    <style>
+        .my-slider-progress {
+            background: #ccc;
+        }
+
+        .my-slider-progress-bar {
+            background: greenyellow;
+            height: 2px;
+            transition: width 400ms ease;
+            width: 0;
+        }
+
+        /* .splide {} */
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="splide">
+        <div class="splide__track bg-dark">
+            <div class="splide__list" style="height: 200px;">
+                <li class="splide__slide bg-primary">
+                    <p>slide-1</p>
+                   
+                </li>
+                <li class="splide__slide bg-secondary">
+                    slide-2
+                </li>
+                <li class="splide__slide bg-success">
+                    slide-3
+                </li>
+                <li class="splide__slide bg-info">
+                    slide-4
+                </li>
+                <li class="splide__slide bg-warning">
+                    slide-5
+                </li>
+                <li class="splide__slide bg-danger">
+                    slide-6
+                </li>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide" style="text-align: center;">
+                        <img src="images/01.webp" alt="" style="width: 100%; ">
+                    </li>
+                    <li class="splide__slide" style="text-align: center;">
+                        <img src="images/02.webp" alt="" style="width: 100%; ">
+                    </li>
+                    <li class="splide__slide" style="text-align: center;">
+                        <img src="images/03.webp" alt="" style="width: 100%; ">
+                    </li>
+                    <li class="splide__slide" style="text-align: center;">
+                        <img src="images/04.webp" alt="" style="width: 100%; ">
+                    </li>
+                    <li class="splide__slide" style="text-align: center;">
+                        <img src="images/05.webp" alt="" style="width:100%;">
+                    </li>
+                    <li class="splide__slide" style="text-align: center;">
+                        <img src="images/06.webp" alt="" style="width: 100%; ">
+                    </li>
+
+                </ul>
+            </div>
+        
+    </div>
+
+    </div>
+
+
+
+
+    <script src="splide-4.1.3/dist/js/splide.min.js"></script>
+    <script src="/splide-4.1.3/scripts/"></script>
+
+    <script>
+        var splide = new Splide('.splide', {
+            type: "slide",
+            perPage: 2, //幾張圖
+            arrows: true, //左右指標
+            pagination: true, //底下第幾個
+            wheel: true, //滑鼠滾輪
+            autoplay: true,
+            interval: 1000,
+            speed: 3000
+            // start:3,
+        }).mount();
+
+  
+
+
+
+    // var splide = new Splide('.splide', {
+    //     type: 'loop',
+    //     perPage: 3,
+    //     autoplay: true,
+    // });
+
+    // splide.mount();
+    // </script>
+</body>
+
+</html>
