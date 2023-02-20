@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tc">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollTrigger-2</title>
+    <!-- <link rel="stylesheet" href="/css/scroll.css"> -->
+
+    <style>
+        * {
+            margin: 0;
+            outline: 1px red solid;
+        }
+
+
+
+        .panel {
+            height: 100vh;
+            background-color: antiquewhite;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="panel"></div>
+    <div class="box"></div>
+    <div class="panel"></div>
+
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 若從頭調整會導致全部delay都要重新設置，不建議使用
+        // gsap.to(".box", { x: 500, duration: 2 })
+        // gsap.to(".box", { y: 200, duration: 3, delay: 2 })
+        // gsap.to(".box", { x: 0, duration: 2, delay:4 })
+
+        // 利用timeline來自動判斷每個動作連貫性
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                markers: {
+                    //方便測試範圍
+                    startColor: "purple",
+                    endColor: "fuchsia",
+                    fontSize: "2rem",
+                    // indent: 100
+                },
+                // duration: 5,
+                trigger: ".box",
+                markers: true,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: 3,
+                toggleActions: "restart none non none"
+            }
+        })
+
+        tl.to(".box", { x: 500, duration: 2 })
+            .to(".box", { y: 200, duration: 3 })
+            .to(".box", { x: 0, duration: 2 })
+
+
+    </script>
+
+</body>
+
+</html>

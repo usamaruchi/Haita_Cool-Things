@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tc">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollTrigger-1</title>
+    <!-- <link rel="stylesheet" href="/css/scroll.css"> -->
+
+    <style>
+        * {
+            outline: 1px red solid;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .div1,
+        .div2 {
+            height: 100vh;
+        }
+
+        .div1 {
+            background-color: pink;
+        }
+
+        .div2 {
+            background-color: salmon;
+        }
+
+        .square {
+            width: 150px;
+            height: 20vh;
+            background-color: aqua;
+        }
+
+        .square2 {
+            width: 150px;
+            height: 20vh;
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="square"></div>
+        <div class="square2"></div>
+    </div>
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"></script>
+    <script>
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <!-- <script src="/js/scroll.js"></script> -->
+
+    <script>
+        $(window).scroll(function () {
+            var scrollVal = $(this).scrollTop();
+            console.log(scrollVal);
+        })
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".square", {
+            // x: 1000,
+            duration: 3,
+            scrollTrigger: {
+                trigger: ".square2",
+                // start: 400,
+                start: "top 80%",
+                end: "top 30%",
+                // toggleActions: "restart pause resume complete",
+                //              onEnter onLeave  onEnterBack  onLeaveBack
+                // paly開始 pause暫停 restart重新開始 reverse反轉 resume恢復繼續 complete完成 reset重置 none無
+                toggleActions: "restart none none none",
+
+                // 主要增加滾動效果
+                scrub: 3,
+
+                pin: ".square",
+                pinSpacing: true,
+
+                // markers: true,
+                markers: {
+                    //方便測試範圍
+                    startColor: "purple",
+                    endColor: "fuchsia",
+                    fontSize: "2rem",
+                    // indent: 100
+                },
+
+                // toggleClass: "red",
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
