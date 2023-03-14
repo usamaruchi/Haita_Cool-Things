@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+
+        .schedule {
+            overflow-x: auto;
+            margin-right: 15px;
+            margin-left: 15px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .schedule .table {
+            table-layout: fixed;
+            min-width: 500px;
+        }
+
+        .schedule tbody th:first-child .schedule tbody td:first-child {
+            width: 20%;
+
+        }
+
+        .schedule tbody td:nth-child(2) {
+            width: 55em;
+        }
+
+        /* .schedule thead th:last-child,
+        .schedule tbody td:last-child {
+            width: 20%;
+        } */
+        caption {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            color: white;
+            text-align: center;
+            caption-side: top;
+            /* border: 1px solid black; */
+            background-color: rgb(61, 61, 61);
+        }
+
+        .schedule {
+            overflow-x: auto;
+            margin-right: 15px;
+            margin-left: 15px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .schedule .table {
+            table-layout: fixed;
+            min-width: 300px;
+        }
+        
+        .schedule thead th:first-child,
+        .schedule tbody td:first-child {
+            width: 15%;
+        }
+
+    </style>
+</head>
+
+<body>
+  
+    <div class="container">
+        <div class="row">
+            <div class="schedule">
+                <h3 class="text-center">Taipei Cycle 2023 每日活動規劃</h3>
+                <table class="table table-bordered table-hover">
+                    <caption>2023/3/22(三)</caption>
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">時間</>
+                            <th scope="col">內容</th>
+                            <th scope="col">備註</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10:00-10:30</td>
+                            <td>開幕準備</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10:30-11:30</td>
+                            <td>開幕+新品記者會+新品揭幕</td>
+                            <td></td>
+
+
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;">11:30-12:00</td>
+                            <td>TSC/ VB / CHPT3 時裝秀</td>
+                            <td>6位專業模特兒 <br>
+                                <em>*記者會壓軸</em>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>12:00-13:00</td>
+                            <td>影片播放</td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td>13:00-13:30</td>
+                            <td>TSC/ VB / CHPT3 時裝秀</td>
+                            <td>6位專業模特兒</td>
+                        </tr>
+                        <tr>
+                            <td>13:30-14:00</td>
+                            <td>Tommasini介紹</td>
+                            <td>PM Pu講解</td>
+                        </tr>
+                        <tr>
+                            <td>14:00-14:30</td>
+                            <td>TSC/ VB / CHPT3 時裝秀</td>
+                            <td>6位專業模特兒</td>
+
+                        </tr>
+                        <tr>
+                            <td>14:30-15:30</td>
+                            <td>單車電競</td>
+                            <td>CT/ 李4 / 松哥/ 張瀚允參賽
+                                (KOL時間待確認)</td>
+
+                        </tr>
+                        <tr>
+                            <td>15:30-16:00</td>
+                            <td>TIME ADH 新品介紹 </td>
+                            <td>Paolo講解</td>
+
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">** TIME Paolo
+                                13:30-14:30 meeting <br>
+                                ** 曜越代理品牌_介紹影片**</td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Js -->
+    <script>
+    </script>
+</body>
+
+</html>

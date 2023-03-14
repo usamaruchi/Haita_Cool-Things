@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table caption {
+            background-color: #083d63;
+            color: #fff;
+            border: 2px solid gray;
+            border-bottom: none;
+            padding: 10px;
+        }
+
+        table th {
+            background-color: #083d63;
+            color: #fff;
+        }
+
+        table th,
+        table td,
+        table tr {
+            border: 2px solid gray;
+            padding: 10px;
+        }
+
+        tfoot td {
+            font-size: 11px;
+            text-align: right;
+            background-color: #eae6e6;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>課表表格</h2>
+    <table>
+        <caption>課表</caption>
+        <colgroup>
+            <col span="5">
+            <col style="background-color: #a6f6f6;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th scope="col">一</th>
+                <th scope="col">二</th>
+                <th scope="col">三</th>
+                <th scope="col">四</th>
+                <th scope="col">五</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>音樂</td>
+                <td>美術</td>
+                <td>歷史</td>
+                <td>國文</td>
+                <td>國文</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>數學</td>
+                <td>數學</td>
+                <td>英文</td>
+                <td>英文</td>
+                <td>化學</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>地理</td>
+                <td>國文</td>
+                <td>國文</td>
+                <td>美勞</td>
+                <td>美勞</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>數學</td>
+                <td>體育</td>
+                <td>地理</td>
+                <td>物理</td>
+                <td>英文</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">更新日期：2020/03/12</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <h2>添加上午欄位</h2>
+    <table>
+        <caption>課表</caption>
+        <colgroup>
+            <col span="6">
+            <col style="background-color: #a6f6f6;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">&nbsp;</th>
+                <th scope="col">一</th>
+                <th scope="col">二</th>
+                <th scope="col">三</th>
+                <th scope="col">四</th>
+                <th scope="col">五</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="4" scope="rowgroup">上午</th>
+                <th scope="row">1</th>
+                <td>音樂</td>
+                <td>美術</td>
+                <td>歷史</td>
+                <td>國文</td>
+                <td>國文</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>數學</td>
+                <td>數學</td>
+                <td>英文</td>
+                <td>英文</td>
+                <td>化學</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>地理</td>
+                <td>國文</td>
+                <td>國文</td>
+                <td>美勞</td>
+                <td>美勞</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>數學</td>
+                <td>體育</td>
+                <td>地理</td>
+                <td>物理</td>
+                <td>英文</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">更新日期：2020/03/12</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
