@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: 1px solid red;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #eee;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            gap: 60px;
+        }
+
+        .container .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 35px;
+            background-size: cover;
+
+        }
+
+        .container .box::before {
+            content: '';
+            position: absolute;
+            /* inset: 0; */
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 35px;
+            filter: blur(15px);
+            background-size: cover;
+            opacity: .5;
+            z-index: -1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" style="background-image: url(/images/01.webp);"></div>
+        <div class="box" style="background-image: url(/images/02.webp);"></div>
+        <div class="box" style="background-image: url(/images/03.webp);"></div>
+    </div>
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Js -->
+    <script>
+    </script>
+</body>
+
+</html>
