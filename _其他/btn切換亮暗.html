@@ -18,20 +18,42 @@
 			/* outline: 1px solid red; */
 		}
 
-		:root {}
+		:root {
+			/* bg */
+			--bg-clr: #ffffff;
+
+
+			/* btn */
+			--bg-btn-clr: #c5c5c5;
+			--font-btn-clr: #666;
+
+			/* font */
+			--h1-clr: #2b2b2b;
+		}
+
+		.dark-theme {
+			/* bg */
+			--bg-clr: #2b2b2b;
+
+			/* btn */
+			--bg-btn-clr: #878787;
+			--font-btn-clr: #444444;
+
+			/* font */
+			--h1-clr: #c2c2c2;
+		}
 
 
 		.bgWrap {
+			background-color: var(--bg-clr);
 			min-height: 100vh;
-			/* width: 100%; */
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			gap: 40px;
 			transition: .5s;
-		}
-
-		.bgWrap.night {
-			background-color: #2b2b2b;
+			color: var(--h1-clr);
 		}
 
 		.dayNight {
@@ -42,10 +64,10 @@
 			gap: 40px;
 			width: 100px;
 			height: 100px;
-			background-color: #c5c5c5 ;
+			background-color: var(--bg-btn-clr);
 			border-radius: 50%;
 			font-size: 2em;
-			color: #666;
+			color: var(--font-btn-clr);
 		}
 
 
@@ -53,19 +75,19 @@
 			display: none;
 		}
 
-		.bgWrap.night ion-icon:nth-child(1){
+		.bgWrap.dark-theme ion-icon:nth-child(1) {
 			display: none;
 		}
 
-		.bgWrap.night ion-icon:nth-child(2){
+		.bgWrap.dark-theme ion-icon:nth-child(2) {
 			display: block;
 		}
-
 	</style>
 </head>
 
 <body>
-	<div class="bgWrap">
+	<div class="bgWrap ">
+		<h1>Font Color Change</h1>
 		<div class="dayNight">
 			<ion-icon name="moon-outline"></ion-icon>
 			<ion-icon name="sunny-outline"></ion-icon>
@@ -88,7 +110,7 @@
 			// let dayNight = document.querySelector('.dayNight');
 
 			$('.dayNight').click(function () {
-				$('.bgWrap').toggleClass('night');
+				$('.bgWrap').toggleClass('dark-theme');
 				// $('.bgWrap').toggleClass('light');
 			});
 

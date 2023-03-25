@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+            gap: 40px;
+            min-height: 100vh;
+        }
+
+        #box {
+            height: 300px;
+            width: 300px;
+            transition: .5s;
+
+            background-color: rgb(255, 0, 0);
+            transition: background-color 1s;
+            /* animation: change-background; */
+
+
+        }
+
+        .gradient {
+            background: linear-gradient(to right, #000000, #ffffff);
+        }
+
+        /* 定义动画 */
+        .animate {
+            animation: change-background 5s infinite;
+        }
+
+        /* 定义动画关键帧 */
+        @keyframes change-background {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <input id="colorInput" type="text" placeholder="輸入 RGB 顏色值" />
+    <button id="submitBtn">送出</button>
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Js -->
+    <script>
+        // 获取要更改颜色的元素和输入框以及提交按钮
+        var element = document.getElementById("box");
+        var input = document.getElementById("colorInput");
+        var submitBtn = document.getElementById("submitBtn");
+        // 设置颜色更改函数
+        function changeColor(color) {
+            element.style.backgroundColor = color;
+        }
+
+        // 设置提交按钮监听事件
+        submitBtn.addEventListener("click", function () {
+            // 获取用户输入的颜色值
+            var color = input.value;
+
+            // 应用用户输入的颜色值
+            changeColor(color);
+        });
+
+        // 设置定时器，每隔 3 秒更新一次颜色
+        setInterval(function () {
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+            var color = "rgb(" + red + ", " + green + ", " + blue + ")";
+            changeColor(color);
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

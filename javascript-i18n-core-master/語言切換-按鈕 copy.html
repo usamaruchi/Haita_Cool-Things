@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的網頁</title>
+</head>
+
+<body>
+    <!-- 網頁內容 -->
+    <h1 i18n="greeting">Hello, world!</h1>
+    <p i18n="farewell">Goodbye!</p>
+    <p i18n="article"></p>
+    <button onclick="toggleLang()" i18n="lang-btn"></button>
+
+    <!-- i18n -->
+    <!-- <script src="/javascript-i18n-core-master/i18n.es6.js"></script> -->
+
+    <script>
+        // 定義了兩種語言的文字內容：英文和繁體中文（'zh-TW'）
+        var lang = 'en'; // 定義默認語言為英文
+        var langStrings = {
+            'en': {
+                'greeting': 'Hello, world!',
+                'farewell': 'Goodbye!',
+                'article': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non libero cumque, suscipit reprehenderit itaque delectus, id nam dolorum vero esse minima necessitatibus molestias est ipsa aperiam, error voluptas assumenda nulla.',
+                'lang-btn': 'Change Language',
+            },
+            'zh-TW': {
+                'greeting': '你好，世界！',
+                'farewell': '再見！',
+                'article': '這是一篇文章',
+                'lang-btn': '切換語言',
+            }
+        };
+    </script>
+
+    <script>
+        function toggleLang() {
+            lang = (lang === 'en') ? 'zh-TW' : 'en';
+            updateContent();
+        }
+        // 更新HTML元素的文字內容
+        function updateContent() {
+            // 查找所有具有“i18n”屬性的HTML元素，並根據當前語言設置其文本內容。
+            var elements = document.querySelectorAll('[i18n]');
+            for (var i = 0; i < elements.length; i++) {
+                var key = elements[i].getAttribute('i18n');
+                elements[i].textContent = langStrings[lang][key];
+            }
+        }
+        updateContent();
+    </script>
+</body>
+
+</html>
