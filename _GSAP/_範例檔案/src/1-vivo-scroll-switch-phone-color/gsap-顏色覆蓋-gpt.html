@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: 1px solid red;
+        }
+
+        .parent {
+            height: 1500px;
+            /* 父層 div 的高度，設定為較高的數值以讓 ScrollTrigger 有滾動的範圍 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .child {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        // 設定要動畫的物件
+        const child = document.querySelector(".child");
+
+        // 設定動畫
+        gsap.to(child, {
+            duration: 1,
+
+            scrollTrigger: {
+                trigger: ".parent",
+                start: "top top", // 當父層 div 捲動至視窗中央時啟動動畫
+                end: "bottom bottom", // 當父層 div 捲動至視窗中央時結束動畫
+                markers: true, // 在畫面中顯示 ScrollTrigger 的觸發範圍，方便除錯
+               
+            },
+            backgroundColor: "blue",
+        });
+
+    </script>
+    <!-- Js -->
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>

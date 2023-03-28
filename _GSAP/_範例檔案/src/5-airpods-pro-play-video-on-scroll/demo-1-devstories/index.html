@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling controls for HTML5 video</title>
+  </head>
+  <!-- Scrolling controls for HTML5 video https://codepen.io/ksiddiqi/pen/YzRmBb -->
+  <!-- src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm" -->
+  <body style="height: 10500px;">
+    <video
+      id="videoId"
+      muted
+      src="./devstories.webm"
+      style="position: fixed;top: 0;left: 0;width: 100%;"
+    ></video>
+    <script>
+      const videoEl = document.getElementById("videoId");
+      // pause video on load
+      videoEl.pause();
+      // pause video on document scroll (stops autoplay once scroll started)
+      window.onscroll = function () {
+        videoEl.pause();
+      };
+      // refresh video frames on interval for smoother playback
+      setInterval(function () {
+        videoEl.currentTime = window.pageYOffset / 400;
+        // console.log(videoEl.currentTime, window.pageYOffset)
+      }, 40);
+    </script>
+  </body>
+</html>
