@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: 1px solid red;
+        }
+
+        .panel {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="panel"></div> -->
+        <div class="row">
+
+            <div class="rellax" data-rellax-speed="-2" ata-rellax-zindex="0">
+                <img src="/images/01.webp" alt="">
+            </div>
+            <img src="/images/01.webp" alt="">
+            <div class="rellax" data-rellax-speed="5" ata-rellax-zindex="0">
+                <img src="/images/01.webp" alt="">
+            </div>
+        </div>
+        <div class="rellax">
+            I’m that default chill speed of "-2"
+        </div>
+        <div class="rellax" data-rellax-speed="7">
+            I’m super fast!!
+        </div>
+        <div class="rellax" data-rellax-speed="-4">
+            I’m extra slow and smooth
+        </div>
+        <div class="panel"></div>
+    </div>
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- Parallax -->
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <!-- Js -->
+    <script>
+        // Accepts any class name
+        var rellax = new Rellax('.rellax');
+
+        // Also can pass in optional settings block
+        var rellax = new Rellax('.rellax', {
+            speed: -2,
+            center: false,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+        });
+    </script>
+</body>
+
+</html>

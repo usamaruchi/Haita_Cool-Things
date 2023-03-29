@@ -107,12 +107,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script type="text/javascript">
         gsap.registerPlugin(ScrollTrigger);
-
+        var tl = gsap.timeline();
         gsap.timeline({
             scrollTrigger: {
                 trigger: ".box",
                 start: "center center", // Animation start at this point
                 end: "bottom top", //Animation end at this point
+                end: "+=200%", //Animation end at this point
                 markers: true,
                 scrub: true,
                 pin: true,
@@ -123,14 +124,18 @@
             .from(".text3", { x: innerWidth * 1 })
             .from(".logo", {
                 y: innerWidth * 1,
-                rotate: 360,
+                rotate: 720,
+                scale: 5,
             })
+
+       
 
         gsap.timeline({
             scrollTrigger: {
                 trigger: ".box2",
                 start: "center center", // Animation start at this point
                 end: "bottom top", //Animation end at this point
+                end: "+=200%", //Animation end at this point
                 markers: true,
                 scrub: true,
                 pin: true,
