@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="search" placeholder="Search products...">
+    <ul id="product-list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Pineapple</li>
+        <li>Watermelon</li>
+        <li>國文</li>
+        <li>數學</li>
+        <li>英文</li>
+        <li>化學</li>
+        <li>物理</li>
+    </ul>
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Javascript
+        // const searchInput = document.getElementById('search');
+        // const productList = document.getElementById('product-list');
+
+        // searchInput.addEventListener('keyup', function (event) {
+        //     const searchTerm = event.target.value.toLowerCase();
+        //     const products = productList.getElementsByTagName('li');
+
+        //     Array.from(products).forEach(function (product) {
+        //         const productName = product.textContent.toLowerCase();
+
+        //         if (productName.includes(searchTerm)) {
+        //             product.style.display = 'block';
+        //         } else {
+        //             product.style.display = 'none';
+        //         }
+        //     });
+        // });
+
+
+        // JQ
+        $(document).ready(function () {
+            $('#search').on('keyup', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                $('#product-list li').each(function () {
+                    var productName = $(this).text().toLowerCase();
+                    if (productName.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
