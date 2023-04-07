@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A System</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question h2 {
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .show-answer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .show-answer:hover {
+            background-color: #3e8e41;
+        }
+
+        .lang-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .lang-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 data-i18n="title">Q&A System</h1>
+        <div id="questions"></div>
+        <button id="lang-en" class="lang-button" data-lang="en" data-i18n="langEn">English</button>
+        <button id="lang-zh" class="lang-button" data-lang="zh" data-i18n="langZh">中文</button>
+    </div>
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- i18n -->
+    <script src="i18n.js"></script>
+    <!-- Js -->
+    <script>
+        var langButtons = document.querySelectorAll('.lang-button');
+
+        for (var j = 0; j < langButtons.length; j++) {
+            langButtons[j].addEventListener('click', function () {
+                lang = this.getAttribute('data-lang');
+                localize();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'question.json', true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        var questions = data[lang];
+                        var output = '';
+                        for (var i in questions) {
+                            output += '<div class="question">';
+                            output += '<h2>' + questions[i].title + '</h2>';
+                            output += '<p class="answer">' + questions[i].answer + '</p>';
+                            output += '<button class="show-answer">' + resources[lang].showAnswer + '</button>';
+                            output += '</div>';
+                        }
+                        document.getElementById('questions').innerHTML = output;
+                        var buttons = document.querySelectorAll('.show-answer');
+                        for (var j = 0; j < buttons.length; j++) {
+                            buttons[j].addEventListener('click', function () {
+                                var answer = this.parentNode.querySelector('.answer');
+                                if (answer.style.display === 'none') {
+                                    answer.style.display = 'block';
+                                    this.innerHTML = resources[lang].hideAnswer;
+                                } else {
+                                    answer.style.display = 'none';
+                                    this.innerHTML = resources[lang].showAnswer;
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        console.log('Error: ' + xhr.status);
+                    }
+                };
+                xhr.send();
+            });
+        }
+
+        // 載入時就顯示所有題目
+        window.onload = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'question.json', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    var questions = data[lang];
+                    var output = '';
+                    for (var i in questions) {
+                        output += '<div class="question">';
+                        output += '<h2>' + questions[i].title + '</h2>';
+                        output += '<p class="answer">' + questions[i].answer + '</p>';
+                        output += '<button class="show-answer">' + resources[lang].showAnswer + '</button>';
+                        output += '</div>';
+                    }
+                    document.getElementById('questions').innerHTML = output;
+                    var buttons = document.querySelectorAll('.show-answer');
+                    for (var j = 0; j < buttons.length; j++) {
+                        buttons[j].addEventListener('click', function () {
+                            var answer = this.parentNode.querySelector('.answer');
+                            if (answer.style.display === 'none') {
+                                answer.style.display = 'block';
+                                this.innerHTML = resources[lang].hideAnswer;
+                            } else {
+                                answer.style.display = 'none';
+                                this.innerHTML = resources[lang].showAnswer;
+                            }
+                        });
+                    }
+                }
+                else {
+                    console.log('Error: ' + xhr.status);
+                }
+            };
+            xhr.send();
+        };
+    </script>
+</body>
+
+</html>

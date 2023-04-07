@@ -1,0 +1,46 @@
+{
+    "en": [
+        {
+            "id": 1,
+            "title": "What is Lorem Ipsum?",
+            "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+            "id": 2,
+            "title": "Why do we use it?",
+            "answer": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+        },
+        {
+            "id": 3,
+            "title": "Where does it come from?",
+            "answer": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+        },
+        {
+            "id": 4,
+            "title": "What is Lorem Ipsum used for?",
+            "answer": "Lorem Ipsum is used for typesetting and printing industry."
+        }
+    ],
+    "zh": [
+        {
+            "id": 1,
+            "title": "什麼是Lorem Ipsum？",
+            "answer": "Lorem Ipsum只是印刷和排版行業的虛擬文本。"
+        },
+        {
+            "id": 2,
+            "title": "為什麼我們要使用它？",
+            "answer": "事實上，當讀者查看其佈局時，頁面上的可讀內容會使讀者分心。"
+        },
+        {
+            "id": 3,
+            "title": "它來自哪裡？",
+            "answer": "與普遍觀念相反，Lorem Ipsum不僅僅是隨機文本。"
+        },
+        {
+            "id": 4,
+            "title": "Lorem Ipsum有什麼用途？",
+            "answer": "Lorem Ipsum用於印刷和排版行業。"
+        }
+    ]
+}
