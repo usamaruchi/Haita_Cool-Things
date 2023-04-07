@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: 1px solid red;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .grid {
+            /* margin: 0 -15px; */
+            /* padding: 0; */
+            display: grid;
+            width: 100%;
+            /* grid-template-columns: 30% 30% 30%; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 1fr)200px;
+            grid-template-columns: repeat(3, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-rows: 100px 200px 200px 100px 100px;
+            gap: 20px;
+            grid-template-areas: "h h h h"
+                "sb m m m"
+                "sb b1 . b3"
+                "sb b2 b2 b3"
+                "f f f f";
+            /* grid-auto-flow: dense; */
+        }
+
+        .box {
+            background-color: rgb(255, 202, 132);
+        }
+
+        /* -1表示直接到最後 */
+        .box1 {
+            grid-area: h;
+        }
+
+        .box2 {
+            grid-area: sb;
+        }
+
+        .box3 {
+            grid-area: m;
+        }
+
+        .box4 {
+            grid-area: b1;
+        }
+
+        .box5 {
+            grid-area: b2;
+        }
+
+        .box6 {
+            grid-area: b3;
+        }
+
+        .box7 {
+            grid-area: f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="row">
+            <div class="grid">
+
+                <div class="box box1">box 1</div>
+                <div class="box box2">box 2</div>
+                <div class="box box3">box 3</div>
+                <div class="box box4">box 4</div>
+                <div class="box box5">box 5</div>
+                <div class="box box6">box 6</div>
+                <div class="box box7">box 7</div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Js -->
+    <script>
+    </script>
+</body>
+
+</html>
