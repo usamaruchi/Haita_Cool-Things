@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      outline: 1px solid red;
+    }
+
+    .box1 {
+      width: 150px;
+      height: 80px;
+      background-color: pink;
+      margin: 100px auto;
+      /* 此為文字顯示不開自動換行 */
+      /* white-space: normal; */
+      /* 1.此為文字顯示不開強制一行顯示  */
+      white-space: nowrap;
+      /* 2.溢出部分隱藏 */
+      overflow: hidden;
+      /* 3.超出使用省略號顯示 */
+      text-overflow: ellipsis;
+    }
+
+    .box2 {
+      width: 150px;
+      /* 設定固定高度來隱藏超出的部分 */
+      height: 50px;
+      background-color: pink;
+      margin: 100px auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* 彈性伸縮型模型顯示 */
+      display: -webkit-box;
+      /* 限制在一個塊元素中顯示的文字行數 */
+      -webkit-line-clamp: 2ㄕ;
+      /* 設置或檢索伸縮盒對象的子元素的排列方式 */
+      -webkit-box-orient: vertical;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    只顯示一行，剩餘的省略
+  </div>
+  <div class="box2">
+    只顯示二行，剩餘的省略，受限較多，建議使用後端來調整文字顯示
+  </div>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>
