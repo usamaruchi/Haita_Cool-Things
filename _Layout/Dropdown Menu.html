@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Ubuntu', sans-serif;
+      outline: 1px solid red;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: rgb(134, 138, 255);
+      background: linear-gradient(45deg, rgba(134, 138, 255, 1) 0%, rgba(189, 215, 255, 1) 100%);
+    }
+
+    nav {
+      position: relative;
+      width: 500px;
+      height: 80px;
+      background-color: #fff;
+      box-shadow: 0 50px 50px rgb(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    nav .menuToggle {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      /* background-color: #ccc; */
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav .menuToggle::before {
+      content: '';
+      position: absolute;
+      width: 35px;
+      height: 3px;
+      background: #555;
+      box-shadow:
+        0 10px 0 #555,
+        0 -10px 0 #555;
+    }
+
+    nav .profile{
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="menuToggle"></div>
+    <div class="profile">
+      <h3>Vic Chi<br><span>Designer</span></h3>
+      <div class="imgBx"></div>
+    </div>
+  </nav>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>
