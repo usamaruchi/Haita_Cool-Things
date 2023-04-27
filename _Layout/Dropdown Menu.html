@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Ubuntu', sans-serif;
-      outline: 1px solid red;
+      /* outline: 1px solid red; */
     }
 
     body {
@@ -33,6 +33,7 @@
     }
 
     nav {
+      top: -150px;
       position: relative;
       width: 500px;
       height: 80px;
@@ -66,7 +67,7 @@
         0 -10px 0 #555;
     }
 
-    nav .profile{
+    nav .profile {
       position: relative;
       display: flex;
       justify-content: flex-end;
@@ -75,7 +76,95 @@
       cursor: pointer;
     }
 
-    
+    nav .profile h3 {
+      text-align: center;
+      font-weight: 500;
+      line-height: 1em;
+      color: #555;
+    }
+
+    nav .profile h3 span {
+      font-size: .75em;
+      color: #555;
+    }
+
+    nav .profile .imgBx {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+    }
+
+    nav .profile .imgBx img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    nav .menu {
+      position: absolute;
+      top: calc(100% + 30px);
+      right: 0;
+      width: 200px;
+      min-height: 100px;
+      background-color: #fff;
+      box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: .5s;
+    }
+
+    nav .menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: 35px;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      transform: rotate(45deg);
+      /* z-index: -1; */
+    }
+
+    nav .menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav .menu ul {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      /* z-index: 10; */
+      background: #fff;
+    }
+
+    nav .menu ul li {
+      list-style: none;
+      padding: 15px 20px;
+      transition: .5s;
+    }
+
+    nav .menu ul li:hover {
+      background: #f5f5f5;
+      transition: 0s;
+    }
+
+    nav .menu ul li a {
+      text-decoration: none;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav .menu ul li a icon-icon {
+      font-size: 1.25em;
+      color: #999;
+    }
   </style>
 </head>
 
@@ -84,7 +173,38 @@
     <div class="menuToggle"></div>
     <div class="profile">
       <h3>Vic Chi<br><span>Designer</span></h3>
-      <div class="imgBx"></div>
+      <div class="imgBx"><img src="/images/usamaruchi.jpg" alt=""></div>
+    </div>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="#">
+            <ion-icon name="person-outline"></ion-icon>
+            Profile
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="chatbubble-outline"></ion-icon>
+            Inbox
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="settings-outline"></ion-icon>
+            Settings</a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="help-circle-outline"></ion-icon>
+            Help</a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="log-out-outline"></ion-icon>
+            Logout</a>
+        </li>
+      </ul>
     </div>
   </nav>
   <!-- JQ -->
@@ -93,8 +213,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+
+  <!-- icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <!-- Js -->
   <script>
+    let profile = document.querySelector('.profile');
+    let menu = document.querySelector('.menu');
+    profile.onclick = function () {
+      menu.classList.toggle('active');
+    }
   </script>
 </body>
 
