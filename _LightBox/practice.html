@@ -20,9 +20,8 @@
 
     .productWrap {
       padding: 20px;
-      background-color: rgb(171, 171, 171);
+      background-color: rgb(150, 150, 150, .5);
       border-radius: 5px;
-
     }
 
     .product {
@@ -31,12 +30,37 @@
       gap: 15px;
     }
 
-    .Full-productWrap{
+    /* #blur{
+      filter: blur(20px);
+      pointer-events: none;
+      user-select: none;
+    } */
+    #blur.active {
+      filter: blur(20px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Full */
+    #popup {
       /* width: 0%; */
       position: fixed;
-      top: 0;
-      left: 0;
-      
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      padding: 50px;
+      background-color: rgba(111, 111, 111, 0.5);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      visibility: hidden;
+      opacity: 0;
+      transition: .3s;
+    }
+
+    #popup.active {
+      top: 50%;
+      visibility: visible;
+      opacity: 1;
     }
   </style>
 </head>
@@ -45,28 +69,31 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 py-4">
-        <div class="productWrap">
+        <div class="productWrap" id="blur">
           <div class="product">
-            <h3>品牌名稱</h3>
+            <h3>Coca-Cola</h3>
             <img class="w-100" src="/images/drinks/drink01.png" alt="">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsum sit iure molestiae, quo
               quaerat alias, doloremque possimus, odio ex quibusdam cum adipisci repudiandae inventore autem. Non
               nostrum vel ex?</p>
-            <a href="#">Read More</a>
+            <a href="#" id="toggle">Read More</a>
           </div>
         </div>
 
-        <!-- <div class="Full-productWrap">
+        <div id="popup" class="Full-productWrap">
           <div class="product">
-            <h3>品牌名稱</h3>
+            <h3>Coca-Cola</h3>
             <img class="w-100" src="/images/drinks/drink01.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsum sit iure molestiae, quo quaerat
-              alias, doloremque possimus, odio ex quibusdam cum adipisci repudiandae inventore autem. Non nostrum vel ex?
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsum sit iure molestiae, quo
+              quaerat
+              alias, doloremque possimus, odio ex quibusdam cum adipisci repudiandae inventore autem. Non nostrum vel
+              ex?
             </p>
-            <a href="#">Read More</a>
+            <a href="#" id="close-btn">Close</a>
           </div>
-        </div> -->
+        </div>
       </div>
+      
     </div>
   </div>
   </div>
@@ -78,6 +105,20 @@
     crossorigin="anonymous"></script>
   <!-- Js -->
   <script>
+    $(document).ready(function () {
+
+      $('#toggle').click(function () {
+
+        $('#blur').toggleClass('active');
+        $('#popup').toggleClass('active');
+      });
+
+      $('#close-btn').click(function () {
+
+        $('#blur').toggleClass('active');
+        $('#popup').toggleClass('active');
+      });
+    });
   </script>
 </body>
 

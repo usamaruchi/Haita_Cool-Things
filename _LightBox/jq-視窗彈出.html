@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background: #fff173; */
+      transition: .5s;
+      padding: 20px;
+    }
+
+    .container#blur.active {
+      filter: blur(20px);
+      pointer-events: none;
+      /* 使用者無法選擇 */
+      user-select: none;
+    }
+
+    .container .content {
+      position: relative;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .container .content img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      position: relative;
+      padding: 5px 20px;
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      background: #111;
+    }
+
+    #popup {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      padding: 50px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+      background: #fff;
+      visibility: hidden;
+      opacity: 0;
+      transition: .5s;
+    }
+
+    #popup.active {
+      top: 50%;
+      visibility: visible;
+      opacity: 1;
+      transform: .5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="blur">
+    <div class="content">
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, eveniet optio facilis temporibus, aut
+        labore delectus nobis eligendi a, tempora voluptate assumenda reprehenderit autem maiores quibusdam quos
+        nesciunt nam officia.</h2>
+      <img src="/images/01.webp" alt="">
+      <a href="#" id="toggle-link">Read More</a>
+    </div>
+  </div>
+
+  <div id="popup">
+    <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+    <p>
+      Optio odio quibusdam officiis harum? Iusto atque dolor
+      possimus necessitatibus. Temporibus doloribus velit debitis repudiandae fugiat excepturi et sed totam quibusdam
+      repellat!
+    </p>
+
+    <a href="#" id="close-link">Close</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#toggle-link').on('click', function () {
+        $('#blur').toggleClass('active');
+        $('#popup').toggleClass('active');
+      });
+
+      $('#close-link').on('click', function () {
+        $('#blur').toggleClass('active');
+        $('#popup').toggleClass('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
