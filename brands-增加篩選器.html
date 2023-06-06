@@ -1,0 +1,101 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.css">
+
+  <style>
+   
+    /* 用於隱藏被篩選的項目 */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container w_1440">
+    <div class="col-12 title">
+
+      <h2>品牌專區</h2>
+
+    </div>
+    <input type="text" id="filterInput" placeholder="輸入關鍵字">
+    <div class="brands mg_b_100 " id="list">
+      <a class="brand" href="{{config path=" web/secure/base_url"}}/tc/brand/abus.html" title="ABUS" id="list">
+        <span class="brand-header" style="background-image: url(https://www.ttbike185.com/pub/media/wysiwyg/key3/img/brand/brand_abus.jpg);
+                                          ">
+          <span class="brand-title">
+            <h3 class="brand-name">abus</h3>
+          </span>
+        </span>
+        <span class="brand-summary">
+          保護移動財產並為人們提供移動安全產品和服務
+        </span>
+        <span class="brand-meta">
+          推薦：安全帽
+        </span>
+      </a>
+
+      <a class="brand" href="{{config path=" web/secure/base_url"}}/tc/brand/apidura.html" title="APIDURA" id="list">
+        <span class="brand-header" style="background-image: url(https://www.ttbike185.com/pub/media/wysiwyg/key3/img/brand/brand_apidura.jpg);
+                  ">
+          <span class="brand-title">
+            <h3 class="brand-name">apidura</h3>
+          </span>
+        </span>
+        <span class="brand-summary">
+          創造最好的自行車包款，設計搭配不同風格的自行車
+        </span>
+        <span class="brand-meta">
+          推薦：包款
+        </span>
+      </a>
+
+      <a class="brand" href="{{config path=" web/secure/base_url"}}/tc/brand/brooks.html" title="BROOKS" id="list">
+        <span class="brand-header"
+          style="background-image: url(https://www.ttbike185.com/pub/media/wysiwyg/key3/img/brand/brand_brooks.jpg);">
+          <span class="brand-title">
+            <h3 class="brand-name">brooks</h3>
+          </span>
+        </span>
+        <span class="brand-summary">
+          多樣化的皮革處理以滿足各種需求
+        </span>
+        <span class="brand-meta">
+          推薦：坐墊、握把、包款
+        </span>
+      </a>
+
+    </div>
+  </div>
+
+
+  <script>
+    // 獲取篩選輸入框和列表元素
+    var filterInput = document.getElementById('filterInput');
+    // var list = document.getElementById('list').getElementsByTagName('a');
+    var list = document.getElementById('list').getElementsByTagName('a');
+
+    // 監聽篩選輸入框的輸入事件
+    filterInput.addEventListener('input', function () {
+      var filterValue = filterInput.value.toLowerCase(); // 將輸入值轉換為小寫
+
+      // 遍歷列表元素，將符合篩選條件的項目顯示，不符合的項目隱藏
+      for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+
+        if (item.innerHTML.toLowerCase().indexOf(filterValue) > -1) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

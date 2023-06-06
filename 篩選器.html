@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>篩選器示例</title>
+
+  <style>
+    /* 用於隱藏被篩選的項目 */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="filterInput" placeholder="輸入關鍵字">
+  <ul id="list">
+    <li>項目 1</li>
+    <li>項目 2</li>
+    <li>項目 3</li>
+    <li>項目 4</li>
+    <li>項目 5</li>
+  </ul>
+
+  <script>
+    // 獲取篩選輸入框和列表元素
+    var filterInput = document.getElementById('filterInput');
+    var list = document.getElementById('list').getElementsByTagName('li');
+
+    // 監聽篩選輸入框的輸入事件
+    filterInput.addEventListener('input', function () {
+      var filterValue = filterInput.value.toLowerCase(); // 將輸入值轉換為小寫
+
+      // 遍歷列表元素，將符合篩選條件的項目顯示，不符合的項目隱藏
+      for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+
+        if (item.innerHTML.toLowerCase().indexOf(filterValue) > -1) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
