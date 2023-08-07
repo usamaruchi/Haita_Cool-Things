@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Image Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #111;
+    }
+
+    .box {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    .box span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-image: url(/images/usamaruchi.jpg);
+      background-repeat: no-repeat;
+      animation: animate 10s linear infinite;
+    }
+
+    @keyframes animate {
+
+      0%,
+      10% {
+        scale: 1;
+        rotate: 0deg;
+        translate: 0 0;
+        transform-origin: center;
+      }
+
+      20%,
+      30% {
+        scale: 0.5;
+        rotate: 360deg;
+        translate: 150px 0;
+        transform-origin: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div id="pixel"></div>
+  </div>
+
+  <script>
+    let w = 50;
+    let h = 50;
+
+    function pixel() {
+      for (var i = 0; i < h; i++) {
+        for (var j = 0; j < w; j++) {
+          let span = document.createElement('span');
+          document.getElementById('pixel').appendChild(span);
+          span.style.left = j * 10 + 'px';
+          span.style.top = i * 10 + 'px';
+          // 'px '需要空格
+          span.style.backgroundPosition = -j * 10 + 'px ' + -i * 10 + 'px , center';
+        }
+      }
+    }
+
+    pixel();
+  </script>
+</body>
+
+</html>
