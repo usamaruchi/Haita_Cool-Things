@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      
     }
 
     body {
@@ -18,19 +19,21 @@
       align-items: center;
       min-height: 100vh;
       background-color: #111;
+      overflow: hidden;
     }
 
     .box {
       position: relative;
-      width: 300px;
-      height: 300px;
+      width: 500px;
+      height: 400px;
+      outline: red solid 1px;
     }
 
     .box span {
       position: absolute;
       width: 10px;
       height: 10px;
-      background-image: url(/images/usamaruchi.jpg);
+      background-image: url(/images/bike.png);
       background-repeat: no-repeat;
       animation: animate 10s linear infinite;
     }
@@ -45,13 +48,41 @@
         transform-origin: center;
       }
 
-      20%,
-      30% {
-        scale: 0.5;
+    25%{
+        scale: .5;
         rotate: 360deg;
         translate: 150px 0;
         transform-origin: 100px;
       }
+
+      /* 40% {
+        scale: .5;
+        rotate: 360deg;
+        translate: 150px 0;
+        transform-origin: -100px;
+      } */
+
+      35% {
+        scale: .5;
+        rotate: 720deg;
+        translate: -150px 0;
+        transform-origin: -100px;
+      }
+
+      60% {
+        scale: 2.5;
+        rotate: 0deg;
+        translate: 0px 0;
+        transform-origin: center;
+      }
+
+      70%,100% {
+        scale: 1;
+        rotate: 0deg;
+        translate: 0 0;
+        transform-origin: center;
+      }
+
     }
   </style>
 </head>
@@ -63,17 +94,23 @@
 
   <script>
     let w = 50;
-    let h = 50;
+    let h = 40;
 
     function pixel() {
       for (var i = 0; i < h; i++) {
         for (var j = 0; j < w; j++) {
           let span = document.createElement('span');
+          //隨機 0~1, *2 = 0~2之間
+          let random = Math.random() * 1;
+          // 固定小數點到後兩位 EX: 0.8374 -> 0.84
+          let randomFixed = random.toFixed(2);
+
           document.getElementById('pixel').appendChild(span);
           span.style.left = j * 10 + 'px';
           span.style.top = i * 10 + 'px';
           // 'px '需要空格
           span.style.backgroundPosition = -j * 10 + 'px ' + -i * 10 + 'px , center';
+          span.style.animationDelay = randomFixed + 's';
         }
       }
     }
