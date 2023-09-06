@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* 設定容器 */
+    .hover-container {
+      width: 300px;
+      /* 容器寬度 */
+      height: 300px;
+      /* 容器高度 */
+      position: relative;
+      /* 相對定位，讓文字在圖片上浮現 */
+      overflow: hidden;
+      /* 隱藏超出容器的內容 */
+    }
+
+    /* 設定背景圖片 */
+    .hover-image {
+      background-image: url('https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wahoo_product/ELEMNT_RIVAL/ELEMNT-RIVAL-Feature-01.jpg');
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+      /* 圖片大小填滿容器 */
+      position: relative;
+      /* 相對定位 */
+      transition: transform 0.5s ease; /* 添加 transform 属性的过渡效果 */
+      z-index: 1; /* 图像位于上层 */
+    }
+
+    /* 初始狀態下隱藏文字 */
+    .hover-text {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* 使文字大小与容器相同 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* 垂直水平居中对齐文字 */
+      color: white;
+      /* 文字顏色 */
+      padding: 10px;
+      border-radius: 5px;
+      /* 圓角 */
+      transition: opacity 0.5s ease, transform 0.5s ease; /* 将过渡效果应用于文字的透明度和缩放 */
+      z-index: 2; /* 文字位于上层 */
+      transform: scale(1.5); /* 初始状态下缩小文字 */
+      background-color: #78787865;
+    }
+
+    /* 滑鼠懸停時顯示文字 */
+    .hover-container:hover .hover-image {
+      transform: scale(1.1); /* 图像放大到 110% 原始大小 */
+    }
+
+    .hover-container:hover .hover-text {
+      opacity: 1; /* 文字透明度淡入效果 */
+      transform: scale(1); /* 文字放大到原始大小 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hover-container">
+    <div class="hover-image"></div>
+    <div class="hover-text">
+      這裡是浮現的文字。
+    </div>
+  </div>
+</body>
+
+</html>
