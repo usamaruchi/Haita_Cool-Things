@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/javascript" src="howler.core.js"></script>
+	<style type="text/css">
+		body,
+		html {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		canvas {
+			background: black;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+	<script type="text/paperscript" canvas="myCanvas">
+var stars = [];
+var velocity = 2;
+var generateRate = 150 
+var newRandom;
+
+function randomInt(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+for(var i = 0; i <= 4000; i++) {
+	var star = new Path.Circle(new Point(view.size.width, view.size.height) * Point.random(), randomInt(0.5, 2))
+	stars.push(star)
+}
+
+
+for(var i = 0; i < stars.length; i++) {
+	var chance = Math.random()
+
+	if(chance < 0.025) {
+		stars[i].fillColor = "#5bd6ff";
+	}
+
+	else if(chance < 0.6) {
+		stars[i].fillColor = "white";
+	}
+
+	else {
+		stars[i].fillColor = "#ffc849";
+	}
+}
+
+
+for(var i = 0; i < stars.length; i++) {
+	var assignedRate = Math.random() * velocity + 0.1
+	stars[i].rate = assignedRate;
+}
+
+function onKeyDown(event) {
+
+	if(event.key == 'd') {
+		velocity += 1
+		for(var i = 0; i < stars.length; i++) {
+		var assignedRate = Math.random() * velocity + 0.1
+		stars[i].rate = assignedRate;
+
+		}
+	}
+
+
+	else if(event.key == 'a') {
+		velocity -= 1
+		for(var i = 0; i < stars.length; i++) {
+		var assignedRate = Math.random() * velocity + 0.1
+		stars[i].rate = assignedRate;
+		}
+	}
+
+}
+
+
+function onFrame(event) {
+	for(var i = 0; i < stars.length; i++) {
+		stars[i].translate(stars[i].rate, 0)
+		if(stars[i].position.x > view.size.width) {
+				stars[i].position.x = 0;
+	}
+
+	else if(stars[i].position.x < 0) {
+		stars[i].position.x = view.size.width;
+	}
+
+	
+	}
+	
+}
+
+</script>
+
+	<title>Starry Night</title>
+</head>
+
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+
+</html>
