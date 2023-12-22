@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://bike.thermaltake.com/media/wysiwyg/key3/css/multiple-pagination-ui/reset.css" rel="stylesheet" />
+  <link href="https://bike.thermaltake.com/media/wysiwyg/key3/css/multiple-pagination-ui/style.css" rel="stylesheet" />
+
+  <title>曜越單車 - 經銷商</title>
+</head>
+
+<style>
+  .dealerList .control-group-label {
+    padding: 0px 20px;
+    width: 100%;
+    display: block;
+    height: 40px;
+  }
+
+  .mix:nth-child(even) {
+    background: #f3f3f3;
+  }
+</style>
+
+<body>
+
+  <div class="dealerList">
+
+    <div class="storelist">Dealer retail outlets</div>
+    <form class="controls">
+      <!-- <button type="reset" class="control control-text">Reset</button> -->
+      <!-- <fieldset data-filter-group class="control-group">
+                <label class="control-group-label">品牌</label> -->
+      <!-- <button type="button" class="control control-text" data-filter=".mix">全品牌</button> -->
+      <!-- <button type="button" class="control control-color" data-filter=".bTime">Time</button> -->
+      <!-- <button type="button" class="control control-color" data-filter=".blue">Blue</button>
+                    <button type="button" class="control control-color" data-filter=".pink">Pink</button> -->
+      <!-- </fieldset> -->
+
+      <fieldset data-filter-group class="control-group">
+        <label class="control-group-label">Brands</label>
+        <!-- <button type="button" class="control control-text" data-filter=".mix">全品牌</button> -->
+        <button type="button" class="control control-size" data-filter=".bBrooks">Brooks</button>
+        <button type="button" class="control control-size" data-filter=".bWilier">Wilier</button>
+        <button type="button" class="control control-size" data-filter=".bTime">Time</button>
+        <button type="button" class="control control-size" data-filter=".bTomma">Tommasini</button>
+        <button type="button" class="control control-size" data-filter=".bMoots">Moots</button>
+        <button type="button" class="control control-size" data-filter=".bSpeedV">Speedvagen</button>
+        <button type="button" class="control control-size" data-filter=".bCHPT3">CHPT3</button>
+        <button type="button" class="control control-size" data-filter=".bTSC">The Service Course</button>
+        <button type="button" class="control control-size" data-filter=".bVb">Velobici</button>
+        <button type="button" class="control control-size" data-filter=".bDemano">Demano</button>
+        <button type="button" class="control control-size" data-filter=".bThousand">Thousand</button>
+        <button type="button" class="control control-size" data-filter=".bCrankbr">Crankbrothers</button>
+        <button type="button" class="control control-size" data-filter=".bApidura">Apidura</button>
+        <button type="button" class="control control-size" data-filter=".bABUS">ABUS</button>
+      </fieldset>
+
+      <fieldset data-filter-group class="control-group">   
+        <label class="control-group-label">Regions</label>
+        <button type="button" class="control control-text" data-filter=".mix">All Regions</button>
+        <button type="button" class="control control-shape" data-filter=".ttSingapore">Singapore</button>
+        <button type="button" class="control control-shape" data-filter=".ttThailand">Thailand</button>
+        <button type="button" class="control control-shape" data-filter=".ttHongKong">Hong Kong</button>
+        <label class="control-group-label" style="margin-top: 40px;">Taiwan Regions</label>
+        <button type="button" class="control control-shape" data-filter=".ttNorth">Northern Region</button>
+        <button type="button" class="control control-shape" data-filter=".ttMiddle">Central Region</button>
+        <button type="button" class="control control-shape" data-filter=".ttSouth">Southern Region</button>
+        <button type="button" class="control control-shape" data-filter=".ttYihuaEast">YihuaEast Region</button>
+      </fieldset>
+
+
+      <!-- <div class="control-group">
+                <button type="button" class="control control-sort" data-sort="default:asc">Asc</button>
+                <button type="button" class="control control-sort" data-sort="default:desc">Desc</button>
+            </div> -->
+    </form>
+
+    <div class="containerStore">
+
+      <div class="mix bTime ttNorth ">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_Yuneng.jpg">
+          </div>
+          <ul>
+            <li>宇能單車</li>
+            <li>基隆市信義區</li>
+            <li>基隆市信義區信一路72號</li>
+            <li>02-24285108</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bBrooks bTime bTomma bMoots bSpeedV bCHPT3 bTSC bVb bDemano bThousand bCrankbr bApidura bABUS ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_Yuneng.jpg">
+          </div>
+          <ul>
+            <li>曜越單車旗艦館</li>
+            <li>台北市內湖區</li>
+            <li>台北市內湖區瑞光路100號</li>
+            <li>02-27901300</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bBrooks bWilier ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_Yuneng.jpg">
+          </div>
+          <ul>
+            <li>曜越單車WilierTriestina品牌旗艦館</li>
+            <li>台北市內湖區</li>
+            <li>台北市內湖區陽光街242號</li>
+            <li>02-87512328</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime medium ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_matrix.jpg">
+          </div>
+          <ul>
+            <li>水岸概念生活館</li>
+            <li>台北市中山區</li>
+            <li>台北市中山區新生北路三段69-2號</li>
+            <li>02-25957727</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_MingChang.jpg">
+          </div>
+          <ul>
+            <li>明昌單車</li>
+            <li>台北市信義區</li>
+            <li>台北市信義區吳興街138號</li>
+            <li>02-27200747</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_oeginx3tka.jpg">
+          </div>
+          <ul>
+            <li>我行我素單車</li>
+            <li>台北市文山區</li>
+            <li>台北市文山區木柵路一段282號</li>
+            <li>02-22342039</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime bCrankbr ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>唯樂郡單車</li>
+            <li>台北市大安區</li>
+            <li>台北市大安區通化街171巷15號</li>
+            <li>02-27321060</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bApidura bMoots ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>鐵人兵工廠</li>
+            <li>台北市松山區</li>
+            <li>台北市松山區八德路三段12巷16弄9號</li>
+            <li>02-25796610</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bWilier ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>悠活單車</li>
+            <li>台北市松山區</li>
+            <li>台北市松山區三民路136巷8號</li>
+            <li>02-27614297</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bCrankbr ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Velo City</li>
+            <li>台北市松山區</li>
+            <li>台北市松山區塔悠路179號</li>
+            <li>02-27616000</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bThousand ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>SuperFast Lab台北西門店</li>
+            <li>台北市萬華區</li>
+            <li>台北市萬華區峨眉街96號</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bTime ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_yesBike.jpg">
+          </div>
+          <ul>
+            <li>優仕單車</li>
+            <li>新北市蘆洲區</li>
+            <li>新北市蘆洲區光榮路26號</li>
+            <li>02-22858551</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Bikehome小哲居單車_湯泉店</li>
+            <li>新北市新店區</li>
+            <li>新北市新店區溪園路417號1F</li>
+            <li>02-86677588</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bWilier ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>閃電鐵馬</li>
+            <li>新北市板橋區</li>
+            <li>新北市板橋區長江路二段284號</li>
+            <li>02-22580488</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bCrankbr ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Specialized 桃園藝文特區(奧斯坦單車)</li>
+            <li>桃園市桃園區</li>
+            <li>桃園市桃園區新埔六街76號</li>
+            <li>03-358 6896</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime bWilier ttNorth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>崇越單車 中壢店</li>
+            <li>桃園市中壢區</li>
+            <li>桃園市中壢區中山東路三段70-1號</li>
+            <li>03-4382923</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="mix bTime ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>單車傳奇 Ride With Passion</li>
+            <li>台中市北區</li>
+            <li>台中市北區育樂街11號一樓</li>
+            <li>0935-115105</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bBrooks bThousand ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>巡揚單車 S.YOUNGBIKE</li>
+            <li>台中市北屯區</li>
+            <li>台中市北屯區庄美街167號</li>
+            <li>04-24269733</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bCrankbr ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>瑟飞斯單車</li>
+            <li>台中市北屯區</li>
+            <li>台中市北屯區中清路二段151號</li>
+            <li>0975-317956</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bBrooks bTSC bVb bCHPT3 ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>曜越單車專賣店-台中新光三越門市</li>
+            <li>台中市西屯區</li>
+            <li>台中市西屯區臺灣大道三段301號 13F</li>
+            <li>04-22528636</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime bABUS bWilier ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Velostudio Taiwan</li>
+            <li>台中市南屯區</li>
+            <li>台中市南屯區大墩十四街292號</li>
+            <li>04-23230699</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>小火鍋單車館</li>
+            <li>台中市豐原區</li>
+            <li>台中市豐原區成功路174號</li>
+            <li>04-25257093</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bTime ttMiddle">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Soar3275</li>
+            <li>南投縣埔里鎮</li>
+            <li>南投縣埔里鎮中山路一段423號</li>
+            <li>0905-056750</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bTime ttYihuaEast">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>偉展車行</li>
+            <li>宜蘭縣羅東鎮</li>
+            <li>宜蘭縣羅東鎮光榮路330號</li>
+            <li>03-9605504</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bBrooks bWilier ttYihuaEast">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>樂單車自行車行</li>
+            <li>花蓮縣花蓮市</li>
+            <li>花蓮縣花蓮市富安路50號</li>
+            <li>03-8466928</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bWilier bCrankbr ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>馬克單車</li>
+            <li>雲林縣北港鎮</li>
+            <li>雲林縣北港鎮中山路179號</li>
+            <li>05-7825660</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bTime ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>單車先生</li>
+            <li>嘉義市東區</li>
+            <li>嘉義市東區義教街706巷7號</li>
+            <li>05-2712585</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bBrooks bThousand ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>賀六單車舖</li>
+            <li>台南市東區</li>
+            <li>台南市東區大同路一段275巷1號</li>
+            <li>0934-253908</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_227.jpg">
+          </div>
+          <ul>
+            <li>277自轉車</li>
+            <li>台南市安平區</li>
+            <li>台南市安平區文平路277號</li>
+            <li>06-2931277</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bBrooks bTSC bVb bCHPT3 ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>曜越單車專賣店-台南新光三越小西門門市</li>
+            <li>台南市中西區</li>
+            <li>台南市中西區西門路1段658之1號1樓</li>
+            <li>06-2146039</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bWilier ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_227.jpg">
+          </div>
+          <ul>
+            <li>單車ING</li>
+            <li>台南市中西區</li>
+            <li>台南市中西區臨安路一段126號</li>
+            <li>06-2215087</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bCHPT3 bTSC  ttSouth ">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_227.jpg">
+          </div>
+          <ul>
+            <li>277自轉車</li>
+            <li>高雄市左營區</li>
+            <li>高雄市左營區明誠二路265號</li>
+            <li>07-5578977</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bCrankbr ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Penny's Bike 霓行自轉車</li>
+            <li>高雄市仁武區</li>
+            <li>高雄市仁武區澄德路79號</li>
+            <li>0981-003395</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bTime ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_vida.jpg">
+          </div>
+          <ul>
+            <li>維達單車</li>
+            <li>高雄市新興區</li>
+            <li>高雄市新興區七賢一路388號</li>
+            <li>07-2366617</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bWilier ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>正爵單車</li>
+            <li>高雄市苓雅區</li>
+            <li>高雄市苓雅區四維二路114-1號</li>
+            <li>0911-706180</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mix bThousand ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>捷輪單車生活館</li>
+            <li>高雄市前鎮區</li>
+            <li>高雄市前鎮區中華五路1451號</li>
+            <li>07-5377818</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bCrankbr bTime ttSouth">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>兆鑫單車生活館</li>
+            <li>屏東縣屏東市</li>
+            <li>屏東縣屏東市建豐路225號</li>
+            <li>08-7368682</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bCHPT3 ttSingapore">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>CycleOxygen</li>
+            <li>Singapore</li>
+            <li>1 Stadium Walk, #01-04 wave mall at Singapore sports hub, Singapore 397628</li>
+            <li>+65 6667 2678</li>
+            <li>Cycleoxygensg@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bCHPT3 ttThailand">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>British Cycle Square</li>
+            <li>Thailand</li>
+            <li>59/115-6 Prachachuen 12, Tungsonghong, Lak Si, Bangkok 10210, Thailand</li>
+            <li>+66 2 591 5987</li>
+            <li>cs@britishcyclesquare.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bTime bTSC ttThailand">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>Herobikeshop Skylane</li>
+            <li>Thailand</li>
+            <li>PQC4+9G7, Lat Krabang 38 Alley, Lat Krabang, Bangkok 10520, Thailand</li>
+            <li>+66 87 325 3202</li>
+            <li>herobikeskylane@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mix bCHPT3 ttHongKong">
+        <div class="bikeStore">
+          <div class="storeLogo"><img
+              src="https://bike.thermaltake.com/media/wysiwyg/key3/img/multiple-pagination-ui/store/Logo_tt.jpg">
+          </div>
+          <ul>
+            <li>單車工匠 The Bike Craftsman</li>
+            <li>Hong Kong</li>
+            <li>No. G 1/10, G/f ,MOSTown Street, Ma On Shan, NT, Ma On Shan, Hong Kong</li>
+            <li>+852 2366 3333</li>
+            <li>thebikecraftsman@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+    </div>
+
+
+    <div class="controls-pagination">
+      <div class="mixitup-page-list"></div>
+      <div class="mixitup-page-stats"></div>
+    </div>
+
+  </div>
+
+
+  <img src="https://bike.thermaltake.com/media/wysiwyg/key3/img/ttbike_abouttt/pic18tw.jpg"
+    class="img-responsive icenter pich950" style="padding: 0px 0px 30px 0px; "> <br><br>
+
+  <!-- <script src="https://bike.thermaltake.com/media/wysiwyg/key3/js/multiple-pagination-ui/mixitup.min.js"></script>
+    <script src="https://bike.thermaltake.com/media/wysiwyg/key3/js/multiple-pagination-ui/mixitup-multifilter.min.js"></script>
+    <script src="https://bike.thermaltake.com/media/wysiwyg/key3/js/multiple-pagination-ui/mixitup-pagination.js"></script> -->
+
+
+
+  <script>
+    require(['mixitup', 'multifilter', 'pagination'], function (mixitup, multifilter, pagination) {
+      mixitup.use(multifilter);
+      mixitup.use(pagination);
+      var containerEl = document.querySelector('.containerStore');
+
+      var mixer = mixitup(containerEl, {
+        pagination: {
+          limit: 50
+        },
+        multifilter: {
+          enable: true
+        },
+        animation: {
+          effects: 'fade translateZ(-100px)'
+        }
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>
