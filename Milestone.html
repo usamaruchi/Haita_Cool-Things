@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>曜越單車 Thermaltake Bicycle Milestone</title>
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
   <!-- CSS -->
   <style>
     * {
@@ -18,9 +18,22 @@
       /* outline: 1px solid red; */
     }
 
+    .milestone .title {
+      font-size: 30px;
+      color: #181818;
+    }
+
     .pd-tb-lg {
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .w60 {
+      width: 50% !important;
+    }
+
+    .w-50 {
+      width: 35% !important;
     }
 
     /*roadmap*/
@@ -42,7 +55,7 @@
       left: 0;
       width: 98%;
       padding-bottom: 18px;
-      font-size: 1.43em;
+      font-size: 24px;
       font-weight: 600;
       border-bottom: 2px solid #333333;
 
@@ -66,7 +79,7 @@
     }
 
     .roadmap-list {
-      padding-top: 20px;
+      padding-top: 40px;
       font-size: 18px;
       line-height: 1.6;
       color: #888888;
@@ -98,7 +111,7 @@
       display: flex;
       flex-direction: column;
 
-      /* background-image: url(/_images/chain.svg);
+      /* background-image: url(/_images/bikechain.svg);
       background-repeat: no-repeat;
       background-size: contain; */
     }
@@ -135,17 +148,21 @@
       left: calc(50% - 1px);
     }
 
-    .roadmap-wrapper .chain {
+    .roadmap-wrapper .bikechain {
       position: absolute;
       top: 0%;
       left: 50%;
       transform: translateX(-50%);
-      height: 101%;
+      height: 100%;
+      /* height: 100vh; */
       width: 25px;
 
-      z-index: 999;
-      background-image: url(/_images/MILESTONE/chain.svg);
+      display: flex;
 
+      z-index: 999;
+      background-image: url(https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/bikechain.svg);
+
+      background-attachment: fixed;
       /* background-repeat: no-repeat; */
       background-size: contain;
     }
@@ -183,7 +200,7 @@
       /* content: " ●"; */
       font-size: 30px;
 
-      /* background-image: url(/_images/chain.svg);
+      /* background-image: url(https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/bikechain.svg);
       background-repeat: no-repeat;
       background-size: contain; */
     }
@@ -224,9 +241,9 @@
     }
 
     @media (max-width: 1200px) {
-      .roadmap-list {
+      /* .roadmap-list {
         font-size: 14px;
-      }
+      } */
 
       .token-sale-items-wrapper {
         left: 40px;
@@ -240,7 +257,14 @@
 
     @media (max-width: 992px) {
 
-      .roadmap-wrapper .chain {
+      .roadmap-item-wrap.right,
+      .roadmap-item-wrap.left {
+        padding: 0;
+      }
+
+
+      .roadmap-wrapper .bikechain {
+        display: none;
         position: absolute;
         top: 0%;
         left: -3%;
@@ -255,7 +279,9 @@
         width: 100%;
       }
 
+
       .roadmap-item .list-title {
+        width: 100%;
         position: relative;
         top: 0;
       }
@@ -269,7 +295,7 @@
       }
 
       .roadmap-item-wrap .roadmap-item {
-        padding: 0 5px 0 0 !important;
+        /* padding: 0 5px 0 0 !important; */
       }
 
       .roadmap-item-wrap .roadmap-item.right:before,
@@ -287,12 +313,27 @@
       }
 
       .roadmap-list {
-        padding: 14px 0 0 25px;
+        padding-top: 20px;
+        /* padding: 14px 0 0 25px; */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .milestone .title {
+        font-size: 26px;
+      }
+
+      .w60 {
+        width: 60% !important;
+      }
+
+      .w-50 {
+        width: 50% !important;
       }
     }
 
     @media (max-width: 576px) {
-      .roadmap-wrapper .chain {
+      .roadmap-wrapper .bikechain {
         display: none;
         /* position: absolute;
         top: 0%;
@@ -312,12 +353,12 @@
       }
 
       .roadmap-item .list-title {
-        font-size: 14px;
+        /* font-size: 14px; */
         padding-bottom: 12px;
       }
 
       .roadmap-list {
-        font-size: 12px;
+        /* font-size: 12px; */
         padding-top: 10px;
       }
 
@@ -355,11 +396,11 @@
     </div>
   </div> -->
 
-  <section id="roadmap" class="container">
+  <section id="milestone" class="container milestone">
     <div class="row justify-content-center">
       <div class="col text-center pd-tb-lg">
-        <h1>曜越單車 Thermaltake Bicycle Milestone
-        </h1>
+        <h2 class="title">曜越單車 Thermaltake Bicycle Milestone
+        </h2>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -367,188 +408,13 @@
         <div class="roadmap">
           <div class="rcontainer">
             <div class="roadmap-wrapper">
-
-              <div class="chain"></div>
-
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title ">2021.06</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 Demano 亞洲總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/demano.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap right scrollflow ">
-                <div class="roadmap-item right">
-                  <h5 class="list-title">2021.07</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 Tommasini / Apidura 臺灣總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/apidura.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2021.08</h5>
-                  <ul class="roadmap-list">
-                    <li>曜越單車事業部 正式成立。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-100" src="/_images/MILESTONE/pic02.JPG" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2021.08</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 Tommasini 臺灣總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/tommasini.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2021.08</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 Speedvagen 臺灣總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/speedvagen.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap right scrollflow ">
-                <div class="roadmap-item right">
-                  <h5 class="list-title">2021.09</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 TIME / stijncycles 臺灣總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/time.png" alt="">
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/stijncycles.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2022.03</h5>
-                  <ul class="roadmap-list">
-                    <li>Taipei Cycle Show 首次參展。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2022.03</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 thousand 臺灣總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap right scrollflow ">
-                <div class="roadmap-item right">
-                  <h5 class="list-title">2022.04</h5>
-                  <ul class="roadmap-list">
-                    <li>首次組隊參賽環花東 Tour of East Taiwan。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/time.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2022.07</h5>
-                  <ul class="roadmap-list">
-                    <li>曜越單車旗艦館於台北內湖盛大開幕。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2022.07</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 Crankbrothers 臺灣總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap right scrollflow ">
-                <div class="roadmap-item right">
-                  <h5 class="list-title">2022.08</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 The Service Course 臺灣總代理。
-
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="/_images/MILESTONE/speedvagen.png" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2022.10</h5>
-                  <ul class="roadmap-list">
-                    <li>正式成為 Velobici 總代理。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2022.10</h5>
-                  <ul class="roadmap-list">
-                    <li>舉辦 2022 曜越單車電競爭霸戰。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <div class="bikechain"></div>
 
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.01</h5>
+                  <h5 class="list-title">2024.01</h5>
                   <ul class="roadmap-list">
-                    <li>正式成為 MOOTS 臺灣總代理。
+                    <li>曜越單車投資入股英國 Velobici 。
                     </li>
                     <li class="py-4">
                       <img class="w-50" src="" alt="">
@@ -558,46 +424,53 @@
               </div>
               <div class="roadmap-item-wrap left scrollflow ">
                 <div class="roadmap-item left">
-                  <h5 class="list-title">2023.02</h5>
+                  <h5 class="list-title">2023.12</h5>
                   <ul class="roadmap-list">
-                    <li>正式成為 Chpt3 亞洲總代理，正式成立 Chpt3 Asia Hub 亞洲總部，同步全球首發 Chpt3 x Brompton V4 。
+                    <li>正式成為 Brooks England 與 Selle Royal 總代理。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_brooks.png" alt="">
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_selleroyal.png"
+                        alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.03</h5>
+                  <h5 class="list-title">2023.11</h5>
                   <ul class="roadmap-list">
-                    <li>正式成為 ABUS 安全帽 臺灣總代理。
+                    <li>The Service Course CEO 暨前環法選手 Simon Gerrans 造訪曜越單車。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202311_2.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
-
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.03</h5>
+                  <h5 class="list-title">2023.11</h5>
                   <ul class="roadmap-list">
-                    <li>Taipei Cycle Show 擴大參展，即為展場中最大的攤位。
+                    <li>Velobici Founder Chris Puttnam 造訪曜越單車。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202311_1.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
-                <div class="roadmap-item right ">
-                  <h5 class="list-title">2023.03</h5>
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2023.11</h5>
                   <ul class="roadmap-list">
-                    <li>The Service Course CEO 暨前環法選手 Simon Gerrans 訪台，代表曜越單車參賽 2023 KOM Spring Challenge。
+                    <li>參加 Gravel Fundo 台南年終站。
                     </li>
                     <li class="py-4">
                       <img class="w-50" src="" alt="">
@@ -607,24 +480,65 @@
               </div>
               <div class="roadmap-item-wrap left scrollflow ">
                 <div class="roadmap-item left">
-                  <h5 class="list-title">2023.04</h5>
+                  <h5 class="list-title">2023.10</h5>
                   <ul class="roadmap-list">
-                    <li>推廣「綠運輸」獎勵機制，鼓勵員工單車通勤。
+                    <li>曜越單車組隊參加「2023 時代騎輪節」。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_4.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.10</h5>
+                  <ul class="roadmap-list">
+                    <li>Chpt3 Founder 暨前環法選手 David Milliar 造訪 Chpt3 Asia Hub 。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_3.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.10</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車代理品牌進駐台中和台南新光三越百貨。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_2.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.10</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車 Wilier Triestina 品牌旗艦店於台北內湖盛大開幕。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_1.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.05</h5>
+                  <h5 class="list-title">2023.07</h5>
                   <ul class="roadmap-list">
-                    <li>首次舉辦 TT 太平山約騎。
+                    <li>正式成為 Wilier Triestina 臺灣總代理。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202307.jpg" alt="">
                     </li>
                   </ul>
                 </div>
@@ -643,57 +557,22 @@
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.07</h5>
+                  <h5 class="list-title">2023.05</h5>
                   <ul class="roadmap-list">
-                    <li>正式成為 Wilier Triestina 臺灣總代理。
+                    <li>首次舉辦 TT 太平山約騎。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202305.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap left scrollflow ">
                 <div class="roadmap-item left">
-                  <h5 class="list-title">2023.10</h5>
+                  <h5 class="list-title">2023.04</h5>
                   <ul class="roadmap-list">
-                    <li>曜越單車 Wilier Triestina 品牌旗艦店於台北內湖盛大開幕。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2023.10</h5>
-                  <ul class="roadmap-list">
-                    <li>曜越單車代理品牌進駐台中和台南新光三越百貨。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2023.10</h5>
-                  <ul class="roadmap-list">
-                    <li>Chpt3 Founder 暨前環法選手 David Milliar 造訪 Chpt3 Asia Hub 。
-                    </li>
-                    <li class="py-4">
-                      <img class="w-50" src="" alt="">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="roadmap-item-wrap left scrollflow ">
-                <div class="roadmap-item left">
-                  <h5 class="list-title">2023.10</h5>
-                  <ul class="roadmap-list">
-                    <li>曜越單車組隊參加「2023 時代騎輪節」。
+                    <li>推廣「綠運輸」獎勵機制，鼓勵員工單車通勤。
                     </li>
                     <li class="py-4">
                       <img class="w-50" src="" alt="">
@@ -702,66 +581,259 @@
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
-                <div class="roadmap-item right">
-                  <h5 class="list-title">2023.11</h5>
+                <div class="roadmap-item right ">
+                  <h5 class="list-title">2023.03</h5>
                   <ul class="roadmap-list">
-                    <li>參加 Gravel Fundo 台南年終站。
+                    <li>The Service Course CEO 暨前環法選手 Simon Gerrans 訪台，代表曜越單車參賽 2023 KOM Spring Challenge。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202303_2.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.11</h5>
+                  <h5 class="list-title">2023.03</h5>
                   <ul class="roadmap-list">
-                    <li>Velobici Founder Chris 造訪曜越單車。
+                    <li>Taipei Cycle Show 擴大參展，即為展場中最大的攤位。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202303_1.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2023.11</h5>
+                  <h5 class="list-title">2023.03</h5>
                   <ul class="roadmap-list">
-                    <li>The Service Course CEO 暨前環法選手 Simon Gerrans 造訪曜越單車。
+                    <li>正式成為 ABUS 安全帽 臺灣總代理。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_abus.png" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap left scrollflow ">
                 <div class="roadmap-item left">
-                  <h5 class="list-title">2023.12</h5>
+                  <h5 class="list-title">2023.02</h5>
                   <ul class="roadmap-list">
-                    <li>正式成為 Brooks England 與 Selle Royal 總代理。
+                    <li>正式成為 Chpt3 亞洲總代理，正式成立 Chpt3 Asia Hub 亞洲總部，同步全球首發 Chpt3 x Brompton V4 。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202302.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="roadmap-item-wrap right scrollflow ">
                 <div class="roadmap-item right">
-                  <h5 class="list-title">2024.01</h5>
+                  <h5 class="list-title">2023.01</h5>
                   <ul class="roadmap-list">
-                    <li>曜越單車投資入股英國 Velobici 。
+                    <li>正式成為 MOOTS 臺灣總代理。
                     </li>
                     <li class="py-4">
-                      <img class="w-50" src="" alt="">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_moots.png" alt="">
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202301.jpg" alt="">
                     </li>
                   </ul>
                 </div>
               </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2022.10</h5>
+                  <ul class="roadmap-list">
+                    <li>舉辦 2022 曜越單車電競爭霸戰。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202210.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2022.10</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 Velobici 總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_velobici.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2022.08</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 The Service Course 臺灣總代理。
 
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_theservicecourse.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2022.07</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 Crankbrothers 臺灣總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w60"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_crankbrothers.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2022.07</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車旗艦館於台北內湖盛大開幕。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202207.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2022.04</h5>
+                  <ul class="roadmap-list">
+                    <li>首次組隊參賽環花東 Tour of East Taiwan。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202204.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2022.03</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 thousand 臺灣總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_thousand.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2022.03</h5>
+                  <ul class="roadmap-list">
+                    <li>Taipei Cycle Show 首次參展。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50" src="" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2021.09</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 TIME / stijncycles 臺灣總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_time.png" alt="">
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_stijncycles.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2021.08</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 Speedvagen 臺灣總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_speedvagen.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2021.08</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車事業部 正式成立。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/pic02.JPG" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2021.07</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 Tommasini / Apidura 臺灣總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_tommasini.png"
+                        alt="">
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_apidura.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title ">2021.06</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 Demano 亞洲總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_demano.png" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -771,11 +843,9 @@
   </section>
 
   <!-- JQ -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
   <!-- Bootstrap -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+
   <!-- Js -->
   <script>
   </script>

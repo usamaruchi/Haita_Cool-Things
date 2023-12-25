@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            outline: 1px solid red;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section h2 {
+            font-size: 6em;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            padding: 100px;
+            overflow: hidden;
+        }
+
+        .box h2 {
+            font-size: 3em;
+        }
+
+        .box .logo {
+            max-width: 300px;
+        }
+
+        .box2 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            padding: 100px;
+            background-color: #000;
+        }
+
+        .box2 h2 {
+            font-size: 3em;
+            color: #fff;
+        }
+    </style>
+</head>
+<section>
+    <h2>Scroll To Begin</h2>
+</section>
+<div class="box">
+    <h2 class="text1">Scroll Trigger is Awesome</h2>
+    <h2 class="text2">This Is My First Code</h2>
+    <h2 class="text3">How it is?</h2>
+    <img src="https://img.freepik.com/free-photo/comic-splash-with-expression-text-center-yellow-background_23-2147910132.jpg?w=826&t=st=1679886676~exp=1679887276~hmac=2b0ffad96a8828588f888fd5442a503f708d7dc7d579cef4a446f48912ddd89f"
+        class="logo" alt="">
+</div>
+<div class="box2">
+    <h2 class="text4">Stay Tuned</h2>
+    <h2 class="text5">For more Videos</h2>
+    <h2 class="text6">Thanks For Watching :)</h2>
+</div>
+
+<body>
+
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script type="text/javascript">
+        gsap.registerPlugin(ScrollTrigger);
+        var tl = gsap.timeline();
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".box",
+                start: "center center", // Animation start at this point
+                end: "bottom top", //Animation end at this point
+                end: "+=200%", //Animation end at this point
+                markers: true,
+                scrub: true,
+                pin: true,
+            }
+        })
+            .from(".text1", { x: innerWidth * 1 })
+            .from(".text2", { x: innerWidth * -1 })
+            .from(".text3", { x: innerWidth * 1 })
+            .from(".logo", {
+                y: innerWidth * 1,
+                rotate: 720,
+                scale: 5,
+            })
+
+       
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".box2",
+                start: "center center", // Animation start at this point
+                end: "bottom top", //Animation end at this point
+                end: "+=200%", //Animation end at this point
+                markers: true,
+                scrub: true,
+                pin: true,
+            }
+        })
+            .from(".box2", { opacity: 0 })
+            .from(".text4", { y: innerWidth * 1 })
+            .from(".text5", { y: innerWidth * 1 })
+            .from(".text6", { y: innerWidth * 1 })
+
+
+    </script>
+    <!-- Js -->
+    <script>
+    </script>
+</body>
+
+</html>

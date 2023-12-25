@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>曜越單車 Thermaltake Bicycle Milestone</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    .milestone .title {
+      font-size: 30px;
+      color: #181818;
+    }
+
+    .pd-tb-lg {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .w60 {
+      width: 50% !important;
+    }
+
+    .w-50 {
+      width: 35% !important;
+    }
+
+    /*roadmap*/
+    /* color de la linea central y puntos */
+    /* color de la linea */
+    /* color de los títulos */
+    .roadmap {
+      margin-bottom: 110px;
+    }
+
+    .roadmap .rcontainer {
+      /* overflow: hidden; */
+      padding-top: 40px;
+    }
+
+    .roadmap-item .list-title {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 98%;
+      padding-bottom: 18px;
+      font-size: 24px;
+      font-weight: 600;
+      border-bottom: 2px solid #333333;
+
+      border-bottom: 80% solid#333333;
+
+      color: #000000;
+
+      border-spacing: 30px;
+
+    }
+
+
+    .roadmap-item.executed .list-title {
+      color: #fc1367;
+    }
+
+    .roadmap-item.executed li {
+      background: linear-gradient(45deg, #00c280 23%, #01a094 33%, #0434da);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .roadmap-list {
+      padding-top: 40px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #888888;
+      padding-left: 0;
+    }
+
+    .roadmap-list li {
+      position: relative;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+    }
+
+    .roadmap-list li::before {
+      position: absolute;
+      content: "";
+    }
+
+    .roadmap-list li:before {
+      width: 30px;
+      height: 100%;
+      left: 0;
+      z-index: 200;
+    }
+
+    .roadmap-wrapper {
+      position: relative;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      /* background-image: url(/_images/bikechain.svg);
+      background-repeat: no-repeat;
+      background-size: contain; */
+    }
+
+
+    .roadmap-wrapper::after {
+      position: absolute;
+      content: "";
+    }
+
+    .roadmap-wrapper::before {
+      position: absolute;
+      content: "";
+    }
+
+    .roadmap-wrapper:after,
+    .roadmap-wrapper:before {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      height: 100%;
+      width: 2px;
+      z-index: 1;
+
+
+    }
+
+    .roadmap-wrapper:after {
+      /* background-color: #fc1367; */
+    }
+
+    .roadmap-wrapper:before {
+      /* background-color: #fc1367; */
+      left: calc(50% - 1px);
+    }
+
+    .roadmap-wrapper .bikechain {
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      /* height: 100vh; */
+      width: 25px;
+
+      display: flex;
+
+      z-index: 999;
+      background-image: url(https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/bikechain.svg);
+
+      background-attachment: fixed;
+      /* background-repeat: no-repeat; */
+      background-size: contain;
+    }
+
+    .roadmap-item-wrap {
+      position: relative;
+      z-index: 10;
+    }
+
+    .roadmap-item-wrap:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .roadmap-item-wrap .roadmap-item {
+      position: relative;
+    }
+
+    .roadmap-item-wrap .roadmap-item::before {
+      position: absolute;
+      content: "";
+    }
+
+    .roadmap-item-wrap .roadmap-item:before {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      display: inline-block;
+      line-height: 40px;
+      margin-top: -15px;
+      z-index: 2;
+      color: #fc1367;
+      /* content: " ●"; */
+      font-size: 30px;
+
+      /* background-image: url(https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/bikechain.svg);
+      background-repeat: no-repeat;
+      background-size: contain; */
+    }
+
+    .roadmap-item-wrap.right,
+    .roadmap-item-wrap.left {
+      padding: 50px 0;
+    }
+
+
+    .roadmap-item-wrap.right .roadmap-item {
+      padding-left: 50px;
+      float: right;
+    }
+
+    .roadmap-item-wrap.right .roadmap-item:before {
+      right: 100%;
+      transform: translateX(50%);
+    }
+
+    .roadmap-item-wrap.right .list-title {
+      padding-left: 40px;
+      left: auto;
+      right: 0;
+    }
+
+    .roadmap-item-wrap.left .roadmap-item {
+      padding-right: 50px;
+    }
+
+    .roadmap-item-wrap.left .roadmap-item:before {
+      left: 100%;
+      transform: translateX(-50%);
+    }
+
+    .roadmap-item {
+      width: 50%;
+    }
+
+    @media (max-width: 1200px) {
+      /* .roadmap-list {
+        font-size: 14px;
+      } */
+
+      .token-sale-items-wrapper {
+        left: 40px;
+      }
+
+      /* .roadmap-item-wrap.left .roadmap-item,
+      .roadmap-item-wrap.right .roadmap-item {
+        padding-right: 35px;
+      } */
+    }
+
+    @media (max-width: 992px) {
+
+      .roadmap-item-wrap.right,
+      .roadmap-item-wrap.left {
+        padding: 0;
+      }
+
+
+      .roadmap-wrapper .bikechain {
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: -3%;
+      }
+
+      .roadmap-wrapper:before,
+      .roadmap-wrapper:after {
+        display: none;
+      }
+
+      .roadmap-item {
+        width: 100%;
+      }
+
+
+      .roadmap-item .list-title {
+        width: 100%;
+        position: relative;
+        top: 0;
+      }
+
+      .roadmap-item-wrap {
+        margin-bottom: 25px;
+      }
+
+      .roadmap-item-wrap .list-title {
+        padding-left: 25px !important;
+      }
+
+      .roadmap-item-wrap .roadmap-item {
+        /* padding: 0 5px 0 0 !important; */
+      }
+
+      .roadmap-item-wrap .roadmap-item.right:before,
+      .roadmap-item-wrap .roadmap-item.left:before {
+        width: 30px;
+        height: 30px;
+        margin-left: 0;
+        bottom: 0;
+        top: 1.43em;
+        margin-top: 0;
+        left: 0;
+        right: 100%;
+        line-height: 0;
+        transform: translateX(0px) translateY(0%);
+      }
+
+      .roadmap-list {
+        padding-top: 20px;
+        /* padding: 14px 0 0 25px; */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .milestone .title {
+        font-size: 26px;
+      }
+
+      .w60 {
+        width: 60% !important;
+      }
+
+      .w-50 {
+        width: 50% !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .roadmap-wrapper .bikechain {
+        display: none;
+        /* position: absolute;
+        top: 0%;
+        left: -3%; */
+      }
+
+      .roadmap {
+        margin-bottom: 25px;
+      }
+
+      .roadmap .section-title {
+        margin-bottom: 25px;
+      }
+
+      .roadmap-item-wrap {
+        margin-bottom: 21px;
+      }
+
+      .roadmap-item .list-title {
+        /* font-size: 14px; */
+        padding-bottom: 12px;
+      }
+
+      .roadmap-list {
+        /* font-size: 12px; */
+        padding-top: 10px;
+      }
+
+      .roadmap-list li {
+        padding-left: 18px;
+      }
+
+      .roadmap-list li:before {
+        background: url(/assets/img/home/roadmap-list-point.png) no-repeat left 7px;
+        background-size: 4px;
+      }
+
+      .roadmap-item-wrap .roadmap-item:before {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        left: -4px !important;
+      }
+
+      .roadmap-item-wrap.left .roadmap-item:before {
+        right: -6px;
+      }
+
+      .roadmap-item-wrap.right .roadmap-item:before {
+        left: -6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="container">
+    <div class="row">
+      <div></div>
+    </div>
+  </div> -->
+
+  <section id="milestone" class="container milestone">
+    <div class="row justify-content-center">
+      <div class="col text-center pd-tb-lg">
+        <h2 class="title">曜越單車 Thermaltake Bicycle Milestone
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col col-lg-10">
+        <div class="roadmap">
+          <div class="rcontainer">
+            <div class="roadmap-wrapper">
+              <div class="bikechain"></div>
+
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2024.01</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車投資入股英國 Velobici 。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50" src="" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.12</h5>
+                  <ul class="roadmap-list">
+                    <li>正式成為 Brooks England 與 Selle Royal 總代理。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_brooks.png" alt="">
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/brand_selleroyal.png"
+                        alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2023.11</h5>
+                  <ul class="roadmap-list">
+                    <li>The Service Course CEO 暨前環法選手 Simon Gerrans 造訪曜越單車。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202311_2.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2023.11</h5>
+                  <ul class="roadmap-list">
+                    <li>Velobici Founder Chris Puttnam 造訪曜越單車。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202311_1.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap right scrollflow ">
+                <div class="roadmap-item right">
+                  <h5 class="list-title">2023.11</h5>
+                  <ul class="roadmap-list">
+                    <li>參加 Gravel Fundo 台南年終站。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-50" src="" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.10</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車組隊參加「2023 時代騎輪節」。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_4.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.10</h5>
+                  <ul class="roadmap-list">
+                    <li>Chpt3 Founder 暨前環法選手 David Milliar 造訪 Chpt3 Asia Hub 。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_3.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="roadmap-item-wrap left scrollflow ">
+                <div class="roadmap-item left">
+                  <h5 class="list-title">2023.10</h5>
+                  <ul class="roadmap-list">
+                    <li>曜越單車代理品牌進駐台中和台南新光三越百貨。
+                    </li>
+                    <li class="py-4">
+                      <img class="w-100"
+                        src="https://bike.thermaltake.com/pub/media/wysiwyg/key3/img/Milestone/202310_2.jpg" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JQ -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <!-- Bootstrap -->
+
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>
