@@ -3,52 +3,66 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Parallax Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
   <style>
+    
     body {
-      margin: 0;
       padding: 0;
-      height: 2000px;
-      /* 用於展示視差滾動效果 */
-      font-family: Arial, sans-serif;
-    }
+      margin: 0;
+      box-sizing: border-box;
 
-
-    .parallax-bg {
-      background-image: url(_images/MILESTONE/bikechain.svg);
-
-      width: 500px;
-
-      background-size: cover;
-      background-size: contain;
-      background-attachment: fixed;
-
-
-      /* 關鍵屬性 */
-      height: 1000px;
-      /* 設定視窗高度 */
       display: flex;
       justify-content: center;
       align-items: center;
-      /* color: white; */
-      text-align: center;
+
+      outline: 1px red solid;
     }
 
-    .content {
-      padding: 20px;
+    .w-100{
+      width: 100%;
+    }
+
+    .center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 按鈕底色/ 地圖中心的顏色 #00313C 外圍的黑色 #171821 系統主題深色(另外一個黑) #252833 按鈕文字的顏色 #f7ec47  */
+
+    /* radial-gradient(circle, #252833, #00313c, #171821) */
+    .bg {
+      height: 100vh;
+      width: 100%;
+
+      background:  radial-gradient(circle, #14151b, #00313c, #171821);
+      background:  radial-gradient(circle, #1e3127, #10554f, #192719);
+      
+      /* background:  radial-gradient(circle, #395868, #1f2c3f, #2a353e); */
+      /* background:  radial-gradient(circle, #1f2c32, #3e4755, #11161a); */
+      /* background: radial-gradient(circle, #283327,#52774e,#222d20, #020b05); */
     }
   </style>
 </head>
 
 <body>
-  <h1>Parallax Background</h1>
-  <p>Scroll down to see the effect!</p>
-  <div class="parallax-bg">
-
-    <div class="content">
-    
-    </div>
+  <div class="bg center">
+    <img class="w-100" src="/_images/test02.png" alt="">
   </div>
+
+  <script>
+    //需要避開的顏色: const statusColorNormal=ref("#219653");
+    const statusColorAlert = ref("#f2c94c");
+    const statusColorCritical = ref("#eb5757");
+    const statusColorDisconnected = ref("#828282");
+    const statusColorAlarm = ref("#f2994a");
+
+    const statusColorLinkDown = computed(() => {
+      return props.storedTheme ? "#828282" : "#4F4F4F";
+    });
+  </script>
 </body>
 
 </html>
