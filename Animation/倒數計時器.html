@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+
+  <style>
+    @import url('http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', 'sans-serif';
+      /* outline: red 1px solid; */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #3a393b;
+    }
+
+    #time {
+      display: flex;
+      gap: 30px;
+    }
+
+    #time .circle {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+    }
+
+    #time .circle::before {
+      content: '';
+      position: absolute;
+      inset: 0px;
+      border: 10px solid #1b1a1c;
+      border-radius: 50%;
+    }
+
+    #time .circle::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #2f2e33;
+      border-radius: 50%;
+      border: 15px solid #4d4c51;
+
+      box-shadow: inset 0 5px 10px rgb(0, 0, 0, 0.25),
+        0 10px 10px rgb(0, 0, 0, 0.75),
+        0 -2px 2px rgb(255, 255, 255, 0.5),
+        inset 0 4px 2px rgb(0, 0, 0, 0.25),
+        inset 0 -2px 2px rgb(255, 255, 255, 0.5);
+    }
+
+    #time .circle svg {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      transform: rotate(270deg);
+    }
+
+    #time .circle svg circle {
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+      stroke-width: 8;
+      stroke: var(--clr);
+      stroke-linecap: round;
+      transform: translate(5px, 5px);
+      stroke-dasharray: 440;
+      /* stroke-dashoffset: 440; */
+    }
+
+    #time div {
+      position: absolute;
+      text-align: center;
+      font-weight: 500;
+      color: #fff;
+      z-index: 10000;
+      color: var(--clr);
+      font-size: 1.65em;
+      transform: translateY(-5px);
+    }
+
+    #time div span {
+      position: absolute;
+      transform: translateX(-50%) translateY(-15px);
+      font-size: .25em;
+      font-weight: 500;
+      letter-spacing: .1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="time">
+    <div class="circle" style="--clr:#1eb9ff;">
+      <svg>
+        <circle cx="70" cy="70" r="70" id="dd"></circle>
+        <div id="days">00<br><span>Days</span></div>
+      </svg>
+    </div>
+
+    <div class="circle" style="--clr:#ff2972;">
+      <svg>
+        <circle cx="70" cy="70" r="70" id="hh"></circle>
+        <div id="hours">00<br><span>Hours</span></div>
+      </svg>
+    </div>
+
+    <div class="circle" style="--clr:#fee800;">
+      <svg>
+        <circle cx="70" cy="70" r="70" id="mm"></circle>
+        <div id="minutes">00<br><span>Minutes</span></div>
+      </svg>
+    </div>
+
+    <div class="circle" style="--clr:#04fc43;">
+      <svg>
+        <circle cx="70" cy="70" r="70" id="ss"></circle>
+        <div id="seconds">00<br><span>Seconds</span></div>
+      </svg>
+    </div>
+
+  </div>
+
+  <script>
+    let days = document.getElementById("days");
+    let hours = document.getElementById("hours");
+    let minutes = document.getElementById("minutes");
+    let seconds = document.getElementById("seconds");
+
+    let dd = document.getElementById("dd");
+    let hh = document.getElementById("hh");
+    let mm = document.getElementById("mm");
+    let ss = document.getElementById("ss");
+
+    let endDate = "1/14/2024 00:00:00";
+
+    let x = setInterval(function () {
+      let now = new Date(endDate).getTime();
+      let countDown = new Date().getTime();
+      let distance = now - countDown;
+
+      // time calculation for days, hours, minutes, seconds
+      let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 24));
+      let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let s = Math.floor((distance % (1000 * 60)) / (1000));
+
+      //output the result in element with id
+      days.innerHTML = d + "<br><span>Days</span>";
+      hours.innerHTML = h + "<br><span>Hours</span>";
+      minutes.innerHTML = m + "<br><span>Minutes</span>";
+      seconds.innerHTML = s + "<br><span>Seconds</span>";
+
+      //Animation Stroke
+      //365 days in an year
+      dd.style.strokeDashoffset = 440 - (440 * d) / 365;
+      //365 days in a day
+      hh.style.strokeDashoffset = 440 - (440 * h) / 24;
+      //365 days in an hours
+      mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+      //365 days in a minute
+      ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+
+    })
+
+  </script>
+</body>
+
+</html>
