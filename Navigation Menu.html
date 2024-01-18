@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Menu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poiret One', sans-serif;
+      /* outline: 1px red solid; */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #161616;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 60px;
+      border-radius: 30px;
+      background-color: #242424;
+    }
+
+    ul li {
+      list-style-type: none;
+    }
+
+    ul li a {
+      position: relative;
+      text-decoration: none;
+      color: #444;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    ul li a ion-icon {
+      font-size: 2.5em;
+      transition: .5s;
+    }
+
+    ul li:hover a ion-icon {
+      color: #c7f80d;
+      filter: drop-shadow(0 0 15px #c7f80d);
+    }
+
+    ul li.active a ion-icon {
+      color: #c7f80d;
+      filter: drop-shadow(0 0 15px #c7f80d);
+      transform: translateY(-50px);
+    }
+
+    #marker {
+      position: absolute;
+      top: -30px;
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: #55650a;
+      border-top: 2px solid #c7f80d;
+      border-left: 2px solid #c7f80d;
+      box-shadow:
+        0 0 0 10px #161616,
+        0 2px 0 9px #c7f80d;
+    }
+
+    #marker::before {
+      content: '';
+      position: absolute;
+      top: 29px;
+      left: -30px;
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      /* background-color: red; */
+      border-top-right-radius: 20px;
+      box-shadow: 4px -4px 0 4px #161616;
+    }
+
+    #marker::after {
+      content: '';
+      position: absolute;
+      top: 29px;
+      right: -30px;
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      /* background-color: red; */
+      border-top-left-radius: 20px;
+      box-shadow: -4px -4px 0 4px #161616;
+    }
+
+    ul li span {
+      position: absolute;
+      pointer-events: none;
+      transform: translateY(50px);
+      opacity: 0;
+      font-size: 0.8em;
+      transition: 0.5s;
+      text-transform: uppercase;
+    }
+
+    ul li.active span {
+      opacity: 1;
+      color: #c7f80d;
+      filter: drop-shadow(0 0 10px #c7f80d);
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><a href="#"><ion-icon name="home-outline"></ion-icon> <span>>Home</span></a></li>
+    <li><a href="#"><ion-icon name="person"></ion-icon> <span>Account</span></a></li>
+    <li class="active"><a href="#"><ion-icon name="add-circle"></ion-icon> <span>Create</span></a></li>
+    <li><a href="#"><ion-icon name="settings"></ion-icon> <span>Settings</span></a></li>
+    <li><a href="#"><ion-icon name="chatbubble"></ion-icon> <span>Chat</span></a></li>
+    <div id="marker"></div>
+  </ul>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
