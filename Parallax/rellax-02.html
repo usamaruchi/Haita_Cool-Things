@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rellax-02</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+
+        .box {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .box span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #9e9e9e;
+            width: 100px;
+            height: 50px;
+        } */
+
+        .box1 {
+            /* background: #fdadad; */
+            /* background-image: url(/_images/pic01.jpg); */
+            background-size: cover;
+            justify-content: center;
+            align-items: start;
+
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+        }
+
+        .box1 img {
+
+            /* width: 100%; */
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            right: -80px;
+        }
+
+        .box2 {
+            background: #edfdad;
+            background-image: url(/_images/pic02.jpg);
+            background-size: cover;
+        }
+
+        .box3 {
+            background: #adfdec;
+            background-image: url(/_images/pic03.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .box4 {
+            background: #edadfd;
+            background-image: url(/_images/pic04.jpg);
+            background-size: cover;
+        }
+
+        .imageWrap {
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .imageWrap img {
+            scale: 1.5;
+        }
+
+        .title1 {
+            font-size: 50px;
+            color: white;
+
+        }
+
+        @media (max-width: 768px) {
+            .imageWrap img {
+                /* width: 200%; */
+                /* height: 200%; */
+                scale: 3;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 ">
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam inventore quam perferendis ab quas
+                    provident quae blanditiis reprehenderit quia? Illo et alias ipsum eligendi optio architecto,
+                    nesciunt soluta voluptatem nam.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero velit ex omnis inventore eos
+                    repudiandae? Soluta nisi, amet eos, cum adipisci inventore commodi laboriosam saepe, odit culpa
+                    optio veniam?
+                    Nisi ipsum dolore fugiat modi illum ducimus laboriosam quod repellendus velit, a harum tenetur
+                    similique accusantium quis ipsam, enim reiciendis iste. Dignissimos sit eveniet neque non sint
+                    accusantium fugiat iusto.
+                    Fugit commodi exercitationem est dolor saepe earum aperiam eum enim deserunt, illum officiis aliquam
+                    soluta nam omnis facere, eius mollitia quasi animi nobis. Unde, officia enim placeat aliquid quis
+                    inventore.
+                    Blanditiis repudiandae mollitia incidunt reiciendis. Natus mollitia ab, ducimus culpa minima quaerat
+                    exercitationem nostrum, suscipit nam aperiam libero illo earum voluptates vitae alias quo unde quos!
+                    Consequatur tenetur earum sint.
+                    Veritatis, voluptatibus distinctio vel laudantium molestias architecto ipsum soluta enim, laboriosam
+                    ducimus illum quos fugit hic suscipit explicabo esse earum obcaecati eaque repellendus quibusdam id
+                    iste. Voluptates perspiciatis maxime magni!
+                    Totam dolores quae quos distinctio, rerum modi esse aliquam facilis, non odit officia. Provident
+                    cumque ipsa, pariatur cum voluptates assumenda quidem! Excepturi assumenda ab expedita? Deserunt
+                    libero dolore quaerat est.
+                    Harum cumque nihil repellendus, excepturi doloremque debitis eum officia facere nulla a totam
+                    eligendi, ad, numquam voluptas nam porro id explicabo non hic voluptates! Temporibus, rerum
+                    repellendus. Nulla, vero libero?
+                    Ratione provident nulla sunt ipsam facilis obcaecati eum rerum, accusantium animi quas ipsa
+                    asperiores voluptatem eius dolores rem perspiciatis. Necessitatibus, iste? Optio qui, dignissimos
+                    doloremque unde reiciendis tenetur nobis reprehenderit.
+                    Sed, tempore rerum reprehenderit modi expedita nobis illo mollitia recusandae excepturi aperiam
+                    impedit nulla, possimus aliquam laborum explicabo est totam corrupti et adipisci! Accusamus sapiente
+                    cupiditate, molestias voluptas veniam voluptate!
+                    In aspernatur nostrum iusto minus ad vero repellendus aliquid. Adipisci, voluptatem tempore.
+                    Consequuntur, nemo. Temporibus ducimus iusto reprehenderit consequuntur, ullam vero placeat sint
+                    nostrum fuga autem ipsam, porro deleniti deserunt.
+                </p>
+            </div>
+
+            <div class="col-12 imageWrap" style="z-index: 1;">
+                <img class="w-100 rellax" data-rellax-speed="1" src="/_images/pic01.jpg" alt="">
+            </div>
+            <div class="col col-md-6 box box1 ">
+                <!-- <span class="title1 rellax" data-rellax-speed="-3">
+                    Sea
+                </span> -->
+                <img class="w-100 rellax" data-rellax-vertical-scroll-axis="x" data-rellax-speed="1" src="/_images/pic01.jpg" alt="">
+            </div>
+            <div class="col-md-6 box box2 " style="z-index:2;">2</div>
+            <div class="col-12">
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam inventore quam perferendis ab quas
+                    provident quae blanditiis reprehenderit quia? Illo et alias ipsum eligendi optio architecto,
+                    nesciunt soluta voluptatem nam.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero velit ex omnis inventore eos
+                    repudiandae? Soluta nisi, amet eos, cum adipisci inventore commodi laboriosam saepe, odit culpa
+                    optio veniam?
+                    Nisi ipsum dolore fugiat modi illum ducimus laboriosam quod repellendus velit, a harum tenetur
+                    similique accusantium quis ipsam, enim reiciendis iste. Dignissimos sit eveniet neque non sint
+                    accusantium fugiat iusto.
+                    Fugit commodi exercitationem est dolor saepe earum aperiam eum enim deserunt, illum officiis aliquam
+                    soluta nam omnis facere, eius mollitia quasi animi nobis. Unde, officia enim placeat aliquid quis
+                    inventore.
+                    Blanditiis repudiandae mollitia incidunt reiciendis. Natus mollitia ab, ducimus culpa minima quaerat
+                    exercitationem nostrum, suscipit nam aperiam libero illo earum voluptates vitae alias quo unde quos!
+                    Consequatur tenetur earum sint.
+                    Veritatis, voluptatibus distinctio vel laudantium molestias architecto ipsum soluta enim, laboriosam
+                    ducimus illum quos fugit hic suscipit explicabo esse earum obcaecati eaque repellendus quibusdam id
+                    iste. Voluptates perspiciatis maxime magni!
+                    Totam dolores quae quos distinctio, rerum modi esse aliquam facilis, non odit officia. Provident
+                    cumque ipsa, pariatur cum voluptates assumenda quidem! Excepturi assumenda ab expedita? Deserunt
+                    libero dolore quaerat est.
+                    Harum cumque nihil repellendus, excepturi doloremque debitis eum officia facere nulla a totam
+                    eligendi, ad, numquam voluptas nam porro id explicabo non hic voluptates! Temporibus, rerum
+                    repellendus. Nulla, vero libero?
+                    Ratione provident nulla sunt ipsam facilis obcaecati eum rerum, accusantium animi quas ipsa
+                    asperiores voluptatem eius dolores rem perspiciatis. Necessitatibus, iste? Optio qui, dignissimos
+                    doloremque unde reiciendis tenetur nobis reprehenderit.
+                    Sed, tempore rerum reprehenderit modi expedita nobis illo mollitia recusandae excepturi aperiam
+                    impedit nulla, possimus aliquam laborum explicabo est totam corrupti et adipisci! Accusamus sapiente
+                    cupiditate, molestias voluptas veniam voluptate!
+                    In aspernatur nostrum iusto minus ad vero repellendus aliquid. Adipisci, voluptatem tempore.
+                    Consequuntur, nemo. Temporibus ducimus iusto reprehenderit consequuntur, ullam vero placeat sint
+                    nostrum fuga autem ipsam, porro deleniti deserunt.
+                </p>
+            </div>
+            <div class="col-md-6 box box3 ">3</div>
+            <div class="col-md-6 box box4 ">4</div>
+        </div>
+    </div>
+
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+
+    <!-- Js -->
+    <script>
+        var rellax = new Rellax('.rellax', {
+            horizontal: true,
+            // round: true,
+            // center: true,
+            // breakpoints: [576, 768, 1201]
+        });
+    </script>
+</body>
+
+</html>

@@ -57,6 +57,7 @@
     ul li a ion-icon {
       font-size: 2.5em;
       transition: .5s;
+      pointer-events: none;
     }
 
     ul li:hover a ion-icon {
@@ -72,7 +73,7 @@
 
     #marker {
       position: absolute;
-      top: -30px;
+      top: -40px;
       width: 80px;
       height: 80px;
       border-radius: 20px;
@@ -82,6 +83,7 @@
       box-shadow:
         0 0 0 10px #161616,
         0 2px 0 9px #c7f80d;
+      transition: .5s;
     }
 
     #marker::before {
@@ -110,6 +112,22 @@
       box-shadow: -4px -4px 0 4px #161616;
     }
 
+    #marker span {
+      position: absolute;
+      top: 122px;
+      left: -10%;
+      width: 120%;
+      height: 30px;
+      background: #55650a;
+      border-radius: 20px;
+      box-shadow:
+        0 0 0 10px #161616,
+        0 -2px 0 9px #c7f80d;
+
+      border-right: 1px solid #c7f80d;
+      border-bottom: 1px solid #c7f80d;
+    }
+
     ul li span {
       position: absolute;
       pointer-events: none;
@@ -135,11 +153,47 @@
     <li class="active"><a href="#"><ion-icon name="add-circle"></ion-icon> <span>Create</span></a></li>
     <li><a href="#"><ion-icon name="settings"></ion-icon> <span>Settings</span></a></li>
     <li><a href="#"><ion-icon name="chatbubble"></ion-icon> <span>Chat</span></a></li>
-    <div id="marker"></div>
+    <div id="marker"><span></span></div>
   </ul>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // 選擇具有 id 為 marker 的元素
+    let marker = document.querySelector('#marker');
+
+    // 選擇所有 ul 元素下的 li 元素
+    let list = document.querySelectorAll('ul li');
+
+    // 定義一個函數，用於移動指示器的位置和寬度
+    function moveIndicator(e) {
+      // 將指示器的左側設置為鏈接的左側偏移量
+      marker.style.left = e.offsetLeft + 'px';
+      // 將指示器的寬度設置為鏈接的寬度
+      marker.style.width = e.offsetWidth + 'px';
+    }
+
+    // 遍歷所有 li 元素
+    list.forEach(link => {
+      // 為每個 li 元素添加點擊事件監聽器
+      link.addEventListener('click', (e) => {
+        // 調用 moveIndicator 函數，傳遞被點擊的鏈接元素作為參數
+        moveIndicator(e.target);
+      })
+    })
+
+    // 定義一個函數，用於將 active 類添加到點擊的 li 元素上，同時從其他 li 元素中移除 active 類
+    function activeLink() {
+      // 移除所有 li 元素的 active 類
+      list.forEach((item) => item.classList.remove('active'));
+      // 將 active 類添加到當前被點擊的 li 元素上
+      this.classList.add('active');
+    }
+
+    // 為所有 li 元素添加點擊事件監聽器，以在點擊時調用 activeLink 函數
+    list.forEach((item) => item.addEventListener('click', activeLink));
+  </script>
 </body>
 
 </html>
