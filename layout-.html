@@ -1,0 +1,178 @@
+!
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    body {
+      background: #2A2C2B;
+      font-family: sans-serif;
+    }
+
+    .center {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav {
+
+      width: 100%;
+      background-color: #ffffff;
+      position: fixed;
+      top: 0%;
+      /* left: 50%; */
+      /* transform: translate(-50%, -50%); */
+    }
+
+    .nav ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav ul>li {
+      display: inline-block;
+    }
+
+    .nav ul>li>a {
+      color: #aaaeaf;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 15px 10px;
+      transition: .3s ease;
+    }
+
+    .nav ul>li>a:hover{
+      color: #727272;
+      transition: .3s ease;
+    }
+
+    .nav ul>li>a.active{
+      color: #727272;
+    }
+
+    #border {
+      position: absolute;
+      background: #DC3522;
+      height: 5px;
+      transition: width 0.3s, left 0.3s;
+
+      align-self: end;
+    }
+
+    .section {
+      min-height: 80vh;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav center">
+    <ul>
+      <li><a href="#section1" class="active">section1</a></li>
+      <li><a href="#section2">section2</a></li>
+      <li><a href="#section3">section3</a></li>
+    </ul>
+    <div id="border"></div>
+  </nav>
+
+
+  <div style="min-height: 50vh;"></div>
+
+  <section id="section1" class="section center" style="background-color: rgb(205, 236, 255);">section1</section>
+  <section id="section2" class="section center" style="background-color: rgb(255, 218, 218);">section2</section>
+  <section id="section3" class="section center" style="background-color: rgb(255, 255, 222);">section3</section>
+
+  <div style="min-height: 50vh;"></div>
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+    $(document).ready(function () {
+      // 設置初始位置
+      var activeLink = $('nav .active');
+      var activeWidth = activeLink.outerWidth();
+      var activePosition = activeLink.position().left;
+      $('#border').css({ 'width': activeWidth + 'px', 'left': activePosition });
+
+      // 監聽點擊事件
+      $('nav a').click(function (e) {
+        e.preventDefault(); // 防止默認鏈接行為
+
+        var targetSection = $($(this).attr('href')); // 獲取目標部分的 jQuery 對象
+        var targetPosition = targetSection.offset().top - 10; // 獲取目標部分的位置，並減去距離
+
+        // 平滑滾動到目標部分
+        $('html, body').animate({
+          scrollTop: targetPosition
+        }, 800);
+
+        // 更新活動連結和底部邊框的位置
+        $('nav .active').removeClass('active');
+        $(this).addClass('active');
+
+        var linkWidth = $(this).outerWidth();
+        var linkPosition = $(this).position().left;
+        $('#border').css({ 'width': linkWidth + 'px', 'left': linkPosition });
+      });
+
+      // 監聽滾動事件
+      $(window).on('scroll', function () {
+        var currentPosition = $(this).scrollTop();
+
+        // 檢查每個部分的位置
+        $('section').each(function () {
+          var sectionTop = $(this).offset().top - 50; // 獲取部分位置，並減去距離
+          var sectionHeight = $(this).outerHeight();
+          var sectionId = $(this).attr('id');
+
+          // 如果滾動位置在部分頂部和底部之間，則更新活動連結和邊框位置
+          if (currentPosition >= sectionTop && currentPosition <= (sectionTop + sectionHeight)) {
+            $('nav .active').removeClass('active');
+            $('nav a[href="#' + sectionId + '"]').addClass('active');
+
+            var linkWidth = $('nav .active').outerWidth();
+            var linkPosition = $('nav .active').position().left;
+            $('#border').css({ 'width': linkWidth + 'px', 'left': linkPosition });
+          }
+        });
+      });
+
+      // 初始化頁面時定位邊框
+      function init() {
+        var initLink = $('nav .active');
+        var initWidth = initLink.outerWidth();
+        var initPosition = initLink.position().left;
+        $('#border').css({ 'width': initWidth + 'px', 'left': initPosition });
+      }
+      init();
+    });
+
+
+  </script>
+</body>
+
+</html>
