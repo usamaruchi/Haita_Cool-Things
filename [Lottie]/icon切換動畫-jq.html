@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottie Animation Example</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CSS -->
+    <style>
+        * {
+            /* outline: red 1px solid; */
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        nav a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+
+        nav a:hover {
+            text-decoration: none;
+        }
+
+        #icon {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" id="run">
+            <div id="icon"></div>
+            <span>Menu</span>
+        </a>
+    </nav>
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- Lottie JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.1/lottie.min.js"></script>
+
+    <!-- Js -->
+    <script>
+        $(document).ready(function () {
+            const icon = $('#icon');
+
+            // 初始化 Lottie 動畫
+            const animation = lottie.loadAnimation({
+                container: icon[0], // 指定動畫顯示的容器
+                renderer: 'svg', // 使用 SVG 渲染器
+                loop: false, // 設置動畫循環播放
+                autoplay: false, // 自動播放動畫
+                path: '/[Lottie]/Polite Chicky.json' // 動畫文件的路徑
+            });
+
+            animation.setSpeed(3);
+
+            $('#run').on('mouseenter', function () {
+                animation.setDirection(1);
+                animation.play();
+            });
+
+            $('#run').on('mouseleave', function () {
+                animation.setDirection(-1);
+                animation.play();
+            });
+        });
+    </script>
+</body>
+
+</html>

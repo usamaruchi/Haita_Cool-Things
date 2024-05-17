@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Box Filter</title>
+  <!-- 引入 Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mt-4 mb-3">Box Filter</h1>
+
+  <!-- 篩選按鈕 -->
+  <div class="btn-group mb-4" role="group">
+    <button type="button" class="btn btn-primary filter-btn" data-filter="all">All</button>
+    <button type="button" class="btn btn-primary filter-btn" data-filter="red">Red</button>
+    <button type="button" class="btn btn-primary filter-btn" data-filter="blue">Blue</button>
+    <button type="button" class="btn btn-primary filter-btn" data-filter="green">Green</button>
+  </div>
+
+  <!-- 盒子列表 -->
+  <div class="row" id="box-container">
+    <div class="col-md-4 filter-item red blue">Red&Blue Box</div>
+    <div class="col-md-4 filter-item blue">Blue Box</div>
+    <div class="col-md-4 filter-item green">Green Box</div>
+    <div class="col-md-4 filter-item red">Red Box</div>
+    <div class="col-md-4 filter-item blue green">Blue&Green Box</div>
+    <div class="col-md-4 filter-item green">Green Box</div>
+  </div>
+</div>
+
+<!-- 引入 Bootstrap JavaScript 和 jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JavaScript 代碼 -->
+<script>
+  $(document).ready(function() {
+    // 點擊篩選按鈕時觸發事件
+    $('.filter-btn').click(function() {
+      var filterValue = $(this).attr('data-filter'); // 獲取篩選值
+      if (filterValue === 'all') {
+        // 如果篩選值是 'all'，顯示所有盒子
+        $('.filter-item').show();
+      } else {
+        // 否則，隱藏沒有匹配篩選值的盒子，並顯示匹配的盒子
+        $('.filter-item').hide().filter('.' + filterValue).show();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
