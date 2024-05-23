@@ -34,7 +34,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <img id="responsive-image" class="w-100" src="_images/pic01.jpg" alt="">
+      <img id="responsive-image" class="w-100" src="/_images/pic01.jpg" alt="">
     </div>
   </div>
   <!-- JQ -->
@@ -50,9 +50,9 @@
     $(document).ready(function () {
       function updateImage() {
         if ($(window).width() < 767) {
-          $("#responsive-image").attr("src", "_images/pic02.jpg");
+          $("#responsive-image").attr("src", "/_images/pic02.jpg");
         } else {
-          $("#responsive-image").attr("src", "_images/pic01.jpg");
+          $("#responsive-image").attr("src", "/_images/pic01.jpg");
         }
       }
 

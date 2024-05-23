@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素外觀等比例</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      /* width: 100%; */
+    }
+
+    .box {
+      background-color: red;
+      max-width: 100%;
+      width:800px;
+      max-width: 100%;
+
+       /* 透過使用 aspect-ratio 屬性，可以更好地控制網頁設計中的元素比例，確保在各種螢幕和設備上保持一致的外觀 */
+      /* 如果同時有width和height，則aspect-ratio不採用 */
+      /* 可以用max-width和max-height，避免跑板問題 */
+      aspect-ratio: 16/9;
+
+     
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">red</div>
+</body>
+
+</html>

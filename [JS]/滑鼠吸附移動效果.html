@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnetic Hover Effects</title>
+
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 100px;
+    }
+
+    .card {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: var(--clr);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5em;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 600;
+      cursor: pointer;
+      transition: .1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" style="--clr:#ff6464;">01</div>
+    <div class="card" style="--clr:#64c0ff;">02</div>
+    <div class="card" style="--clr:#48e365;">03</div>
+    <div class="card" style="--clr:#cb4af7;">04</div>
+  </div>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Js -->
+  <!-- <script>
+    let card = document.querySelectorAll(".card").forEach(cards => {
+      cards.addEventListener('mousemove', (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let cardWidth = cards.clientWidth;
+        let cardHeight = cards.clientHeight;
+        let posX = (x - cardWidth / 2);
+        let posY = (y - cardHeight / 2);
+        cards.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+      })
+      cards.addEventListener('mouseout', (e) => {
+        cards.style.transform = ``;
+      })
+
+    })
+  </script> -->
+
+  <!-- JQ寫法 -->
+  <script>
+    $(document).ready(function () {
+      $(".card").on('mousemove', function (e) {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let cardWidth = $(this).width();
+        let cardHeight = $(this).height();
+        let posX = (x - cardWidth / 2);
+        let posY = (y - cardHeight / 2);
+        $(this).css('transform', `translateX(${posX}px) translateY(${posY}px)`);
+      });
+
+      $(".card").on('mouseout', function () {
+        $(this).css('transform', '');
+      });
+    });
+  </script>
+</body>
+
+</html>
