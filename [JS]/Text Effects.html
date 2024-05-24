@@ -9,7 +9,6 @@
 
 <style>
   * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
@@ -21,6 +20,8 @@
     min-height: 100vh;
     background-color: #000;
     overflow: hidden;
+    cursor: none;
+    pointer-events: none;
   }
 
   h2 {
@@ -28,6 +29,11 @@
     color: #2196f3;
     font-size: 12em;
     pointer-events: none;
+  }
+
+  img{
+    /* filter: grayscale(100%); */
+    /* backdrop-filter: grayscale(100); */
   }
 
   #cursor {
@@ -39,6 +45,7 @@
     pointer-events: none;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(12px) contrast(10) hue-rotate(90deg) brightness(2);
+    /* backdrop-filter: grayscale(100); */
   }
 </style>
 
@@ -46,7 +53,6 @@
 <body>
   <h2>Blood</h2>
   <div id="cursor"></div>
-
   <!-- <script>
     document.addEventListener('mousemove', function (e) {
       let cursor = document.getElementById('cursor');
