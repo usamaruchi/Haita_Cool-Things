@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <!-- CSS -->
+  <style>
+    @import url('http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'sans-serif';
+      /* outline: 1px solid red; */
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #F4F5F8;
+      /* height: 100%;
+      min-height: 320px; */
+
+      height: 200px;
+
+      width: 320px;
+      position: relative;
+      padding: 20px;
+
+      overflow: hidden;
+      transition: .3s ease-in-out
+    }
+
+    .card:hover {
+      height: 450px;
+    }
+
+    .card::after {
+      content: '01';
+      position: absolute;
+      right: calc(100% / 10);
+      top: 45px;
+      font-size: 72px;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+    }
+
+    .card ion-icon {
+      position: relative;
+      transform: translateX(-20px);
+      background-color: #F77D0A;
+      padding: 15px;
+      font-size: 40px;
+      margin-top: 40px;
+    }
+
+    /* .card ion-icon {
+      transform-origin: bottom left;
+      transform: rotate(-45deg);
+      z-index: 1;
+    } */
+
+    .card h3 {
+      position: relative;
+      transform: translateX(75px);
+      padding: 15px 0px;
+      transition: .3s ease-in-out
+    }
+
+    .card:hover h3 {
+      transform: translateX(0px);
+    }
+
+    .card p {
+      color: #8b8c9a;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <ion-icon name="car-outline"></ion-icon>
+    <div class="card-title"></div>
+    <h3>CAR RENTAL</h3>
+    <p>Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed
+      Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed
+    </p>
+  </div>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <!-- iconicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>
