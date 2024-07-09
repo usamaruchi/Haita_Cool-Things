@@ -5,6 +5,12 @@
   <meta charset="utf-8" />
   <title>Swiper demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <!-- Bootstrap -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <!-- CSS -->
+
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://ttbike185.com/pub/media/wysiwyg/key3/css/swiper-bundle.min.css" />
 
@@ -72,12 +78,12 @@
     /* 移除圖片 */
     .swiper-button-prev,
     .swiper-container-rtl .swiper-button-next {
-      background-image:none !important;
+      background-image: none !important;
     }
 
     .swiper-button-next,
     .swiper-container-rtl .swiper-button-next {
-      background-image:none !important;
+      background-image: none !important;
     }
   </style>
 </head>
@@ -98,8 +104,9 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
-
   </div>
+
+
 
   <!-- <div class="container">
    
@@ -120,14 +127,14 @@
   </div> -->
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
 
   <!-- Initialize Swiper -->
   <script>
 
 
 
- //  require(['jquery', 'swiperBundle'], function ($, Swiper) {
+    require(['jquery', 'swiperBundle'], function ($, Swiper) {
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         // spaceBetween: 30,
@@ -142,7 +149,7 @@
           prevEl: ".swiper-button-prev",
         },
       });
- //   })
+    })
 
   </script>
 </body>
