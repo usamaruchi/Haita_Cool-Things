@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://ttbike185.com/pub/media/wysiwyg/key3/css/swiper-bundle.min.css" />
+
+  <!-- CSS -->
+  <style>
+    /* ================================================================= */
+    /* All Spec */
+    /* -------------------------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    :root {
+      /* 主體色 */
+      --primary-clr: #96B3DE;
+      --secondary-clr: #fff;
+      --third--clr: #000;
+      --fourth--clr: #53565A;
+      --fifth--clr: #E8E8DF;
+
+      /* 文字色 */
+      --font-clr-1: #000;
+      --font-clr-2: #ffffff;
+      --font-clr-3: #4f4f4f;
+
+      /* 尺寸 */
+      /* --xxl-spec: 120px; */
+      /* --xl-spec: 96px; */
+      --lg-spec: 120px;
+      --md-spec: 60px;
+      --sm-spec: 20px;
+      /* --xs-spec: 16px;
+      --xxs-spec: 12px; */
+    }
+
+    @media(max-width:1199px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 64px;
+        --md-spec: 32px;
+        /* --sm-spec: 20px; */
+      }
+    }
+
+    @media(max-width:991px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 40px;
+        --md-spec: 32px;
+        /* --sm-spec: 20px; */
+      }
+    }
+
+    @media(max-width:767px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 32px;
+        --md-spec: 24px;
+        --sm-spec: 16px;
+      }
+    }
+
+    @media(max-width:575px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 24px;
+        --md-spec: 20px;
+        --sm-spec: 16px;
+      }
+    }
+
+
+    /* ================================================================= */
+    /* Common */
+    /* -------------------------- */
+    .font-style-p-1,
+    .font-style-p-2,
+    .font-style-h2-1,
+    .font-style-h3 {
+      text-align: justify;
+    }
+
+    .font-style-h2-2 {
+      text-align: start;
+    }
+
+    .font-style-p-1 {
+      font-size: 18px;
+      line-height: 29px;
+      color: var(--font-clr-2);
+    }
+
+    .font-style-p-2 {
+      font-size: 18px;
+      line-height: 29px;
+      color: var(--font-clr-3);
+    }
+
+    .font-style-h2-1 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      color: var(--font-clr-2);
+    }
+
+    .font-style-h2-2 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      color: var(--font-clr-1);
+    }
+
+    .font-style-h3 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      color: var(--font-clr-3);
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* flex-direction: column; */
+      height: 100%;
+    }
+
+    .column-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .mg0 {
+      margin: 0;
+    }
+
+    .pd0 {
+      padding: 0;
+    }
+
+    .pd-t-sm {
+      padding-top: var(--sm-spec);
+    }
+
+    .pd-t-md {
+      padding-top: var(--md-spec);
+    }
+
+
+    .pd-t-100 {
+      padding-top: 100px;
+    }
+
+    .pd-rl-0 {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .pd-rl-50 {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+
+    .pd-md {
+      padding: var(--md-spec);
+    }
+
+    .pd-lg {
+      padding: var(--lg-spec);
+    }
+
+    .pd-tb-sm {
+      padding-top: var(--sm-spec);
+      padding-bottom: var(--sm-spec);
+    }
+
+    .pd-tb-md {
+      padding-top: var(--md-spec);
+      padding-bottom: var(--md-spec);
+    }
+
+    .pd-tb-lg {
+      padding-top: var(--lg-spec);
+      padding-bottom: var(--lg-spec);
+    }
+
+    .pd-rl-md {
+      padding-left: var(--md-spec);
+      padding-right: var(--md-spec);
+    }
+
+    .pd-rl-lg {
+      padding-left: var(--lg-spec);
+      padding-right: var(--lg-spec);
+    }
+
+    .pd-rl-lg-1 {
+      padding-left: var(--lg-spec);
+      padding-right: var(--lg-spec);
+    }
+
+    .pd-t-lg {
+      padding-top: var(--lg-spec);
+    }
+
+    .mg-l-40 {
+      margin-left: 40px;
+    }
+
+    .mg-t-80 {
+      /* transform: translateY(100px); */
+      margin-top: 80px;
+    }
+
+    .gap-sm {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sm-spec);
+    }
+
+    .gap-md {
+      display: flex;
+      flex-direction: column;
+      gap: var(--md-spec);
+    }
+
+    .gap-lg {
+      display: flex;
+      flex-direction: column;
+      gap: var(--lg-spec);
+    }
+
+    .w-35 {
+      width: 35%;
+    }
+
+    .w-60 {
+      width: 60%;
+    }
+
+    .w-80 {
+      width: 80%;
+    }
+
+
+    /* ================================================================= */
+    /* Common */
+    /* -------------------------- */
+
+    @media(max-width:1199px) {
+      /* .font-style-p-1 {
+        font-size: 18px;
+        line-height: 29px;
+      } */
+
+      /* .font-style-p-2 {
+        font-size: 18px;
+        line-height: 29px;
+      } */
+
+      .font-style-h2-1 {
+        font-size: 32px;
+        line-height: 48px;
+      }
+
+      .font-style-h2-2 {
+        font-size: 32px;
+        line-height: 34px;
+      }
+
+
+      .mg-l-40 {
+        margin-left: 0px;
+      }
+
+      .pd-rl-lg-1 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    @media(max-width:991px) {}
+
+    @media(max-width:767px) {}
+
+    @media(max-width:575px) {
+      .font-style-h2-1 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .font-style-h2-2 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .pd-md {
+        padding: var(--md-spec) 15px;
+      }
+
+      .pd-lg {
+        padding: var(--lg-spec) 15px;
+      }
+    }
+
+    /* ================================================================= */
+    /* Custom */
+
+
+    /* -------------------------- */
+    /* img & bg */
+
+    /* .bg01 {
+      background-image: url(images/bg03.jpg);
+      background-image: url(https://event.ttbike185.com/Thermaltake25thxWilierTriestina/images/bg03.jpg);
+      background-size: cover;
+    } */
+    .bg-grey {
+      background-color: #efefef;
+    }
+
+
+    /* 按鈕切換圖 */
+    .imgWrap {
+      position: relative;
+      width: 100%;
+      /* height: 100%; */
+      padding-top: 100%;
+      /* 4:3 Aspect Ratio */
+      overflow: hidden;
+    }
+
+    .imgWrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      /* height: 100%; */
+      transition: transform 0.75s ease;
+    }
+
+    .img-hidden {
+      transform: translateX(-100%);
+    }
+
+    .img-move-out {
+      transform: translateX(-100%);
+    }
+
+    .img-visible {
+      transform: translateX(0%);
+    }
+
+    .btnWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: end;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      /* margin-right: 10px; */
+      border: 1px solid #242424;
+      cursor: pointer;
+      background-color: #f8f9fa;
+      border-radius: 0;
+      height: 50px;
+      width: 50px;
+      position: relative;
+    }
+
+
+    .btn-pre::before {
+      content: '<';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn-next::before {
+      content: '>';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn:disabled {
+      border: 1px solid #a5a5a5;
+      cursor: default;
+    }
+
+    .count {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .line {
+      border-bottom: 1px solid #242424;
+      width: 100%;
+    }
+
+    #current1,
+    #total1,
+    #current2,
+    #total2 {
+      text-align: center;
+      padding: 5px 10px;
+      margin: 0 5px;
+    }
+
+
+    /* ================================================================= */
+    /* Custom */
+    /* -------------------------- */
+    @media(max-width:1199px) {}
+
+    @media(max-width:991px) {}
+
+    @media(max-width:767px) {
+      .btnWrap {
+        justify-content: start;
+      }
+    }
+
+    @media(max-width:575px) {}
+
+    /* ================================================================= */
+    /* Swiper */
+    /* 顏色替換 */
+    :root {
+      --swiper-pagination-color: #505050;
+      --swiper-pagination-bullet-inactive-color: #505050;
+    }
+
+    /* 上下一個顏色 */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #505050;
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-slide-transform {
+      color: #505050;
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 15px;
+      height: 15px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: 0 10px;
+    }
+
+    /* ================================================================= */
+    /* Magento CSS*/
+
+    .default-style .resp-tabs-container .resp-tab-content {
+      display: block !important;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container-fluid pd-tb-lg">
+    <div class="row center">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-1227.webp"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">出色的碳纖維布複合製程</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            當我們討論爬坡車種的車架時，首先要考慮的是使用的原材料。使用最高品質的複合材料是開端，打造一個完全聚焦於頂級性能的車種上。
+          </p>
+          <p class="font-style-p-2">
+            對於Verticale SLR，我們特別使用了由日本東麗公司所生產的三種類型的碳纖維布，日本東麗是碳纖維市場的領導者，採用獨特的T800、T1100和M46JB。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 輪播一 -->
+  <div class="container-fluid w-80 pd-tb-lg">
+    <!-- Swiper -->
+    <div class="swiper swiper-container-one">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/estverticale0162.webp"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/estverticale0178.webp"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/estverticale0130.webp"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/estverticale0142.webp"
+            alt="">
+        </div>
+
+      </div>
+      <!-- <div class="swiper-button-next"></div> -->
+      <!-- <div class="swiper-button-prev"></div> -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="row flex-xl-row-reverse center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img01.png"
+          alt="">
+      </div>
+      <div class="col-xl-5 pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">全新的一體式把手 V-Bar</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            這款採用碳纖維結構的一體式把手<strong>重約310克</strong>，採用全新流線設計。
+          </p>
+          <p class="font-style-p-2">
+            第一眼看到的是其特殊形狀，上、下把位採用不同寬度的把手設計。從正面看，手變把的高握處較窄，下把位較寬。這種特殊形狀是為了滿足職業車手的賽事空力需求而設計的，他們在每個賽季中都在尋找符合UCI規定且享有最佳空力動學性能的解決方案。
+          </p>
+          <p class="font-style-p-2">
+            現在的趨勢是將上把位(高握處)變窄，同時保留較寬的下把位(低握處)，以保證在瞬間加速時更好的操作性能。高握處與低握處之間的高差為30mm。
+          </p>
+          <p class="font-style-p-2">
+            V-Bar與Wilier系列中其他一體式的把手一樣，也與我們的其他SLR一級車款兼容。<strong>V-Bar 提供6種尺寸選擇</strong>，標註有2種寬度把位為37/40mm，搭配有90 以及
+            100mm的龍頭長度；另外4種寬度為39/42mm，搭配有龍頭長度110、120、130以及150mm。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img02.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">一體式把手內走線設計</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            Wilier 提供了全新一體把的設計，特別是關於煞車油管內走線的改良設計。為了改善內走線空間順暢，Wilier 調整了走線開孔位置以及內走線接觸面積。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row flex-xl-row-reverse center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img03.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">整合式碼表座</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            為了追求減輕整體把手重量，我們開發了一款專用的碼表座，完全由CNC加工製成，與其前一代碼表座不同的是，它完全嵌入一體式把手內。
+          </p>
+          <p class="font-style-p-2">
+            這款碼表座由下方開兩處螺絲孔來進行固定，相比前一代碼表座優化了重量。
+          </p>
+          <p class="font-style-p-2">
+            碼表座接觸把手的後方附上一個橡膠套緊密結合，以防污垢和汗水滲入，可以延長產品可靠性。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 圖片切換一 -->
+  <div class="container-fluid">
+    <!-- 第一組圖片 -->
+    <div class="row pd-tb-lg">
+      <div class="col-md-5">
+        <div class="imgWrap mg-t-80" style="padding-top: 140%;">
+          <img class="img01 img-visible"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-2733.webp"
+            alt="">
+          <img class="img02 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-2589.webp"
+            alt="">
+          <img class="img03 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-2510.webp"
+            alt="">
+        </div>
+
+      </div>
+      <div class="col-md-7">
+        <div class="imgWrap" style="padding-top: 65%;">
+          <img class="img01 img-visible"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-2689.webp"
+            alt="">
+          <img class="img02 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-2433.webp"
+            alt="">
+          <img class="img03 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierverticaleaction-2002.webp"
+            alt="">
+        </div>
+        <div class="btnWrap">
+          <button id="previous1" class="btn btn-pre" disabled>
+          </button>
+          <div class="count">
+            <div id="current1">1</div>
+            <div class="line"></div>
+            <div id="total1">3</div>
+          </div>
+          <button id="next1" class="btn btn-next"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row flex-xl-row-reverse center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img04.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">座管附帶USB後燈以及整合號碼牌設計</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            我們重新設計了座管設計，提供兩種可能的後頃角度：0°和-15°，兩者均配備兩個特殊孔位，可安裝整合式後燈或比賽號碼牌。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img05.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">新的座管夾系統</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            我們對座管固定裝置進行了微調，現在不再從上方固定，而是從底部對角線固定。<br>
+            這種座管固定系統使我們能夠減輕相較於0 SLR整體車架重量，卻不犧牲座管的固定方式。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row flex-xl-row-reverse center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img06.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">新的變速器前吊耳固定系統</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            另一個重要且必須的新功能是前變速器吊耳系統，對於Verticale SLR來說，這個系統不再是固定於車架上，而是可調整且卸除。
+          </p>
+          <p class="font-style-p-2">
+            這樣一來，我們可以減輕了吊耳系統的重量，並且多有了兩種可能的前變速器位置調整配置：一種是安裝50/34或53/39的緊湊型曲柄組，另一種是安裝我們世巡賽車隊所特規的55/56齒的超重曲柄組。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/single-image.jpg"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">Lenny Martinez，Groupama - FDJ 車隊的職業車手實測：</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            <em>
+              "Verticale 是一款非常棒的自行車，尤其對我這種爬坡車手來說更是如此。它比 Filante SLR 更輕，當路面開始爬升時反應非常靈敏。當你站起來抽車時，它的反應非常迅速，就像我們在 Mercan'
+              Tour Classic 賽中看到的那樣，我用這輛測試版車架的獲得比賽勝利。
+              <br>
+              我認為這款自行車在當天的勝利中發揮了極大的作用。我在比賽前在家裡隨便騎了一下，馬上愛上了它。它具備了一台頂級車款的所有特質，當你抽車或用力加速時，你真的能感受到它的優勢，感覺就像被推動向前一樣。"
+            </em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pd-tb-lg">
+      <div class="col-xl-4 pd-rl-md mg-t-80 gap-sm">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilier_verticale_day02_155.webp"
+          alt="">
+        <h2 class="font-style-h2-2 ">
+          Harold Tejada，Astana Qazaqstan 車隊的職業運動員：
+        </h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            <em>
+              "Wilier Triestina 創造了一款非常競速且輕巧的車款。我會說它非常輕，對我最擅長的爬坡賽段來說非常理想。新的V-Bar
+              車把設計非常棒，使你在下坡時能夠控車自如，且保持良好的穩定性、抓地力和空力動學性能。
+              <br>
+              在每個彎道中，你都能感受到它的剛性和輕便，這讓你可以完全控制自行車。我非常喜歡新的 Verticale，這是一部非常出色的機器，沒有多餘的設計，一切都恰到好處。我對這款自行車非常滿意。"
+            </em>
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-8 pd-rl-md gap-sm">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilier-verticale-groupamafdj-24-652.webp"
+          alt="">
+        <h2 class="font-style-h2-2 pd-rl-lg-1">
+          David Gaudu，Groupama - FDJ 車隊的職業運動員：
+        </h2>
+        <div class="mg-l-40 pd-rl-lg-1">
+          <p class="font-style-p-2">
+            <em>
+              "你能感受到 Verticale
+              是專門為應對艱難坡度所開發設計的，當你站著抽車時，它能完全回饋你的力量，讓你在高速下坡中可以完全掌控過彎角度，這對於一名職業車手來說非常重要，因為必須完全信任自己的車才有信心加速。
+              <br>
+              這確實是一款非常適合爬坡賽段的優秀車種。它將是我在環法自行車賽中的可靠夥伴，我迫不及待想在高山賽段中測試它了。"
+            </em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 輪播二 -->
+  <div class="container-fluid w-80 pd-tb-lg">
+    <!-- Swiper -->
+    <div class="swiper swiper-container-two">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilier-verticale-groupamafdj-24-294.webp"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilier-verticale-groupamafdj-24-804.webp"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilier-verticale-groupamafdj-24-58.webp"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/vertical-innov-groupamafdj-teide-250.webp"
+            alt="">
+        </div>
+
+      </div>
+      <!-- <div class="swiper-button-next"></div> -->
+      <!-- <div class="swiper-button-prev"></div> -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row flex-xl-row-reverse center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img07.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">形狀設計的後叉端</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            至於後三角，我們設計了一個具有特殊輪廓形狀的新型後叉端，這種設計能防止其旋轉，從而保證更高的可靠性。
+          </p>
+          <p class="font-style-p-2">
+            可更換的部件是懸臂式設計，這使得鏈條和後叉之間有相當大的空間，避免了鏈條和後叉之間可能的接觸點。
+          </p>
+          <p class="font-style-p-2">
+            所有設計都兼容無線和半無線變速系統。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img08.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">不對稱前叉</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            Wilier 面臨的挑戰是改進一個看似簡單部位的重量和性能。我們保留了其特有的不對稱形狀。
+          </p>
+          <p class="font-style-p-2">
+            安裝煞車卡鉗的前叉部分已被加大面積，而右側的前叉部分則更輕更薄。
+          </p>
+          <p class="font-style-p-2">
+            一個新的特點是左側前叉的扭曲設計。這種形狀的改進有兩個原因：改進碳纖維前叉在滾動受壓過程中的方向性（以更好地應對壓力）以及增強煞車卡鉗在煞車時施加的力阻反作用力。
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row flex-xl-row-reverse center pd-tb-lg">
+      <div class="col-xl-7 pd0">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/video_img09.png"
+          alt="">
+      </div>
+      <div class="col-xl-5  pd-rl-lg gap-sm pd-tb-sm">
+        <h2 class="font-style-h2-2">新的競速幾何設計</h2>
+        <div class="mg-l-40">
+          <p class="font-style-p-2">
+            與 Wilier 0 SLR 相比，最大的不同是前伸距離的Reach改變。我們專注於自行車手最關心的問題，也就是他們的變把位置與五通BB的相對應距離。
+          </p>
+          <p class="font-style-p-2">
+            結果是車架幾何和車把幾何都做了優化調整。車架Stack高度保持不變，但Reach 前伸距離在 XS 和 S 尺寸上略有縮短，而在 XL 和 XXL 尺寸上相對我們的經典幾何調整較長。
+          </p>
+          <p class="font-style-p-2">
+            至於車把位置，我們重點放在 Bikefitting 新關注 C0 和 C1 位置，這對職業車手來說是最具表現施力的位置。這使我們能夠提供一款車把位置在調整配置上適合所有競賽需求和任何類型車手的車款。
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 圖片切換二 -->
+  <div class="container-fluid">
+    <!-- 第一組圖片 -->
+    <div class="row pd-tb-lg flex-md-row-reverse">
+      <div class="col-md-5">
+        <div class="imgWrap mg-t-80" style="padding-top: 140%;">
+          <img class="img05 img-visible"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/_q2_5.webp" alt="">
+          <img class="img06 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/_q4_7.webp" alt="">
+          <img class="img07 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierbicicloseup-34.webp"
+            alt="">
+          <img class="img08 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierbicicloseup-340.webp"
+            alt="">
+        </div>
+      </div>
+
+      <div class="col-md-7 ">
+        <div class="imgWrap" style="padding-top: 65%;">
+          <img class="img05 img-visible"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/_q2_3.webp" alt="">
+          <img class="img06 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/verticale-groupamafdj-closeup-506.webp"
+            alt="">
+          <img class="img07 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/wilierbicicloseup-93.webp"
+            alt="">
+          <img class="img08 img-hidden"
+            src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/_q3_11.webp" alt="">
+        </div>
+        <div class="btnWrap">
+          <button id="previous2" class="btn btn-pre" disabled></button>
+          <div class="count">
+            <div id="current2">1</div>
+            <div class="line"></div>
+            <div id="total2">4</div>
+          </div>
+          <button id="next2" class="btn btn-next"></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="center">
+      <img class="w-100" style="max-width: 1440px;"
+        src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/gallery.jpg" alt="">
+    </div>
+
+    <!-- 車架尺寸 -->
+    <div class="row center pd-tb-lg bg-grey">
+      <div class="col-lg-6 pd-md">
+        <div class="Verticale_SLR_chart"></div>
+      </div>
+
+      <div class="col-lg-6">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/verticale_slr.png"
+          alt="">
+      </div>
+    </div>
+
+    <div class="row flex-md-row-reverse bg-grey">
+      <div class="col-lg-6  pd-lg gap-sm">
+        <h2 class="font-style-h2-2">使用 ACCU-FIT 改善您的騎行姿勢</h2>
+        <p class="font-style-p-2">
+          正確的坐姿對於自行車手來說是最重要的問題之一，特別是對於競賽選手和長途耐力車手來說。在鋼管車時代，測量虛擬上管相對地簡單，但隨著時間的轉變以及壓縮上管的導入，車架定義尺寸變得越來越複雜。因此，除了傳統的高度、長度和角度數值外，我們現在還考慮了
+          Reach & Stack 數據，以及五通中心到頭管上部中心的水平和垂直距離值。
+        </p>
+        <p class="font-style-p-2">
+          現代自行車的測量更為複雜，因為它們是基於車架、車把墊片和一體式把手組合而成的完整且複雜的系統。購買自行車時，根據您的身型和柔軟度了解每個自行車部件的尺寸是必不可少的。作為車架和一體式車把的製造商，我們在車架測量中增加了一個新值，該值結合了頭管的長度和一體式車把的尺寸。
+        </p>
+        <p class="font-style-p-2">
+          這個被稱為 <strong>ACCU-FIT </strong>的坐標，確定了五通中心到車把中心之間的距離。顯然，對於每個型號來說，每個坐標都等於車架尺寸數量乘以車把尺寸數量和墊片配置。
+        </p>
+        <p class="font-style-p-2">
+          對於 Verticale SLR，最大的消息是我們成功地在空間中實現了更均勻的填充範圍，即使是新的 <strong>C1 位置</strong>。我們與 Groupama - FDJ Équipe Cycliste
+          車隊密切合作進行了這個研究和開發過程。
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <img class="w-100"
+          src="https://www.ttbike185.com/pub/media/wysiwyg/key3/img/wilier_product/Verticale_SLR/vista_accufit.png"
+          alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Bootstrap -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script> -->
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Js -->
+  <script src="https://www.ttbike185.com/pub/media/wysiwyg/key3/js/products/load_wilier.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+  //  require(['jquery'], function ($) {
+      // $(document).ready(function () {
+      let totalSlides1 = 3;
+
+      // 第一組圖片控制
+      let currentSlide1 = 0;
+
+      function showSlide1(index) {
+        $(`.img0${index + 1}`).addClass('img-visible').removeClass('img-hidden');
+        if (index > 0) {
+          $(`.img0${index}`).addClass('img-hidden').removeClass('img-move-out');
+        }
+        // 更新顯示當前圖片索引與總數
+        $('#current1').text(currentSlide1 + 1); // currentSlide1 索引從 0 開始，顯示為 1 / 3
+      }
+
+      function hideSlide1(index) {
+        $(`.img0${index + 1}`).addClass('img-move-out').removeClass('img-visible');
+        if (index > 0) {
+          $(`.img0${index}`).removeClass('img-hidden').addClass('img-visible');
+        }
+        // 更新顯示當前圖片索引與總數
+        $('#current1').text(currentSlide1 + 1); // currentSlide1 索引從 0 開始，顯示為 1 / 3
+      }
+
+      function updateButtons1() {
+        $('#previous1').prop('disabled', currentSlide1 === 0);
+        $('#next1').prop('disabled', currentSlide1 === totalSlides1 - 1);
+      }
+
+      $('#next1').click(function () {
+        if (currentSlide1 < totalSlides1 - 1) {
+          currentSlide1++;
+          showSlide1(currentSlide1);
+          updateButtons1();
+        }
+      });
+
+      $('#previous1').click(function () {
+        if (currentSlide1 > 0) {
+          hideSlide1(currentSlide1);
+          currentSlide1--;
+          showSlide1(currentSlide1);
+          updateButtons1();
+        }
+      });
+
+      updateButtons1();
+
+      // 第二組圖片控制
+      let totalSlides2 = 4;
+      let currentSlide2 = 0;
+
+      function showSlide2(index) {
+        $(`.img0${index + 5}`).addClass('img-visible').removeClass('img-hidden');
+        if (index > 0) {
+          $(`.img0${index + 4}`).addClass('img-hidden').removeClass('img-move-out');
+        }
+        // 更新顯示當前圖片索引與總數
+        $('#current2').text(currentSlide2 + 1); // currentSlide2 索引從 0 開始，顯示為 2 / 4
+      }
+
+      function hideSlide2(index) {
+        $(`.img0${index + 5}`).addClass('img-move-out').removeClass('img-visible');
+        if (index > 0) {
+          $(`.img0${index + 4}`).removeClass('img-hidden').addClass('img-visible');
+        }
+        // 更新顯示當前圖片索引與總數
+        $('#current2').text(currentSlide2 + 1); // currentSlide2 索引從 0 開始，顯示為 2 / 4
+      }
+
+      function updateButtons2() {
+        $('#previous2').prop('disabled', currentSlide2 === 0);
+        $('#next2').prop('disabled', currentSlide2 === totalSlides2 - 1);
+      }
+
+      $('#next2').click(function () {
+        if (currentSlide2 < totalSlides2 - 1) {
+          currentSlide2++;
+          showSlide2(currentSlide2);
+          updateButtons2();
+        }
+      });
+
+      $('#previous2').click(function () {
+        if (currentSlide2 > 0) {
+          hideSlide2(currentSlide2);
+          currentSlide2--;
+          showSlide2(currentSlide2);
+          updateButtons2();
+        }
+      });
+
+      updateButtons2();
+      // });
+   // });
+  </script>
+
+  <script>
+  //  require(['jquery', 'swiperBundle'], function ($, Swiper) {
+      var swiperOne = new Swiper(".swiper-container-one", {
+        slidesPerView: 1,
+        // spaceBetween: 30,
+        loop: false,
+        autoplay: false,
+        pagination: {
+          el: ".swiper-container-one .swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-container-one .swiper-button-next",
+          prevEl: ".swiper-container-one .swiper-button-prev",
+        },
+      });
+  //  })
+
+ //   require(['jquery', 'swiperBundle'], function ($, Swiper) {
+      var swiperTwo = new Swiper(".swiper-container-two", {
+        slidesPerView: 1,
+        // spaceBetween: 30,
+        loop: false,
+        autoplay: false,
+        pagination: {
+          el: ".swiper-container-two .swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-container-two .swiper-button-next",
+          prevEl: ".swiper-container-two .swiper-button-prev",
+        },
+      });
+ //
+  </script>
+</body>
+
+</html>
