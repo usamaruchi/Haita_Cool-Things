@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/zh-tw.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <!-- <script src="https://www.ttbike185.com/pub/media/wysiwyg/key3/js/xlsx.full.min.js"></script> -->
+    <!-- 引入 SheetJS -->
+    <style>
+        .page-title-wrapper {
+            display: none;
+        }
+
+        .title-calendar{
+            text-align: center;
+            padding: 30px 0;
+            font-size: 30px;
+            color: #181818;
+        }
+
+        #calendar {
+            width: 100%;
+            max-width: 1440px;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="title-calendar">
+        <h2>
+            曜越單車行程表
+        </h2>
+    </div>
+    <div id='calendar'></div>
+
+    <script>
+        require([
+            'xlsx',
+        ], function ($) {
+
+            // document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'zh-tw', // 設定繁體中文
+                headerToolbar: {
+                    left: 'title',
+                    center: '',
+                    right: 'prev,next today'
+                },
+                // footerToolbar: {
+                //     left: '',
+                //     center: '',
+                //     right: '' // 可以選擇在底部工具列顯示的按鈕
+                // },
+                events: [],
+                dayMaxEvents: true, // 顯示 "+more"
+                dayMaxEventRows: 2, // 最多顯示兩行事件
+
+                // eventDidMount: function (info) {
+                //     if (info.event.url) {
+                //         var linkElement = document.createElement('a');
+                //         linkElement.href = info.event.url;
+                //         linkElement.target = '_blank';
+                //         linkElement.textContent = info.event.title;
+                //         linkElement.style.color = 'inherit';
+                //         linkElement.style.textDecoration = 'none';
+
+                //         // 清空事件元素的內容並添加新鏈接元素
+                //         info.el.innerHTML = '';
+                //         info.el.appendChild(linkElement);
+                //     }
+                // }
+
+            });
+
+
+
+            calendar.render();
+
+            // 為了防止快取，使用當前時間戳作為查詢參數
+            var timestamp = new Date().getTime();
+            var url = 'https://www.ttbike185.com/pub/media/wysiwyg/key3/file/database/RidingData.xlsx?timestamp=' + timestamp;
+
+            fetch(url)
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    var workbook = XLSX.read(data, { type: 'array' });
+                    var sheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[sheetName];
+                    var json = XLSX.utils.sheet_to_json(worksheet);
+
+                    // 將 Excel 數據轉換為 FullCalendar 事件格式
+                    var events = json.map(function (item) {
+                        return {
+                            title: item['title'],
+                            start: item['start'],
+                            end: item['end'],
+                            color: item['color'] || '',
+                            textColor: item['textColor'] || '',
+                            url: item['url'] || ''
+                        };
+                    });
+
+                    // 添加事件到 FullCalendar
+                    calendar.addEventSource(events);
+                })
+                .catch(error => console.error('Error fetching or processing Excel file:', error));
+            //  });	
+        });
+
+    </script>
+</body>
+
+</html>

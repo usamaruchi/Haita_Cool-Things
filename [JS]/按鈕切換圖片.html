@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圖片替換示例</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      outline: 1px solid red;
+    }
+
+    .company-content {
+      background-color: #f1ead2;
+      margin-top: 50px;
+      padding: 50px 50px 80px 50px;
+      height: 100%;
+    }
+
+    .max-h250 {
+      max-height: 250px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 pd0 conpant-img">
+        <img class="w-100" src="https://cdn.pixabay.com/photo/2023/01/12/05/31/orange-7713308_1280.jpg" alt="">
+      </div>
+      <div class="col-lg-6 pd0 overflow-hidden">
+        <div class="company-content">
+          <h3 class="font-style-h3">公司簡介</h3>
+          <p class="font-style-p-1">橙子是廣泛栽培的水果，主要生產地區包括中國、美國、巴西和印度。中國是全球最大的橙子生產國，主要種植區位於廣東、廣西、福建和湖南省。美國，尤其是佛羅里達州，也以橙子生產著稱，對國內消費和出口均有重大貢獻。巴西，特別是聖保羅州，是另一個領先的生產國，以其廣泛的橙汁產業聞名。這些地區受益於有利的氣候，支持高品質橙子的生長。</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 max-h300 py-2">
+        <img class="w-100 changeable-img" src="https://cdn.pixabay.com/photo/2023/01/12/05/31/orange-7713308_1280.jpg" alt="" data-index="0">
+      </div>
+      <div class="col-lg-4 max-h300 py-2">
+        <img class="w-100 changeable-img" src="https://cdn.pixabay.com/photo/2017/12/09/08/47/water-3007467_1280.jpg" alt="" data-index="1">
+      </div>
+      <div class="col-lg-4 max-h300 py-2">
+        <img class="w-100 changeable-img" src="https://cdn.pixabay.com/photo/2015/08/10/21/13/orange-883187_1280.jpg" alt="" data-index="2">
+      </div>
+    </div>
+  </div>
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+    $(document).ready(function() {
+      // 定義一個陣列來存儲每張圖片對應的資料
+      var contentData = [
+        {
+          imgSrc: "https://cdn.pixabay.com/photo/2023/01/12/05/31/orange-7713308_1280.jpg",
+          title: "橙子簡介",
+          text: "橙子是廣泛栽培的水果，主要生產地區包括中國、美國、巴西和印度。"
+        },
+        {
+          imgSrc: "https://cdn.pixabay.com/photo/2017/12/09/08/47/water-3007467_1280.jpg",
+          title: "水的照片",
+          text: "這是一張美麗的水的照片。"
+        },
+        {
+          imgSrc: "https://cdn.pixabay.com/photo/2015/08/10/21/13/orange-883187_1280.jpg",
+          title: "橙子特寫",
+          text: "這是一張橙子的特寫照片。"
+        }
+      ];
+
+      // 當下方的圖片被點擊時
+      $('.changeable-img').click(function() {
+        // 獲取被點擊圖片的 data-index 屬性值
+        var index = $(this).data('index');
+        // 從陣列中獲取對應的資料
+        var data = contentData[index];
+        // 淡出上方的圖片和文字，然後更換 src 和文字，最後淡入
+        $('.conpant-img img').fadeOut(300, function() {
+          $(this).attr('src', data.imgSrc).fadeIn(300);
+        });
+        $('.company-content h3').fadeOut(300, function() {
+          $(this).text(data.title).fadeIn(300);
+        });
+        $('.company-content p').fadeOut(300, function() {
+          $(this).text(data.text).fadeIn(300);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

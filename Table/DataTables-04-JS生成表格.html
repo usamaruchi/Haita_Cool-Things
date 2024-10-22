@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-HANT">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTables套件</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- DataTables CSS-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+      float: none;
+      text-align: left;
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table id="myTable" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">E-Mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 動態生成的資料將顯示在這裡 -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <!-- DataTables JS-->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- Js -->
+  <script>
+    // JSON 陣列，包含表格資料
+    const tableData = [
+      { id: 1, name: "Mark", phone: "0912001527", email: "abc@gmail.com" },
+      { id: 2, name: "Jacob", phone: "0988612854", email: "zaq@gmail.com" },
+      { id: 3, name: "Larry", phone: "0955633218", email: "zzxc@gmail.com" },
+      { id: 3, name: "Sam", phone: "0988598171", email: "dssc@gmail.com" }
+    ];
+
+    // 初始化 DataTable 並動態生成表格
+    $(document).ready(function () {
+      // 生成表格內容
+      const tbody = $('#myTable tbody');
+      tableData.forEach(row => {
+        tbody.append(`
+          <tr>
+            <th scope="row">${row.id}</th>
+            <td>${row.name}</td>
+            <td>${row.phone}</td>
+            <td>${row.email}</td>
+          </tr>
+        `);
+      });
+
+      // 初始化 DataTables，使用中文語言包
+      $('#myTable').dataTable({
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/zh-HANT.json"
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

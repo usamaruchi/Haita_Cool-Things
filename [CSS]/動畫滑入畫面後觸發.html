@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      width: 100%;
+      height: 100vh;
+      line-height: 80vh;
+      text-align: center;
+      display: block;
+      font-size: 60px;
+    }
+
+    .view {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .block {
+      height: 200px;
+      width: 300px;
+      margin: 50px;
+      border: 0.5mm solid black;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .block:nth-child(1) {
+      background: rgb(232, 88, 67);
+      background-image: url(https://images.pexels.com/photos/11635470/pexels-photo-11635470.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+      background-size:contain;
+    }
+
+    .block:nth-child(2) {
+      background: rgb(26, 84, 207);
+    }
+
+    .block:nth-child(3) {
+      background: rgb(36, 217, 127);
+    }
+
+    .block:nth-child(4) {
+      background: rgb(157, 86, 247);
+      width: 700px;
+    }
+
+    .block:nth-child(5) {
+      background: rgb(250, 201, 82);
+    }
+
+    .block:nth-child(6) {
+      background: rgb(26, 84, 207);
+    }
+
+    .block:nth-child(7) {
+      background: rgb(157, 86, 247);
+    }
+
+    .block:nth-child(8) {
+      background: rgb(36, 217, 127);
+      width: 700px;
+    }
+
+    .block:nth-child(9) {
+      background: rgb(232, 88, 67);
+    }
+
+    .block:nth-child(10) {
+      background: rgb(250, 201, 82);
+      width: 700px;
+    }
+
+    .block:nth-child(11) {
+      background: rgb(26, 84, 207);
+    }
+
+    .block:nth-child(12) {
+      background: rgb(36, 217, 127);
+    }
+
+    .block:nth-child(13) {
+      background: rgb(157, 86, 247);
+    }
+
+    .block:nth-child(14) {
+      background: rgb(250, 201, 82);
+    }
+
+    .block:nth-child(15) {
+      background: rgb(232, 88, 67);
+    }
+
+    .block:nth-child(16) {
+      background: rgb(36, 217, 127);
+      width: 700px;
+    }
+
+    .block:nth-child(17) {
+      background: rgb(157, 86, 247);
+    }
+
+    .block:nth-child(18) {
+      background: rgb(26, 84, 207);
+    }
+
+    .block:nth-child(19) {
+      background: rgb(250, 201, 82);
+    }
+
+    .block:nth-child(20) {
+      background: rgb(232, 88, 67);
+      width: 700px;
+    }
+
+    @keyframes appear {
+      from {
+        /* 起始狀態：完全透明 */
+        opacity: 0;
+
+        /* 使用 clip-path 從右下角裁剪，讓元素完全隱藏 */
+        clip-path: inset(100% 100% 0 0);
+      }
+
+      to {
+        /* 結束狀態：完全可見 */
+        opacity: 1;
+
+        /* 取消裁剪，顯示整個元素 */
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    .block {
+      /* 應用前面定義的 "appear" 動畫，並使用線性（恒定速度）的過渡 */
+      animation: appear linear;
+
+      /* 使用 experimental 的 animation-timeline 來控制動畫依賴於視窗滾動（實驗性功能） */
+      animation-timeline: view();
+
+      /* 定義動畫的觸發區間：
+     - 當元素的頂部進入視窗的 0%（即當它剛剛進入視窗）時開始動畫；
+     - 當元素的 40% 覆蓋視窗時，動畫結束。*/
+      animation-range: entry 0% cover 40%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Animate On Scroll</h1>
+  <div class="view">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+  </div>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>

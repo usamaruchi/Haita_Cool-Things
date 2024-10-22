@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-HANT">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel 匯入範例</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="my-4">Excel 檔案自動匯入範例</h1>
+
+    <!-- 表格 -->
+    <table id="myTable" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">E-Mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 動態生成資料 -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- SheetJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- JS -->
+  <script>
+    $(document).ready(function () {
+      // 初始化 DataTable
+      const table = $('#myTable').DataTable({
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/zh-HANT.json"
+        }
+      });
+
+      // 自動讀取伺服器上的 Excel 檔案
+      fetch('/_database/TableData.xlsx')  // 將這裡替換為你的 Excel 檔案路徑
+        .then(response => response.arrayBuffer())
+        .then(data => {
+          const workbook = XLSX.read(data, { type: 'array' });
+          
+          // 假設第一個工作表是要使用的資料
+          const sheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[sheetName];
+
+          // 將 Excel 資料轉換為陣列
+          const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+          // 清空表格內容
+          table.clear();
+
+          // 將每一行插入到表格中
+          rows.forEach((row, index) => {
+            if (index === 0) return; // 跳過標題行
+            table.row.add([
+              index, // 序號
+              row[0] || '', // Name
+              row[1] || '', // Phone
+              row[2] || ''  // E-Mail
+            ]).draw();
+          });
+        })
+        .catch(error => console.error('Error loading Excel file:', error));
+    });
+  </script>
+</body>
+
+</html>

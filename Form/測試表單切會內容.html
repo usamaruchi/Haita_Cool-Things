@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>場次選擇表單</title>
+    <script>
+        // 在頁面加載後自動顯示台北場的時間選項
+        window.onload = function() {
+            document.querySelector('input[name="location"][value="taipei"]').checked = true;
+            updateTimeOptions();
+        };
+
+        // 根據選擇的場次動態更新時間選項
+        function updateTimeOptions() {
+            // 取得所選場次
+            var location = document.querySelector('input[name="location"]:checked').value;
+
+            // 取得時間選項容器
+            var timeOptions = document.getElementById("time-options");
+
+            // 清空當前時間選項
+            timeOptions.innerHTML = "";
+
+            // 根據選擇的場次更新時間選項
+            if (location === "taipei") {
+                timeOptions.innerHTML = `
+                    <label><input type="radio" name="time" value="morning" checked> 早上 9:00 到 12:00</label><br>
+                    <label><input type="radio" name="time" value="noon"> 中午 12:00 到 3:00</label><br>
+                    <label><input type="radio" name="time" value="afternoon"> 下午 3:00 到 6:00</label><br>
+                `;
+            } else if (location === "taichung") {
+                timeOptions.innerHTML = `
+                    <label><input type="radio" name="time" value="morning" checked> 早上 9:00 到 12:00</label><br>
+                    <label><input type="radio" name="time" value="noon"> 下午 1:00 到 4:00</label><br>
+                    <label><input type="radio" name="time" value="afternoon"> 下午 4:00 到 7:00</label><br>
+                `;
+            } else if (location === "kaohsiung") {
+                timeOptions.innerHTML = `
+                    <label><input type="radio" name="time" value="noon" checked> 中午 12:00 到 3:00</label><br>
+                    <label><input type="radio" name="time" value="afternoon"> 下午 3:00 到 6:00</label><br>
+                `;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>場次選擇表單</h2>
+    <form>
+        <!-- 場次選擇 -->
+        <fieldset>
+            <legend>場次</legend>
+            <label>
+                <input type="radio" name="location" value="taipei" onclick="updateTimeOptions()"> 台北場
+            </label><br>
+            <label>
+                <input type="radio" name="location" value="taichung" onclick="updateTimeOptions()"> 台中場
+            </label><br>
+            <label>
+                <input type="radio" name="location" value="kaohsiung" onclick="updateTimeOptions()"> 高雄場
+            </label><br>
+        </fieldset>
+        <br>
+
+        <!-- 時間選擇 -->
+        <fieldset>
+            <legend>時間</legend>
+            <div id="time-options">
+                <!-- 初始狀態顯示台北場的時間選項 -->
+            </div>
+        </fieldset>
+        <br>
+
+        <!-- 提交按鈕 -->
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTables套件</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- DataTables CSS-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+      float: none;
+      text-align: left;
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+      float: left;
+      /* text-align: right; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table id="myTable" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">E-Mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>0912001527</td>
+          <td>abc@gmail.com</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>0988612854</td>
+          <td>zaq@gmail.com</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>0955633218</td>
+          <td>zzxc@gmail.com</td>
+        </tr>
+       
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <!-- DataTables JS-->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- Js -->
+  <script>
+    // 初始化
+    $(document).ready(function () {
+      $('#myTable').dataTable({
+        "language": {
+          "lengthMenu": "顯示 _MENU_ 筆資料",
+          "zeroRecords": "沒有符合的結果",
+          "info": "顯示第 _START_ 至 _END_ 筆資料，共 _TOTAL_ 筆",
+          "infoEmpty": "顯示第 0 至 0 筆資料，共 0 筆",
+          "infoFiltered": "(從 _MAX_ 筆資料中過濾)",
+          "search": "搜尋：",
+          "paginate": {
+            "first": "第一頁",
+            "last": "最後一頁",
+            "next": "下一頁",
+            "previous": "上一頁"
+          },
+          "loadingRecords": "載入中...",
+          "processing": "處理中...",
+          "emptyTable": "表中資料為空",
+          "thousands": ",",
+          "aria": {
+            "sortAscending": ": 升冪排列",
+            "sortDescending": ": 降冪排列"
+          }
+        }
+      });
+    });
+  </script>
+  
+</body>
+
+</html>

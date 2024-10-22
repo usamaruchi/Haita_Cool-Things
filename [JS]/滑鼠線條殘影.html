@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Trail</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: black;
+    }
+    .trail {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.5;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const trailCount = 20;  // 設定殘影的數量
+  const trails = [];
+
+  // 創建多個trail元素
+  for (let i = 0; i < trailCount; i++) {
+    const trail = document.createElement('div');
+    trail.classList.add('trail');
+    document.body.appendChild(trail);
+    trails.push(trail);
+  }
+
+  let mouseX = 0, mouseY = 0;
+
+  // 設置滑鼠移動事件監聽器
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateTrails() {
+    for (let i = trails.length - 1; i > 0; i--) {
+      trails[i].style.left = trails[i - 1].style.left;
+      trails[i].style.top = trails[i - 1].style.top;
+    }
+    trails[0].style.left = mouseX + 'px';
+    trails[0].style.top = mouseY + 'px';
+
+    requestAnimationFrame(animateTrails);
+  }
+
+  animateTrails();
+</script>
+
+</body>
+</html>

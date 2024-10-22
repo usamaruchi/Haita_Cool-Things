@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    body {
+      background-color: rgb(36, 36, 36);
+    }
+
+    .list {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+    }
+
+    .list .item img {
+      width: 150px
+    }
+
+    .list .item {
+      transition: .5s;
+      filter: brightness(0);
+    }
+
+    .list .item:hover {
+      filter: brightness(1);
+      transform: translateZ(200px);
+    }
+
+    .list .item:hover+* {
+      filter: brightness(0.6);
+      transform: translateZ(150px) rotateY(40deg);
+    }
+
+    .list .item:hover+*+* {
+      filter: brightness(0.4);
+      transform: translateZ(70px) rotateY(20deg);
+    }
+
+    .list .item:hover+*+*+* {
+      filter: brightness(0.2);
+      transform: translateZ(30px) rotateY(10deg);
+    }
+
+    .list .item:has(+*:hover) {
+      filter: brightness(0.6);
+      transform: translateZ(150px) rotateY(-40deg);
+    }
+
+    .list .item:has(+*+*:hover) {
+      filter: brightness(0.4);
+      transform: translateZ(70px) rotateY(-20deg);
+    }
+
+    .list .item:has(+*+*+*:hover) {
+      filter: brightness(0.2);
+      transform: translateZ(30px) rotateY(-10deg);
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <div class="list">
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+      <div class="item"><img src="/_images/card.png" alt=""></div>
+    </div>
+  </main>
+
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>
