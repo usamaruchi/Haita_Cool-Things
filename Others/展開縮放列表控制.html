@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 初始隱藏內容區塊，並設置過渡效果 */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 500ms;
+    }
+
+    /* 展開內容區塊時，調整高度 */
+    .accordion-content[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+    }
+
+    .accordion-content>div {
+      overflow: hidden; /* 隱藏超出範圍的內容 */
+    }
+
+    /* 設定整體頁面字體 */
+    body {
+      font-family: system-ui;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .wrapper {
+      width: min(65ch, 100% - 4rem); /* 設定最大寬度 */
+      margin-inline: auto;
+    }
+
+    /* 手風琴容器背景與文字顏色 */
+    .accordion {
+      background: #121212;
+      color: #effeef;
+      padding: 1rem;
+    }
+
+    .accordion-panel {
+      padding: 1rem;
+      border: 1px solid; /* 設定邊框 */
+    }
+
+    .accordion h2 {
+      position: relative;
+    }
+
+    /* 按鈕樣式，設定箭頭圖示 */
+    .accordion-trigger {
+      background: transparent;
+      border: 0;
+      font: inherit;
+      color: inherit;
+    }
+
+    .accordion-trigger::before,
+    .accordion-trigger::after {
+      position: absolute;
+      right: 1em;
+      content: "";
+      display: block;
+      width: 1em;
+      height: 5px;
+      background: currentcolor;
+      transition: transform 500ms; /* 設置旋轉動畫 */
+    }
+
+    .accordion-trigger::after {
+      rotate: 90deg;
+      translate: 0 -1.5em;
+    }
+
+    /* 展開時箭頭變成交叉 */
+    .accordion-trigger[aria-expanded="true"]::before,
+    .accordion-trigger[aria-expanded="true"]::after {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h1>Going from 0 to auto, the easy way</h1>
+
+    <div class="accordion">
+
+      <!-- 每一個面板 -->
+      <div class="accordion-panel">
+        <h2 id="panel1-title">
+          <button class="accordion-trigger" aria-expanded="true" aria-controls="accordion1-content">
+            Grid is awesome
+          </button>
+        </h2>
+        <div class="accordion-content" role="region" aria-labelledby="panel1-title" aria-hidden="false"
+          id="panel1-content">
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, amet!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 另一個面板 -->
+      <div class="accordion-panel">
+        <h2 id="panel2-title">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion1-content">
+            It's full of neat tricks
+          </button>
+        </h2>
+        <div class="accordion-content" role="region" aria-labelledby="panel2-title" aria-hidden="true"
+          id="panel2-content">
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium harum autem delectus mollitia ab
+              assumenda nemo facilis ea aliquam deleniti earum recusandae, eius, atque explicabo, expedita alias
+              laboriosam labore iste.</p>
+            <!-- 更多內容 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 更多面板... -->
+
+    </div>
+
+  </div>
+
+  <script>
+    const accordion = document.querySelector(".accordion");
+
+    // 監聽點擊事件
+    accordion.addEventListener("click", (e) => {
+      const activePanel = e.target.closest(".accordion-panel");
+      if (!activePanel) return; // 點擊位置非面板則跳過
+      toggleAccordion(activePanel);
+    });
+
+    // 切換手風琴面板展開與收合狀態
+    function toggleAccordion(panelToActivate) {
+      const activeButton = panelToActivate.querySelector("button");
+      const activePanel = panelToActivate.querySelector(".accordion-content");
+      const activePanelIsOpened = activeButton.getAttribute("aria-expanded");
+
+      // 如果面板是展開的，則收合
+      if (activePanelIsOpened === "true") {
+        panelToActivate.querySelector("button").setAttribute("aria-expanded", false);
+        panelToActivate.querySelector(".accordion-content").setAttribute("aria-hidden", true);
+      } else { // 否則展開
+        panelToActivate.querySelector("button").setAttribute("aria-expanded", true);
+        panelToActivate.querySelector(".accordion-content").setAttribute("aria-hidden", false);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
