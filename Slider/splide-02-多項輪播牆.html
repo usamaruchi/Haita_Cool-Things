@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splide.js Carousel Example</title>
+  <!-- 引入 Splide.js 的 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+<body>
+  <!-- 第一個輪播牆 -->
+  <div id="image-carousel-1" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide"><img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1"></li>
+        <li class="splide__slide"><img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2"></li>
+        <li class="splide__slide"><img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3"></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 第二個輪播牆 -->
+  <div id="image-carousel-2" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide"><img src="https://via.placeholder.com/800x400?text=Slide+A" alt="Slide A"></li>
+        <li class="splide__slide"><img src="https://via.placeholder.com/800x400?text=Slide+B" alt="Slide B"></li>
+        <li class="splide__slide"><img src="https://via.placeholder.com/800x400?text=Slide+C" alt="Slide C"></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 引入 Splide.js 的 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+  <script>
+    // 初始化第一個輪播牆
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#image-carousel-1', {
+        type   : 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 3000,
+      }).mount();
+
+      // 初始化第二個輪播牆
+      new Splide('#image-carousel-2', {
+        type   : 'fade',
+        perPage: 1,
+        autoplay: true,
+        interval: 5000,
+      }).mount();
+    });
+  </script>
+</body>
+</html>
+
+
+{{media url="wysiwyg/banner-image/bike185/banner2/i_pro_1.jpg"}}

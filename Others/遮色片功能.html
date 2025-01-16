@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>直立遮色片效果</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+      /* 背景為黑色以隱藏圖片其餘部分 */
+      overflow: hidden;
+      /* 防止滾動 */
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/_images/01.webp');
+      background-size: cover;
+      background-position: center;
+      clip-path: polygon(5% 50%,
+          5% 60%,
+          15% 60%,
+          15% 50%,
+
+          25% 50%,
+          25% 70%,
+          35% 70%,
+          35% 50%,
+
+          45% 50%,
+          45% 80%,
+          55% 80%,
+          55% 50%,
+
+          65% 50%,
+          65% 70%,
+          75% 70%,
+          75% 50%,
+
+          85% 50%,
+          85% 60%,
+          95% 60%,
+          95% 50%,
+
+          95% 40%,
+          85% 40%,
+          85% 50%,
+
+          75% 50%,
+          75% 30%,
+          65% 30%,
+          65% 50%,
+
+          55% 50%,
+          55% 20%,
+          45% 20%,
+          45% 50%,
+
+          35% 50%,
+          35% 30%,
+          25% 30%,
+          25% 50%,
+
+          15% 50%,
+          15% 40%,
+          5% 40%,
+          5% 50%);
+
+      transition: .2s ease-in-out;
+    }
+
+    .background:hover {
+
+      clip-path: polygon(
+          5% 50%,
+          5% 65%,
+          15% 65%,
+          15% 50%,
+
+          25% 50%,
+          25% 75%,
+          35% 75%,
+          35% 50%,
+
+          45% 50%,
+          45% 85%,
+          55% 85%,
+          55% 50%,
+
+          65% 50%,
+          65% 75%,
+          75% 75%,
+          75% 50%,
+
+          85% 50%,
+          85% 65%,
+          95% 65%,
+          95% 50%,
+
+          95% 35%,
+          85% 35%,
+          85% 50%,
+
+          75% 50%,
+          75% 25%,
+          65% 25%,
+          65% 50%,
+
+          55% 50%,
+          55% 15%,
+          45% 15%,
+          45% 50%,
+
+          35% 50%,
+          35% 25%,
+          25% 25%,
+          25% 50%,
+
+          15% 50%,
+          15% 35%,
+          5% 35%,
+          5% 50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="background"></div>
+  </div>
+</body>
+
+</html>

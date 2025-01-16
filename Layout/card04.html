@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    .card-wrapper {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .card-object {
+      background: #222 url(https://www.dropbox.com/s/8cc22nblu4y4vzi/jenny.jpeg?raw=1) center center;
+      background-size: cover;
+      color: #FFF;
+      height: 500px;
+      width: 300px;
+      /* transform-style: preserve-3d; */
+    }
+
+    .card-object.card-1 .front {
+      background: #222 url(https://www.dropbox.com/s/8cc22nblu4y4vzi/jenny.jpeg?raw=1) 90% 35%;
+      background-size: 115%;
+    }
+
+    .face {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .face {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .face:hover{
+      color: #fff;
+    }
+
+    .face.front {
+      z-index: 20;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .face.front::before {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      content: "";
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
+      opacity: 0.7;
+      z-index: 20;
+      transition: opacity 0.2s ease;
+    }
+
+    .face.front::after {
+      position: absolute;
+      inset: 7%;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      z-index: 100;
+      content: "";
+    }
+
+    .face.front .title-wrapper {
+      position: absolute;
+      bottom: 3%;
+      left: 25%;
+      right: 25%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-wrap: wrap;
+      z-index: 100;
+      transform: translateY(0);
+      transition: transform 0.28s ease;
+    }
+
+    .face.front .title-wrapper .title {
+      position: relative;
+      font-family: 'Archivo Black', sans-serif;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 2vw;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .face.front .title-wrapper .title::after {
+      display: block;
+      margin: 7% auto 8% auto;
+      width: 100%;
+      height: 1px;
+      content: "";
+      background-color: #fff;
+      opacity: 0.5;
+      transform: scale(0);
+      transition: transform 0.15s;
+    }
+
+    .face.front .title-wrapper .subtitle {
+      font-size: 0.9vw;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .face.front:hover::before {
+      opacity: 0.9;
+    }
+
+    .face.front:hover .title-wrapper {
+      transform: translateY(-50%);
+    }
+
+    .face.front:hover .title-wrapper .title {
+      opacity: 1;
+    }
+
+    .face.front:hover .title-wrapper .title::after {
+      transform: scale(1);
+      opacity: 0.5;
+      transition-delay: 0.15s;
+      transition-duration: 0.2s;
+    }
+
+    .face.front:hover .title-wrapper .subtitle {
+      opacity: 0.7;
+      transition-delay: 0.2s;
+      transition-duration: 0.2s;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 card-wrapper">
+        <div class="card-1 card-object card-object-hf">
+          <a class="face front" href="#">
+            <div class="title-wrapper">
+              <div class="title">Jenny</div>
+              <div class="subtitle">felis hairyus</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- Js -->
+  <script>
+  </script>
+</body>
+
+</html>

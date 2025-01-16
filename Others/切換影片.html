@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #videoPlayer {
+      min-height: 300px;
+    }
+
+    .btnWrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 20px;
+      min-height: 250px;
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      background-color: beige;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <video id="videoPlayer" class="w-100" src="/_video/mountain.mp4" loop autoplay muted></video>
+      </div>
+      <div class="col-6">
+        <div class="btnWrap">
+          <div class="btn" data-video="/_video/mountain.mp4">
+            Pick your bundle - 01
+          </div>
+          <div class="btn" data-video="/_video/sky.mp4">
+            Pick your bundle - 02
+          </div>
+          <div class="btn" data-video="/_video/ocean.mp4">
+            Pick your bundle - 03
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap -->
+
+  <!-- Js -->
+  <script>
+    $(document).ready(function () {
+      // 選取影片元素
+      const $videoPlayer = $("#videoPlayer");
+
+      // 為每個按鈕添加點擊事件
+      $(".btn").on("click", function () {
+        // 獲取按鈕的 data-video 屬性值
+        const videoSrc = $(this).data("video");
+
+        // 更改影片的 src 並播放
+        $videoPlayer.attr("src", videoSrc).get(0).play();
+      });
+    });
+  </script>
+</body>
+
+</html>
