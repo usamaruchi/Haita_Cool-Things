@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+  <!-- Splide套件 -->
+  <link rel="stylesheet" href="/_package/splide-4.1.3/dist/css/splide.min.css">
+
+  <!-- CSS -->
+  <style>
+    /* -------------------------- */
+    /* All Spec Start*/
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* outline: 1px solid red; */
+    }
+
+    :root {
+      /* 主體色 */
+      /* --primary-clr: #78BE20;
+      --secondary-clr: #E8E8DF;
+      --third--clr: #25303B;
+      --fourth--clr: #53565A;
+      --fifth--clr: #E8E8DF; */
+
+      /* 文字色 */
+      /* --font-clr-1: #000;
+      --font-clr-2: #7a7a7a;
+      --font-clr-3: #6cc04a; */
+
+      /* 尺寸 */
+      /* --xxl-spec: 120px; */
+      /* --xl-spec: 96px; */
+      --lg-spec: 80px;
+      --md-spec: 40px;
+      --s-spec: 20px;
+      /* --xs-spec: 16px;
+      --xxs-spec: 12px; */
+    }
+
+    @media(max-width:991px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 64px;
+        --md-spec: 28px;
+        /* --s-spec: 20px; */
+      }
+    }
+
+    @media(max-width:767px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 64px;
+        --md-spec: 28px;
+        --s-spec: 16px;
+      }
+    }
+
+    @media(max-width:575px) {
+      :root {
+        /* 尺寸 */
+        /* --xxl-spec: 120px; */
+        --lg-spec: 40px;
+        --md-spec: 20px;
+        --s-spec: 12px;
+      }
+    }
+
+    /* All Spec End*/
+    /* -------------------------- */
+
+
+    /* -------------------------- */
+    /* Common Start*/
+    .product-content {
+      /* font-family: 'Roboto', sans-serif; */
+      padding-top: var(--md-spec);
+      padding-bottom: var(--md-spec);
+
+    }
+
+    /* .product-content .container {
+      max-width: 1680px;
+    } */
+
+    .product-content .container .row,
+    .product-content .container-fluid .row {
+      margin-left: -15px !important;
+      margin-right: -15px !important;
+    }
+
+    .font-style-p1,
+    .font-style-p2,
+    .font-style-h3 {
+      text-align: justify;
+    }
+
+    .font-style-p1 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+      color: #fff;
+      margin: 0;
+    }
+
+    .font-style-p2 {
+      font-size: 16px;
+      font-weight: 700;
+      /* line-height: 31px; */
+      color: #000000;
+    }
+
+    .font-style-h2 {
+      width: 100%;
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 36px;
+      color: #000000;
+      text-align: center;
+    }
+
+    .font-style-h3 {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 35px;
+      color: #000000;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .col-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+    }
+
+
+    .pd0 {
+      padding: 0;
+    }
+
+    .mg0 {
+      margin: 0;
+    }
+
+    .pd-rl-0 {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .pd-rl-50 {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+
+    .pd-tb-md {
+      padding-top: var(--md-spec);
+      padding-bottom: var(--md-spec);
+    }
+
+    .pd-tb-lg {
+      padding-top: var(--lg-spec);
+      padding-bottom: var(--lg-spec);
+    }
+
+    .gap-s {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-spec);
+    }
+
+    .gap-md {
+      display: flex;
+      flex-direction: column;
+      gap: var(--md-spec);
+    }
+
+    .gap-lg {
+      display: flex;
+      flex-direction: column;
+      gap: var(--lg-spec);
+    }
+
+    .w-35 {
+      width: 35%;
+    }
+
+    .w-60 {
+      width: 60%;
+    }
+
+    .w-80 {
+      width: 80%;
+    }
+
+    .bd-r {
+      border-right: 1px solid #bcbcbc;
+    }
+
+    .bd-tb {
+      border-top: 1px solid #bcbcbc;
+      border-bottom: 1px solid #bcbcbc;
+    }
+
+    @media(max-width:1199px) {}
+
+    @media(max-width:991px) {}
+
+    @media(max-width:767px) {
+      .bd-n {
+        border: none;
+      }
+    }
+
+    @media(max-width:575px) {}
+
+    /* Common End*/
+    /* -------------------------- */
+
+
+
+
+    /* -------------------------- */
+    /* Custom Start*/
+    .content-title {
+      width: 100%;
+      text-align: center;
+      padding-top: var(--lg-spec);
+      padding-bottom: var(--lg-spec);
+    }
+
+    .category {
+      position: relative;
+      /* display: flex; */
+      /* align-items: flex-end; */
+      justify-content: center;
+      overflow: hidden;
+      padding: 15px;
+      width: 100%;
+      /* text-align: center; */
+      /* color: whitesmoke; */
+      /* background-color: whitesmoke; */
+      /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1); */
+      height: 800px;
+
+      /* background-image: url(/_images/banner/img01.jpg);
+      background-size: cover;
+      background-position: 0 0;
+      transition: .3s ease-in-out; */
+    }
+
+
+    .category:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      background-size: cover;
+      background-position: center center;
+      transition: .3s ease-in-out;
+      pointer-events: none;
+    }
+
+    .category-01::before {
+      /* background-image: url(/_images/banner/img01.jpg); */
+      background-image: url(https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/category-mens.jpg);
+    }
+
+    .categor-02::before {
+      background-image: url(https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/category-womens.jpg);
+    }
+
+    .categor-03::before {
+      background-image: url(https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/category-accessories.jpg);
+    }
+
+
+    .category:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      pointer-events: none;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+      transform: translateY(0%);
+      transition: .3s ease-in-out;
+    }
+
+    .category .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 0 30px;
+      color: #fff;
+
+      transform: translateY(70%);
+      transition: .3s ease-in-out;
+      z-index: 1;
+    }
+
+    .category:hover::after {
+      transform: translateY(-50%);
+    }
+
+    .category:hover:before {
+      transform: translateY(-4%);
+    }
+
+    .category:hover .content {
+      transform: translateY(0%);
+    }
+
+    .btn {
+      cursor: pointer;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.025rem;
+      text-transform: uppercase;
+      color: white;
+      background-color: rgb(36, 36, 36);
+      border: none;
+      /* transition: .3s ease-in-out; */
+    }
+
+    .btn:hover {
+      color: white;
+      background-color: #0d0d0d;
+      outline: none;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+
+
+
+    /* Products */
+    .product-series {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-line-series {
+      width: 100%;
+      max-width: 150px;
+      display: block;
+      transition: transform 0.3s ease-out;
+      /* 動畫效果：平滑 */
+    }
+
+    .product-series:hover .img-line-series {
+      transform: translateY(-10px);
+      /* Y 軸位移 -10px */
+    }
+
+
+    .product-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      writing-mode: vertical-rl;
+      font-size: 100px;
+      font-weight: 800;
+    }
+
+    .product-title .line {
+      padding: 20px 0;
+    }
+
+    .product-title .line::before {
+      content: '';
+      border-top: 10px solid #333333;
+    }
+
+    .product-info {
+      line-height: 32px;
+      font-size: 18px;
+      padding: 8px;
+      text-align: center;
+    }
+
+
+    .mainbg {
+      padding: 40px 0px;
+    }
+
+
+
+
+    @media(max-width:1199px) {}
+
+    @media(max-width:991px) {}
+
+    @media(max-width:767px) {}
+
+    @media(max-width:575px) {}
+
+
+    /* Custom End*/
+    /* -------------------------- */
+
+    /* -------------------------- */
+    /* Splide Start*/
+
+    .splide {
+      /* padding: 50px 0; */
+      /* z-index: -1;*/
+    }
+
+    .splide_wapper {
+      max-height: 800px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .splide_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+    .splide_title {
+      position: absolute;
+      bottom: 64px;
+      left: 64px;
+      color: #fff;
+      font-size: 72px;
+      font-weight: 600;
+      line-height: 64px;
+    }
+
+    .splide_content {
+      font-size: 18px;
+    }
+
+    .splide__pagination__page.is-active {
+      background-color: #7d7d7d;
+    }
+
+    @media(max-width:1199px) {
+      .splide__slide img {
+        height: 450px;
+        /* 平板 */
+      }
+    }
+
+    @media(max-width:991px) {}
+
+    @media(max-width:767px) {
+      .splide__slide img {
+        height: 500px;
+        /* 手機 */
+      }
+    }
+
+    @media(max-width:575px) {}
+
+    /* Splide End*/
+    /* -------------------------- */
+
+
+    /* -------------------------- */
+    /* Magento css Start*/
+    .default-style .resp-tabs-container .resp-tab-content {
+      display: block !important;
+    }
+
+    .baseline-align {
+      vertical-align: baseline;
+    }
+
+    /* Magento css End*/
+    /* -------------------------- */
+  </style>
+</head>
+
+<body>
+
+  <!-- <div class="">
+    <img class="w-100" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/main-background.jpg" alt="">
+  </div> -->
+
+
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="splide_wapper">
+            <div class="splide_title">
+              Ride free, pedal strong!
+            </div>
+            <img class="splide_img" src="_images/banner/carousel-04.jpg" alt="">
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="splide_wapper">
+            <div class="splide_title">
+              Explore on two wheels!
+            </div>
+            <img class="splide_img" src="_images/banner/carousel-05.jpg" alt="">
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="splide_wapper">
+            <div class="splide_title">
+              Pedal green, live clean!
+            </div>
+            <img class="splide_img" src="_images/banner/carousel-06.jpg" alt="">
+          </div>
+        </li>
+
+        <!-- <li class="splide__slide">
+
+          <div class="splide_img">
+            <img class="w-100" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/carousel-03.jpg"
+              alt="">
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="content-title bd-tb mx-4">
+        <h2 class="font-style-h2">
+          依類別選購優惠商品
+        </h2>
+      </div>
+    </div>
+
+    <div class="row  justify-content-center">
+      <div class="col-lg-3 py-4">
+        <div class="category category-01">
+          <div class="content">
+            <h2 class="font-style-h2" style="color: #fff;">男士專區</h2>
+            <p class="font-style-p1 text-center">
+              精選高品質服飾、護膚與生活好物，助您展現專屬魅力。<br><br>
+              定義您的型格，從這裡開始！</p>
+            <button class="btn">選購男款商品</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 py-4">
+        <div class="category categor-02">
+          <div class="content">
+            <h2 class="font-style-h2" style="color: #fff;">女士專區</h2>
+            <p class="font-style-p1 text-center">
+              精選高品質服飾、護膚與生活好物，助您展現專屬魅力。<br><br>
+              定義您的型格，從這裡開始！</p>
+            <button class="btn">選購女款商品</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 py-4">
+        <div class="category categor-03">
+          <div class="content">
+            <h2 class="font-style-h2" style="color: #fff;">配件專區</h2>
+            <p class="font-style-p1 text-center">
+              精選高品質服飾、護膚與生活好物，助您展現專屬魅力。<br><br>
+              定義您的型格，從這裡開始！</p>
+            <button class="btn">選購男款商品</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="content-title bd-tb mx-4">
+        <h2 class="font-style-h2">
+          CLASSIC SEAMLESS KNIT
+        </h2>
+        <h3 class="font-style-h3">
+          重塑我們最具標誌性的設計。
+        </h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3 col-6 my-4 bd-r">
+        <div class="product-series">
+          <img class="img-line-series" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/s.png" alt="">
+          <div class="product-title">
+            <span class="line"></span>
+            <p>LINE</p>
+          </div>
+          <span class="product-info">
+            <b>DESIGN ELEMENT</b> / Function <br>
+            <b>PRODUCT KEYWORDS</b> / Speed, Sports, Signature <br>
+            <b>FIT</b>/ Race Fit
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 my-4 bd-r bd-n">
+        <div class="product-series">
+          <img class="img-line-series" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/a.png" alt="">
+          <div class="product-title">
+            <span class="line"></span>
+            <p>LINE</p>
+          </div>
+          <span class="product-info">
+            <b>DESIGN ELEMENT</b> / Multi Color, Pattern <br>
+            <b>PRODUCT KEYWORDS</b> / Aero, Athlete, Attitude <br>
+            <b>FIT</b>/ Race Fit
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 my-4 bd-r">
+        <div class="product-series">
+          <img class="img-line-series" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/e.png" alt="">
+          <div class="product-title">
+            <span class="line"></span>
+            <p>LINE</p>
+          </div>
+          <span class="product-info">
+            <b>DESIGN ELEMENT</b> / Solid Color <br>
+            <b>PRODUCT KEYWORDS</b> / Essential, Economy, Entry <br>
+            <b>FIT</b>/ Relaxed Fit
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 my-4">
+        <div class="product-series">
+          <img class="img-line-series" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/u.png" alt="">
+          <div class="product-title">
+            <span class="line"></span>
+            <p>LINE</p>
+          </div>
+          <span class="product-info">
+            <b>DESIGN ELEMENT</b> / Function, Fasion<br>
+            <b>PRODUCT KEYWORDS</b> / Urban, Unique <br>
+            <b>FIT</b>/ Relax Fit
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mainbg bd-tb">
+      <img class="w-100" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/main-background.jpg" alt="">
+    </div>
+
+
+  </div>
+
+  <!-- <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-xl-8 pd-tb-md">
+        <img class="w-100"
+          src="https://ttbike185.com/pub/media/wysiwyg/key3/img/brompton_product/C_Line_Explore/C-Line-Explore-Black.jpg"
+          alt="">
+      </div>
+
+      <div class="col-xl-4 pd-tb-md">
+        <div class="content">
+          <h2 class="font-style-h2">
+            Geared Up To Go Further
+          </h2>
+          <p class="font-style-p1">
+            The C Line folding bike captures the same fun-to-ride, go-anywhere feeling it always has. And today, with
+            refined geometry, sleek design updates and modernised components, it does it better than ever. For over 45
+            years, owners across the world have customised their trusty steel folding bikes in hundreds of ways to
+            suit
+            their needs. Some have ridden around the world. Most have used them to improve their every day. With C
+            Line,
+            your options are always open.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row flex-xl-row-reverse">
+
+      <div class="col-xl-8 pd-tb-md">
+        <img class="w-100"
+          src="https://ttbike185.com/pub/media/wysiwyg/key3/img/brompton_product/C_Line_Explore/CLine-Black-Explore-Colour.jpg"
+          alt="">
+      </div>
+
+      <div class="col-xl-4 pd-tb-md">
+        <div class="content">
+          <h2 class="font-style-h2">
+            Brompton C Line Colours
+          </h2>
+          <p class="font-style-p1">
+            Dune Sand, Yuzu Lime, Ocear Blue, Matcha, Pol Lilac Racing Green, Black, Flame Lacquer, Black Lacquer
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-xl-8 offset-xl-2 pd-tb-md">
+        <div>
+          <p class="font-style-p2">
+            Geared Up To Go Further
+          </p>
+          <p class="font-style-p1">
+            The C Line Explore from Brompton lets you go anywhere easily and confidently. Helping you roll with the
+            adventures that life presents, with the C Line Explore you can commute, travel, and run errands in style.
+            As with all of the stunning Brompton bikes, this model allows each journey to be a joyful experience full
+            of agility and power.
+            <br><br>
+            Refinement is showcased in every element of this versatile bike. Promising a smooth ride, the 6-gearing
+            system and powerful brakes ensure control and precision can be enjoyed. This makes for a comfortable
+            riding experience which gives you the time to enjoy the special things in life.
+            <br><br>
+            Expert engineering isn't the only benefit that this everyday bike brings. Letting you roll and glide
+            around with ease, the ergonomic folding system can be actioned in 20 seconds to turn your 2-wheeled wonder
+            into a compact carry accessory. Perfect for commuters or carefree travelers who want to visit every part
+            of a new location, the frame is lightweight for easy carrying.
+            <br><br>
+            Beauty is also apparent in the stunning finish that this Brompton classic boasts. Finished with powder
+            coating, our team of experts hand make each bike in the London Brompton factory using energy from over 90%
+            renewable sources.
+            <br><br>
+            The C Line Explore makes traveling around a breeze. Letting you embrace fun-filled moments whenever they
+            arise, with Brompton, you can experience the world in a brighter, more powerful way.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div> -->
+
+
+
+
+  <!-- JQ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <!-- Splide套件 -->
+  <script src="/_package/splide-4.1.3/dist/js/splide.js"></script>
+
+  <!-- Js -->
+  <script>
+
+
+
+    // require(['jquery', 'splide'], function ($, Splide) {
+
+    var splide = new Splide('.splide', {
+      // drag: 'false',
+      type: 'fade',
+      autoplay: true,
+      // focus: 'center',
+      // padding: '0px',
+      // gap: '0',
+
+
+      type: 'fade',    // 淡入淡出效果
+      perPage: 1,      // 一次顯示 1 個
+      autoplay: true,  // 自動播放
+      interval: 3000,  // 每 3 秒切換一次
+      speed: 1500,     // 切換動畫時間（1.5 秒）
+      rewind: true,     // 啟用循環 (回到第一張)
+      arrows: false,    // 顯示左右箭頭
+      pagination: true, // 顯示小圓點
+      pauseOnHover: false,  // 讓滑鼠點擊後也不暫停輪播
+    });
+
+    splide.mount();
+
+    // });
+
+
+  </script>
+</body>
+
+</html>
