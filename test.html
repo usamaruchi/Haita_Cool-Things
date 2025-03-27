@@ -1,1023 +1,127 @@
-<!DOCTYPE html>
-<html lang="">
+<style>
+  .page-wrapper>.page-main {
+    padding-top: 0 !important;
+  }
 
+  .splide_title {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    transform: translateX(0%), translateY(-50%);
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
 
+  .splide_title .main-img01 {
+    width: 100%;
+    max-width: calc(200px + 2vh);
+  }
 
-  <!-- Splide套件 -->
-  <link rel="stylesheet" href="/_package/splide-4.1.3/dist/css/splide.min.css">
+  .splide_title .main-img02 {
+    width: 100%;
+    max-width: calc(600px + 5vh);
+  }
 
-  <!-- CSS -->
-  <style>
-    /* -------------------------- */
-    /* All Spec Start*/
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      /* outline: 1px solid red; */
-    }
+  .splide_title .main-img04 {
+    width: 100%;
+    max-width: calc(800px + 5vh);
+  }
 
-    body {
-      /* background: #1A1E23; */
-    }
+  .main-img03 {
+    width: 100%;
+    max-width: calc(50px + 2vh);
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+  }
 
-    :root {
-      /* 主體色 */
-      /* --primary-clr: #78BE20;
-      --secondary-clr: #E8E8DF;
-      --third--clr: #25303B;
-      --fourth--clr: #53565A;
-      --fifth--clr: #E8E8DF; */
-
-      /* 文字色 */
-      /* --font-clr-1: #000;
-      --font-clr-2: #7a7a7a;
-      --font-clr-3: #6cc04a; */
-
-      /* 尺寸 */
-      /* --xxl-spec: 120px; */
-      /* --xl-spec: 96px; */
-      --lg-spec: 80px;
-      --md-spec: 40px;
-      --s-spec: 20px;
-      /* --xs-spec: 16px;
-      --xxs-spec: 12px; */
-    }
-
-    @media(max-width:991px) {
-      :root {
-        /* 尺寸 */
-        /* --xxl-spec: 120px; */
-        --lg-spec: 64px;
-        --md-spec: 28px;
-        /* --s-spec: 20px; */
-      }
-    }
-
-    @media(max-width:767px) {
-      :root {
-        /* 尺寸 */
-        /* --xxl-spec: 120px; */
-        --lg-spec: 64px;
-        --md-spec: 28px;
-        --s-spec: 16px;
-      }
-    }
-
-    @media(max-width:575px) {
-      :root {
-        /* 尺寸 */
-        /* --xxl-spec: 120px; */
-        --lg-spec: 40px;
-        --md-spec: 20px;
-        --s-spec: 12px;
-      }
-    }
-
-    /* All Spec End*/
-    /* -------------------------- */
-
-
-    /* -------------------------- */
-    /* Common Start*/
-    .product-content {
-      /* font-family: 'Roboto', sans-serif; */
-      padding-top: var(--md-spec);
-      padding-bottom: var(--md-spec);
-
-    }
-
-    /* .product-content .container {
-      max-width: 1680px;
-    } */
-
-    .product-content .container .row,
-    .product-content .container-fluid .row {
-      margin-left: -15px !important;
-      margin-right: -15px !important;
-    }
-
-    .font-style-p1,
-    .font-style-p2,
-    .font-style-h3 {
-      text-align: justify;
-    }
-
-    .font-style-p1 {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 18px;
-      color: #fff;
-      margin: 0;
-    }
-
-    .font-style-p2 {
-      font-size: 16px;
-      font-weight: 700;
-      /* line-height: 31px; */
-      color: #000000;
-    }
-
-    .font-style-h2 {
+  @media(max-width:1199px) {
+    .splide_title .main-img01 {
       width: 100%;
-      font-size: 34px;
-      font-weight: 900;
-      line-height: 36px;
-      color: #000000;
-      text-align: center;
+      max-width: calc(180px + 2vh);
     }
 
-    .font-style-h3 {
-      font-size: 20px;
-      font-weight: 300;
-      line-height: 35px;
-      color: #000000;
-      font-style: italic;
-      text-align: center;
-    }
-
-    .center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .col-center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      /* align-items: center; */
-    }
-
-
-    .pd0 {
-      padding: 0;
-    }
-
-    .mg0 {
-      margin: 0;
-    }
-
-    .pd-rl-0 {
-      padding-right: 0;
-      padding-left: 0;
-    }
-
-    .pd-rl-50 {
-      padding-right: 50px;
-      padding-left: 50px;
-    }
-
-    .pd-tb-md {
-      padding-top: var(--md-spec);
-      padding-bottom: var(--md-spec);
-    }
-
-    .pd-tb-lg {
-      padding-top: var(--lg-spec);
-      padding-bottom: var(--lg-spec);
-    }
-
-    .gap-s {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-spec);
-    }
-
-    .gap-md {
-      display: flex;
-      flex-direction: column;
-      gap: var(--md-spec);
-    }
-
-    .gap-lg {
-      display: flex;
-      flex-direction: column;
-      gap: var(--lg-spec);
-    }
-
-    .w-35 {
-      width: 35%;
-    }
-
-    .w-60 {
-      width: 60%;
-    }
-
-    .w-80 {
-      width: 80%;
-    }
-
-    .bd-r {
-      border-right: 1px solid #bcbcbc;
-    }
-
-    .bd-tb {
-      border-top: 1px solid #bcbcbc;
-      border-bottom: 1px solid #bcbcbc;
-    }
-
-    @media(max-width:1199px) {}
-
-    @media(max-width:991px) {}
-
-    @media(max-width:767px) {
-      .bd-n {
-        border: none;
-      }
-    }
-
-    @media(max-width:575px) {}
-
-    /* Common End*/
-    /* -------------------------- */
-
-
-
-
-    /* -------------------------- */
-    /* Custom Start*/
-    .content-title {
+    .splide_title .main-img02 {
       width: 100%;
-      text-align: center;
-      padding-top: var(--lg-spec);
-      padding-bottom: var(--lg-spec);
+      max-width: calc(500px + 5vh);
     }
 
-    .category {
-      position: relative;
-      /* display: flex; */
-      /* align-items: flex-end; */
-      justify-content: center;
-      overflow: hidden;
-      padding: 15px;
+    .splide_title .main-img04 {
       width: 100%;
-      /* text-align: center; */
-      /* color: whitesmoke; */
-      /* background-color: whitesmoke; */
-      /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1); */
-      height: 800px;
-
-      /* background-image: url(/_images/banner/img01.jpg);
-      background-size: cover;
-      background-position: 0 0;
-      transition: .3s ease-in-out; */
+      max-width: calc(700px + 5vh);
     }
+  }
 
-
-    .category:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 110%;
-      background-size: cover;
-      background-position: center center;
-      transition: .3s ease-in-out;
-      pointer-events: none;
-    }
-
-    .category-01::before {
-      /* background-image: url(/_images/banner/img01.jpg); */
-      background-image: url(https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/category-mens.jpg);
-    }
-
-    .categor-02::before {
-      background-image: url(https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/category-womens.jpg);
-    }
-
-    .categor-03::before {
-      background-image: url(https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/category-accessories.jpg);
-    }
-
-
-    .category:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 200%;
-      pointer-events: none;
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-      transform: translateY(0%);
-      transition: .3s ease-in-out;
-    }
-
-    .category .content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      padding: 0 30px;
-      color: #fff;
-
-      transform: translateY(70%);
-      transition: .3s ease-in-out;
-      z-index: 1;
-    }
-
-    .category:hover::after {
-      transform: translateY(-50%);
-    }
-
-    .category:hover:before {
-      transform: translateY(-4%);
-    }
-
-    .category:hover .content {
-      transform: translateY(0%);
-    }
-
-    .btn {
-      cursor: pointer;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 0.025rem;
-      text-transform: uppercase;
-      color: white;
-      background-color: rgb(36, 36, 36);
-      border: none;
-      /* transition: .3s ease-in-out; */
-    }
-
-    .btn:hover {
-      color: white;
-      background-color: #0d0d0d;
-      outline: none;
-    }
-
-    .btn:focus {
-      outline: none;
-    }
-
-
-
-
-    /* Products */
-    .product-series {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: default;
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .img-line-series {
-      width: 100%;
-      max-width: 150px;
-      display: block;
-      transition: transform 0.3s ease-out;
-      /* 動畫效果：平滑 */
-    }
-
-    .product-series:hover .img-line-series {
-      transform: translateY(-10px);
-      /* Y 軸位移 -10px */
-    }
-
-
-    .product-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      writing-mode: vertical-rl;
-      font-size: 100px;
-      font-weight: 800;
-    }
-
-    .product-title .line {
-      padding: 20px 0;
-    }
-
-    .product-title .line::before {
-      content: '';
-      border-top: 10px solid #333333;
-    }
-
-    .product-info {
-      line-height: 32px;
-      font-size: 18px;
-      padding: 8px;
-      text-align: center;
-    }
-
-
-    .mainbg {
-      padding: 40px 0px;
-    }
-
-
-    /* tabs */
-    .tabs {
-      position: relative;
-      padding-bottom: 5px;
-    }
-
-    .tabs .line {
-      height: 2px;
-      position: absolute;
-      bottom: 0;
-      margin: 10px 0 0 0;
-      background: #c6c6c6;
-    }
-
-    .tabs ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      display: flex;
-    }
-
-    .tabs ul li {
-      margin: 0 40px 0 0;
-      opacity: 0.4;
-      transition: all 0.4s ease;
-    }
-
-    .tabs ul li:hover {
-      opacity: 0.7;
-    }
-
-    .tabs ul li.active {
-      opacity: 1;
-    }
-
-    .tabs ul li:last-child {
-      margin-right: 0;
-    }
-
-    .tabs ul li a {
-      text-decoration: none;
-      color: #313131;
-      text-transform: uppercase;
-      display: block;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      font-size: 14px;
-    }
-
-
-    /* cards */
-    .splide__slide .product_series {
-      max-width: 600px;
-      border-radius: 0.5rem;
-      background-color: #fff;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.197);
-      /* border: 1px solid transparent; */
-      margin: 10px 0;
-      overflow: hidden;
-    }
-
-    .product_series a {
-      text-decoration: none;
-    }
-
-    .content {
-      padding: 1.1rem;
-    }
-
-    /* .image {
-      object-fit: cover;
-      width: 100%;
-    } */
-
-    .image img {
-      width: 100%;
-    }
-
-    .title {
-      color: #111827;
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-      font-weight: 600;
-    }
-
-    .desc {
-      margin-top: 0.5rem;
-      color: #6B7280;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-    }
-
-    .action {
-      display: inline-flex;
-      margin-top: 1rem;
-      color: #ffffff;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      font-weight: 500;
-      align-items: center;
-      gap: 0.25rem;
-      background-color: #656565;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: .3s ease;
-    }
-
-    .action .arrow {
-      transition: .3s ease;
-    }
-
-    .action:hover {
-      color: #ffffff;
-      background-color: #505050;
-    }
-
-    .action:hover .arrow {
-      transform: translateX(4px);
-    }
-
-
-    @media(max-width:1199px) {}
-
-    @media(max-width:991px) {}
-
-    @media(max-width:767px) {}
-
-    @media(max-width:575px) {}
-
-
-    /* Custom End*/
-    /* -------------------------- */
-
-    /* -------------------------- */
-    /* Splide Start*/
-
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      height: 400px;
-    }
-
-    .carousel {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .carousel.active {
-      visibility: visible;
-      opacity: 1;
-      z-index: 99;
-    }
-
-
-
-    .splide_wapper {
-      max-height: 800px;
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    .splide_img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-
+  @media(max-width:991px) {
     .splide_title {
-      position: absolute;
-      bottom: 64px;
-      left: 64px;
-      color: #fff;
-      font-size: 72px;
-      font-weight: 600;
-      line-height: 64px;
+      gap: 30px;
     }
 
-
-    /* 產品輪播 */
-
-    .splide__pagination__page.is-active {
-      background-color: #7d7d7d;
+    .splide_title .main-img01 {
+      width: 100%;
+      max-width: calc(150px + 2vh);
     }
 
-    @media(max-width:1199px) {
-      .splide__slide img {
-        height: 450px;
-        /* 平板 */
-      }
+    .splide_title .main-img02 {
+      width: 100%;
+      max-width: calc(400px + 5vh);
+    }
+    .splide_title .main-img04 {
+      width: 100%;
+      max-width: calc(550px + 5vh);
+    }
+  }
+
+  @media(max-width:767px) {
+
+    .splide_title .main-img01 {
+      width: 100%;
+      max-width: calc(100px + 1.5vh);
     }
 
-    @media(max-width:991px) {}
-
-    @media(max-width:767px) {
-      .splide__slide img {
-        height: 500px;
-        /* 手機 */
-      }
+    .splide_title .main-img02 {
+      width: 100%;
+      max-width: calc(300px + 3vh);
     }
 
-    @media(max-width:575px) {}
-
-    /* Splide End*/
-    /* -------------------------- */
-
-
-    /* -------------------------- */
-    /* Magento css Start*/
-    .default-style .resp-tabs-container .resp-tab-content {
-      display: block !important;
+    .splide_title .main-img04 {
+      width: 100%;
+      max-width: calc(350px + 3vh);
     }
 
-    .baseline-align {
-      vertical-align: baseline;
+    .main-img03 {
+      width: 100%;
+      max-width: calc(35px + 2vh);
+      bottom: 5%;
     }
+  }
 
-    /* Magento css End*/
-    /* -------------------------- */
-  </style>
-</head>
+  @media(max-width:575px) {
+    .main-img03 {
+      width: 100%;
+      max-width: calc(15px + 2vh);
+    }
+  }
+</style>
 
-<body>
+<div class="splide_wapper">
+  <div class="splide_title">
 
-  <!-- <div class="">
-    <img class="w-100" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/main-background.jpg" alt="">
-  </div> -->
-
-
-  <nav class="tabs">
-    <ul>
-      <li class="active"><a id="men" href="">男款</a>
-      </li>
-      <li><a id="women" href="">女款</a>
-      </li>
-      <!-- <li><a href="">Third</a></li> -->
-    </ul>
-  </nav>
-
-  <div class="carousel-container">
-
-
-    <div id="image-carousel-1" class="splide carousel active">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt01.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt02.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt03.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt04.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="image-carousel-2" class="splide carousel ">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt04.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt03.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt02.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="product_series">
-              <div class="image">
-                <img src="/_images/banner/pdt01.jpg" alt="">
-              </div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    E Line
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                  dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span class="arrow">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
+    <img class="main-img01" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/eline-icon02.png" alt="">
+    <img class="main-img02" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/eline-slogan.png" alt="">
+    <img class="main-img04" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/eline-about.png" alt="">
   </div>
 
+  <img class="main-img03" src="https://www.ttbici.com/pub/media/wysiwyg/banner-image/ttbici/eline-symbol.png" alt="">
 
-  <!-- JQ -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</div>
 
-
-  <!-- Splide套件 -->
-  <script src="/_package/splide-4.1.3/dist/js/splide.js"></script>
-
-  <!-- Js -->
-  <script>
-    $(document).ready(function () {
-      var nav = $('.tabs');
-      var line = $('<div />').addClass('line');
-      line.appendTo(nav);
-
-      var active = nav.find('.active');
-      var pos = 0;
-      var wid = 0;
-
-      // **設定初始導航底線位置**
-      if (active.length) {
-        pos = active.position().left;
-        wid = active.width();
-        line.css({
-          left: pos,
-          width: wid
-        });
-      }
-
-      // **初始化輪播顯示狀態**
-      updateCarouselVisibility();
-
-      // **點擊導航選單時的動畫與狀態變化**
-      nav.find('ul li a').click(function (e) {
-        e.preventDefault(); // 防止頁面跳轉
-
-        if (!$(this).parent().hasClass('active') && !nav.hasClass('animate')) {
-          nav.addClass('animate'); // 避免同時進行多個動畫
-
-          var _this = $(this);
-          nav.find('ul li').removeClass('active'); // 清除其他項目的 `active`
-
-          var position = _this.parent().position();
-          var width = _this.parent().width();
-
-          // **動畫效果：導航底線移動**
-          if (position.left >= pos) {
-            line.animate({
-              width: ((position.left - pos) + width) // 先變寬
-            }, 300, function () {
-              line.animate({
-                width: width,
-                left: position.left // 再移動到新位置
-              }, 150, function () {
-                nav.removeClass('animate');
-              });
-              _this.parent().addClass('active'); // 設定新選擇的項目為 `active`
-              updateCarouselVisibility(); // **更新輪播顯示**
-            });
-          } else {
-            line.animate({
-              left: position.left,
-              width: ((pos - position.left) + wid) // 先變寬
-            }, 300, function () {
-              line.animate({
-                width: width // 縮回新位置
-              }, 150, function () {
-                nav.removeClass('animate');
-              });
-              _this.parent().addClass('active');
-              updateCarouselVisibility(); // **更新輪播顯示**
-            });
-          }
-
-          pos = position.left;
-          wid = width;
-        }
-      });
-
-      // **函式：控制輪播區塊顯示**
-      function updateCarouselVisibility() {
-        if ($("#men").parent().hasClass("active")) {
-          $("#image-carousel-1").addClass("active");
-          $("#image-carousel-2").removeClass("active");
-        } else if ($("#women").parent().hasClass("active")) {
-          $("#image-carousel-1").removeClass("active");
-          $("#image-carousel-2").addClass("active");
-        }
-      }
+<script type="text/javascript">
+  //require(['jquery'], function ($) {
+  jQuery(".splide_wapper").prependTo(".category-image");
 
 
-      // **統一 Splide 設定**
-      var splideOptions = {
-        padding: '15px',
-        gap: '15px',
-        type: 'loop',       // 無限循環播放
-        perPage: 4,         // 一次顯示 4 個
-        perMove: 1,      // 每次移動 1 個
-        // autoplay: true,     // 自動播放
-        interval: 5000,     // 每 3 秒切換一次
-        speed: 1500,        // 切換動畫時間（1.5 秒）
-        rewind: true,       // 啟用循環 (回到第一張)
-        arrows: false,      // 隱藏左右箭頭
-        pagination: false,  // 隱藏小圓點
-        pauseOnHover: false // 滑鼠停留時仍然繼續播放
-      };
-
-      // **初始化所有輪播**
-      ['#image-carousel-1', '#image-carousel-2'].forEach(function (selector) {
-        new Splide(selector, splideOptions).mount();
-      });
-
-    });
-
-  </script>
-</body>
-
-</html>
+  // });
+</script>
